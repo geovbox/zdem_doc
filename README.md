@@ -1,4 +1,4 @@
-# GeoVBOX参考手册
+# VBOX 手册
 
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![Build Status](https://travis-ci.org/geovbox/vbox_doc.svg?branch=master)](https://travis-ci.org/geovbox/vbox_doc)
@@ -11,13 +11,12 @@
 ## 相关链接
 
 - VBOX官网：http://geovbox.com/
-- Julia K. Morgan 主页：https://earthscience.rice.edu/directory/user/100/
-- GeoVBOX参考手册项目源码：https://github.com/geovbox/vbox_doc
+- VBOX手册：https://doc.geovbox.com/
 
 
 ## 版本说明
 
-- 在线阅读： http://doc.geovbox.com
+- 在线阅读： https://doc.geovbox.com
 
 文档的维护可以通过如下几个方式：
 
