@@ -10,7 +10,7 @@
 
 ## 相关链接
 
-- GeoVBOX官网：http://geovbox.com/
+- VBOX官网：http://geovbox.com/
 - Julia K. Morgan 主页：https://earthscience.rice.edu/directory/user/100/
 - GeoVBOX参考手册项目源码：https://github.com/geovbox/vbox_doc
 
