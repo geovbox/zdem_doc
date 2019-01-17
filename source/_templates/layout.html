@@ -1,0 +1,44 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+{{ super() }}
+<!-- favicons -->
+
+<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+{% endblock %}
+
+{% block comments %}
+{{ super() }}
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+{% endblock %}
