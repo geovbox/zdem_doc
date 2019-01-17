@@ -24,8 +24,9 @@
 1. 在文档页面的底部评论区留言
 2. 发送相关建议或投稿至 `geovbox@163.com`
 
+## 致谢
 
-
+[gmt-china](https://github.com/gmt-china) 的开源项目 [GMT_docs](https://github.com/gmt-china/GMT_docs)，对本手册的编写起到了很大的帮助作用。
 
 ## 许可协议
 
