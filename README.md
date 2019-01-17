@@ -19,7 +19,7 @@
 
 本手册目前与 GeoVBOX 1.3 同步，历史版本见 [release](https://github.com/geovbox/GeoVBOX_Docs/releases) 页面。
 
-- 在线阅读： https://docs.geovbox.com
+- 在线阅读： https://doc.geovbox.com
 
 文档的维护可以通过如下几个方式：
 
