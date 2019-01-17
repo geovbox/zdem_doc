@@ -4,22 +4,20 @@
 [![Build Status](https://travis-ci.org/geovbox/vbox_doc.svg?branch=master)](https://travis-ci.org/geovbox/vbox_doc)
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
-欢迎来到 [GeoVBOX](http://geovbox.com/) 的世界，GeoVBOX是一个用于构造模拟的二维离散元软件。
+欢迎来到 [VBOX](http://geovbox.com/) 的世界，`VBOX` 是一个用于构造模拟的二维离散元软件。
 
-本项目开始于2019年初，由南京大学李长圣维护的GeoVBOX参考手册，即可以作为日常参考，也可以作为离散与的入门读物。希望通过阅读本手册，能够让用户尽快掌握GeoVBOX的使用方法。
+本项目开始于2019年初，由南京大学李长圣维护的 `VBOX` 手册，即可以作为日常参考，也可以作为离散与的入门读物。希望通过阅读本手册，能够让用户尽快掌握 `VBOX` 的使用方法。
 
 ## 相关链接
 
-- GeoVBOX官网：https://geovbox.com/
+- GeoVBOX官网：http://geovbox.com/
 - Julia K. Morgan 主页：https://earthscience.rice.edu/directory/user/100/
-- GeoVBOX参考手册项目源码：https://github.com/geovbox/GeoVBOX_Docs
+- GeoVBOX参考手册项目源码：https://github.com/geovbox/vbox_doc
 
 
 ## 版本说明
 
-本手册目前与 GeoVBOX 1.3 同步，历史版本见 [release](https://github.com/geovbox/GeoVBOX_Docs/releases) 页面。
-
-- 在线阅读： https://doc.geovbox.com
+- 在线阅读： http://doc.geovbox.com
 
 文档的维护可以通过如下几个方式：
 
