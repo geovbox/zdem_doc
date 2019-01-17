@@ -4,13 +4,13 @@
 [![Build Status](https://travis-ci.org/geovbox/vbox_doc.svg?branch=master)](https://travis-ci.org/geovbox/vbox_doc)
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
-欢迎来到 [VBOX](http://geovbox.com/) 的世界，`VBOX` 是一个用于构造模拟的二维离散元软件。
+欢迎来到 [VBOX](https://geovbox.com/) 的世界，`VBOX` 是一个用于构造模拟的二维离散元软件。
 
 本项目开始于2019年初，由南京大学李长圣维护的 `VBOX` 手册，即可以作为日常参考，也可以作为离散与的入门读物。希望通过阅读本手册，能够让用户尽快掌握 `VBOX` 的使用方法。
 
 ## 相关链接
 
-- VBOX官网：http://geovbox.com/
+- VBOX官网：https://geovbox.com/
 - VBOX手册：https://doc.geovbox.com/
 
 

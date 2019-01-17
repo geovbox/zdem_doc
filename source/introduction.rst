@@ -15,7 +15,7 @@
 
 - VBOX开发者
 
-    VBOX源码由 `李长圣 <http://geovbox.com/about/lichangsheng/>`_ 开发并负责维护。
+    VBOX源码由 `李长圣 <https://geovbox.com/about/lichangsheng/>`_ 开发并负责维护。
 
 .. figure:: /images/LiChangSheng.png
    :width: 20%
