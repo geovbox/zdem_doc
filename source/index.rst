@@ -2,7 +2,7 @@ VBOX手册 v1.3
 #############
 
 
-欢迎来到 `VBOX <http://geovbox.com>`_ 的世界。
+欢迎来到 `VBOX <https://geovbox.com>`_ 的世界。
 
 .. only:: html
 
@@ -13,7 +13,7 @@ VBOX手册 v1.3
 首先来看 :ref:`firstexample`
 
 
-本项目是由 `VBOX <http://geovbox.com>`_ 官网维护的VBOX参考手册，即可以作为VBOX日常参考，也可以作为离散元的入门读物。希望通过阅读本手册，能够让用户尽快掌握VBOX的使用方法。
+本项目是由 `VBOX <https://geovbox.com>`_ 官网维护的VBOX参考手册，即可以作为VBOX日常参考，也可以作为离散元的入门读物。希望通过阅读本手册，能够让用户尽快掌握VBOX的使用方法。
 
 **VBOX脚本约定**
 
@@ -24,8 +24,8 @@ VBOX手册 v1.3
 
 **相关链接：**
 
-- VBOX官网：http://geovbox.com
-- VBOX手册：http://docs.geovbox.com
+- VBOX官网：https://geovbox.com
+- VBOX手册：https://doc.geovbox.com
 
 
 
