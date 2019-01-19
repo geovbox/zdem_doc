@@ -1,6 +1,5 @@
-VBOX手册 v1.3
-#############
-
+VBOX手册 1.3
+############
 
 欢迎来到 `VBOX <https://geovbox.com>`_ 的世界。
 
@@ -39,6 +38,7 @@ VBOX手册 v1.3
    use
    push/index
    clac
+   struct/index
    color
    cmd/index
    hpc

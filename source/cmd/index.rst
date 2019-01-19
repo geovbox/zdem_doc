@@ -22,7 +22,7 @@
 - 主程序
 
   - ``vboxdaily cmd.txt`` : 运行 ``cmd.txt`` 脚本
-  - ``vboxplot ./data`` : 将 ``./data`` 中的计算结果绘制成 ``jpg`` 格式
+  - :doc:`vboxplot` : ``vboxplot ./data`` ， 将 ``./data`` 中的计算结果绘制成 ``jpg`` 格式
   
 *脚本* ``cmd.txt`` *中支持的命令如下：*
 
@@ -63,7 +63,6 @@
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
    :caption: 目 录
 
    ball

@@ -54,6 +54,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 templates_path = ['_templates']
 html_title = project
 html_logo = None
+html_favicon = "_static/favicon.ico"
 html_static_path = ['_static']
 html_extra_path = ['CNAME']
 html_last_updated_fmt = u'%Y年%m月%d日'
@@ -69,6 +70,17 @@ html_context = {
     'github_version': 'master',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
+    
+     "menu_links": [
+        (
+            '<i class="fa fa-globe fa-fw"></i> VBOX官网',
+            "https://geovbox.com",
+        ),
+        (
+            '<i class="fa fa-envelope fa-fw"></i> 联系我们',
+            "https://geovbox.com/about/"
+        ),
+    ],
 }
 
 # -- Options for LaTeX output ---------------------------------------------
