@@ -13,5 +13,5 @@
 
    syn_erosion/index
    syn_sedimentaion/index
-
+   pre_struct/index
 

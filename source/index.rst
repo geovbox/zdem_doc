@@ -39,8 +39,8 @@ VBOX手册 1.3
    push/index
    clac
    struct/index
-   color
    cmd/index
+   color
    hpc
    linux
    thanks

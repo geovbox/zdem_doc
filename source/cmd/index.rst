@@ -40,10 +40,18 @@
   - :doc:`gline` ：在两个点之间建立一组线形排列的颗粒
   - :doc:`del` ：删除颗粒，用于实现剥蚀
 
+- 基本参数设置
+
+  - :doc:`set` ：设置计算的基本参数，如 时间步长 ``DT`` ，重力加速度 ``G`` 等
+
 - 颗粒参数设置
 
   - :doc:`prop` ：设置颗粒的微观参数
   - :doc:`bond` ：断开粘结 ``bond``
+
+- 范围圈定
+
+  - :doc:`range`: 用在 ``prop`` ``bond`` ``del`` 后，拥有 ``矩形xy`` ``多边形P4`` 圈定方法
 
 - 设置挤压量
 
@@ -63,7 +71,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 目 录
+   :caption: 命令列表
 
    ball
    bond
@@ -75,7 +83,9 @@
    load
    prop
    psconvert
+   range
    restore
+   set
    start
    wall
    vboxplot
