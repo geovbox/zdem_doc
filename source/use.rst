@@ -1,5 +1,5 @@
-在Windows下使用
-===============
+Windows下运行
+=============
 
 
 #. 使用 `xshell <https://www.netsarang.com/products/xsh_overview.html>`_ 连接安装了VBOX的服务器 
