@@ -21,9 +21,15 @@
 
 - 主程序
 
-  - ``vboxdaily cmd.txt`` : 运行 ``cmd.txt`` 脚本
+  - :doc:`vboxdaily` : ``vboxdaily cmd.txt`` , 运行 ``cmd.txt`` 脚本
+
+
+- 格式转换
+
   - :doc:`vboxplot` : ``vboxplot ./data`` ， 将 ``./data`` 中的计算结果绘制成 ``jpg`` 格式
-  
+  - :doc:`gmt psconvert <psconvert>` : 将VBOX生成的PS文件转换为其他图片格式。`GMT <https://gmt-china.org/>`_ 命令
+
+
 *脚本* ``cmd.txt`` *中支持的命令如下：*
 
 - 程序开始
@@ -58,11 +64,6 @@
   - :doc:`cyc` ：从网格文件中提取基本信息
   - :doc:`imple` ：从表数据中提取信息
 
-- 格式转换
-
-  - :doc:`vboxplot` ：利用VBOX生成的 ``all_*.dat`` 文件绘制如 ``jpg`` ``pdf`` 等各种格式的图片
-  - :doc:`ps2raster <psconvert>` ：将VBOX生成的PS文件转换为其他图片格式。 `GMT <https://gmt-china.org/>`_ 命令
-  - :doc:`psconvert` ：将VBOX生成的PS文件转换为其他图片格式。`GMT <https://gmt-china.org/>`_ 命令
 
 .. raw:: latex
 
@@ -88,4 +89,6 @@
    set
    start
    wall
+   vboxdaily
    vboxplot
+
