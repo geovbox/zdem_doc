@@ -7,7 +7,7 @@ imple
 
 使用方法::
 
-   DEL RANGE Y (<float> <float>)
+   IMPLE WALL ID <int> xmove <float> print <float> ps <float> save <float>
 
 实例::
 
