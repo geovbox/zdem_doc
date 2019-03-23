@@ -21,6 +21,8 @@
    :width: 20%
    :align: center
 
+   VBOX的维护者
+
 
 - VBOX的特点
 

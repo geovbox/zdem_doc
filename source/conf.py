@@ -101,12 +101,6 @@ latex_elements = {
     # customized tableofcontents
     'tableofcontents' : r'''\pdfbookmark[0]{\contentsname}{contents}
                             \tableofcontents
-                            \cleardoublepage
-                            \pdfbookmark[0]{\listfigurename}{lof}
-                            \listoffigures
-                            \cleardoublepage
-                            \pdfbookmark[0]{\listtablename}{lot}
-                            \listoftables
                             \cleardoublepage''',
     'passoptionstopackages': r'\PassOptionsToPackage{dvipsnames, svgnames}{xcolor}',
     'sphinxsetup': r'''VerbatimColor={named}{Lavender},
@@ -120,3 +114,14 @@ latex_elements = {
     'fontenc'   : '',
     'maketitle' : '\\maketitle',
 }
+
+
+#    'tableofcontents' : r'''\pdfbookmark[0]{\contentsname}{contents}
+#                            \tableofcontents
+#                            \cleardoublepage
+#                            \pdfbookmark[0]{\listfigurename}{lof}
+#                            \listoffigures
+#                            \cleardoublepage
+#                            \pdfbookmark[0]{\listtablename}{lot}
+#                            \listoftables
+#                            \cleardoublepage''',
