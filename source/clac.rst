@@ -115,7 +115,7 @@ SGE调度
         #$ -cwd
         #$ -pe orte 16 #调用16个核计算
         export OMP_NUM_THREADS=$NSLOTS
-        time vboxdaily cmd.py #提交计算 
+        time vboxdaily push.py #提交计算 
 
     2. 查看计算状态
 
