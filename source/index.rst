@@ -35,7 +35,7 @@ VBOX手册 1.3
    :hidden:
 
    introduction
-   use
+   use/index
    push/index
    clac
    struct/index

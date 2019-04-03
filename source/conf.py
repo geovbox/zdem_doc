@@ -73,6 +73,10 @@ html_context = {
     
      "menu_links": [
         (
+            '<i class="fa fa-download fa-fw"></i> PDF版本手册',
+            "https://doc.geovbox.com/vbox_doc.pdf",
+        ),
+        (
             '<i class="fa fa-globe fa-fw"></i> VBOX官网',
             "https://geovbox.com",
         ),
