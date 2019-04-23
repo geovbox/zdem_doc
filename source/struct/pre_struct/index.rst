@@ -5,7 +5,7 @@
 
 登陆南京大学高性能计算中心集群，运行 ``pre_struct.py`` 脚本::
 
-   vboxdaily pre_struct.py
+   vbox pre_struct.py
 
 
 ``pre_struct.py`` 中完整脚本命令如下

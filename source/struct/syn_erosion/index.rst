@@ -5,7 +5,7 @@
 
 登陆南京大学高性能计算中心集群，运行 ``syn_erosion.py`` 脚本::
 
-   vboxdaily syn_erosion.py
+   vbox syn_erosion.py
 
 
 ``syn_erosion.py`` 中完整脚本命令如下

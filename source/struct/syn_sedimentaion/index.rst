@@ -5,7 +5,7 @@
 
 登陆南京大学高性能计算中心集群，运行 ``syn_sedimentaion.py`` 脚本::
 
-   vboxdaily syn_sedimentaion.py
+   vbox syn_sedimentaion.py
 
 
 ``syn_sedimentaion.py`` 中完整脚本命令如下

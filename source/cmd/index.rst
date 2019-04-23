@@ -21,12 +21,12 @@
 
 - 主程序
 
-  - :doc:`vboxdaily` : ``vboxdaily cmd.txt`` , 运行 ``cmd.txt`` 脚本
+  - :doc:`vbox` : ``vbox cmd.txt`` , 运行 ``cmd.txt`` 脚本
 
 
 - 格式转换
 
-  - :doc:`vboxplot` : ``vboxplot ./data`` ， 将 ``./data`` 中的计算结果绘制成 ``jpg`` 格式
+  - :doc:`vbox2jpg` : ``vbox2jpg ./data`` ， 将 ``./data`` 中的计算结果绘制成 ``jpg`` 格式
   - :doc:`gmt psconvert <psconvert>` : 将VBOX生成的PS文件转换为其他图片格式。`GMT <https://gmt-china.org/>`_ 命令
 
 
@@ -89,6 +89,6 @@
    set
    start
    wall
-   vboxdaily
-   vboxplot
+   vbox
+   vbox2jpg
 

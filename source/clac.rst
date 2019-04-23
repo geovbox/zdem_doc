@@ -10,7 +10,7 @@
     ::
 
         #程序名 脚本名
-        vboxdaily push.py
+        vbox push.py
 
     - 优点：实时查看计算是否正确，使用`ctrl+c`结束计算
 
@@ -47,7 +47,7 @@ LSF调度
 		#BSUB -q mpi
 		#BSUB -n 24
 		#BSUB -R "span[ptile=24]"
-		/share/home/hwyin/vbox/vboxdaily push.py 
+		/share/home/hwyin/vbox/vbox push.py 
 
     2. 查看计算状态
 
@@ -115,7 +115,7 @@ SGE调度
         #$ -cwd
         #$ -pe orte 16 #调用16个核计算
         export OMP_NUM_THREADS=$NSLOTS
-        time vboxdaily push.py #提交计算 
+        time vbox push.py #提交计算 
 
     2. 查看计算状态
 
