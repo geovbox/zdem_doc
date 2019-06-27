@@ -26,7 +26,7 @@
 
 - 格式转换
 
-  - :doc:`vbox2jpg` : ``vbox2jpg ./data`` ， 将 ``./data`` 中的计算结果绘制成 ``jpg`` 格式
+  - :doc:`vbox2jpg` : 将计算结果绘制成 ``jpg`` 格式，同 ``vboxplot``
   - :doc:`gmt psconvert <psconvert>` : 将VBOX生成的PS文件转换为其他图片格式。`GMT <https://gmt-china.org/>`_ 命令
 
 
