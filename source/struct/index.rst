@@ -14,4 +14,6 @@
    syn_erosion/index
    syn_sedimentaion/index
    pre_struct/index
-
+   ex5_detachment/index
+   ex6_palaeohigh/index
+   ex7_extens_rigid/index
