@@ -54,15 +54,17 @@
 
   - :doc:`prop` ：设置颗粒的微观参数
   - :doc:`bond` ：断开粘结 ``bond``
+  - :doc:`fix` ：限制颗粒运动
+  - :doc:`free` ：释放颗粒运动，与 ``fix`` 相反
 
 - 范围圈定
 
-  - :doc:`range`: 用在 ``prop`` ``bond`` ``del`` 后，拥有 ``矩形xy`` ``多边形P4`` 圈定方法
+  - :doc:`range`: 用在 ``prop`` ``bond`` ``del`` 等后，拥有 ``矩形xy`` ``多边形P4`` 等圈定方法
 
 - 设置挤压量
 
-  - :doc:`cyc` ：从网格文件中提取基本信息
-  - :doc:`imple` ：从表数据中提取信息
+  - :doc:`cyc` ：设置迭代步数
+  - :doc:`imple` ：设置挤压距离
 
 
 .. raw:: latex
@@ -78,6 +80,8 @@
    bond
    cyc
    del
+   fix
+   free
    gen
    gline
    imple
