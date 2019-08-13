@@ -29,10 +29,10 @@ prop
    PROP n_bond 1.0e4 s_bond 1.0e4
    #
    #
-   #设置( |OA| - (rO+rA)| ) < tolerate的颗粒粘结在一起，使颗粒具有粘聚力 ,使得更多颗粒粘结到一起
+   #设置( |OA| - (rO+rA)| ) <= tolerate的颗粒粘结在一起，使颗粒具有粘聚力 ,使得更多颗粒粘结到一起
    PROP n_bond 1.0e4 s_bond 1.0e4 tolerate 10.0
    #
-   #设置( |OA| - (rO+rA)*rext| ) < tolerate的颗粒粘结在一起，使颗粒具有粘聚力 。这里，tolerate取默认值1e-6
+   #设置( |OA| - (rO+rA)*rext| ) <= tolerate的颗粒粘结在一起，使颗粒具有粘聚力 。这里，tolerate取默认值1e-6
    PROP n_bond 1.0e4 s_bond 1.0e4 tolerate rext 0.8
 
 
