@@ -26,7 +26,30 @@ vbox2jpg
 
 ``--ymax=<float>``
     设置绘图坐标Y轴最大值
+    
+``--xmin=<float>``
+    绘图X最小值，默认0.0
 
+``--ymin=<float>``
+    绘图Y最小值，默认0.0
+
+``--xmove=<float>``
+    坐标沿x轴偏移量，默认0.0
+
+``--ymove=<float>``
+    坐标沿y轴偏移量，默认0.0
+
+``--major_locator=<int>``
+    主坐标刻度间隔，默认10000
+    
+``--minor_locator=<float>``
+    次坐标刻度间隔，默认10000
+    
+``--fontsize=<int>``
+    坐标刻度字体大小，默认12
+    
+``--max_workers=<float>``
+    并行进程数，默认24
 
     
 - 实例 ``vbox2jpg --dir=./data``
