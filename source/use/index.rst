@@ -9,7 +9,7 @@ Windows下使用
 #. 下载安装 `Xshell <https://www.netsarang.com/products/xsh_overview.html>`_ ， 使用 ``Xshell`` 连接南京大学高性能计算中心的主机。
 
    - 文件-新建
-   - 连接 南京大学高兴能计算中心的主机 ``hpcc.nju.edu.cn`` 端口号 ``8801`` 
+   - 连接 南京大学高性能计算中心的主机 ``hpcc.nju.edu.cn`` 端口号 ``8801`` 
    
     .. figure:: 5.png
        :width: 80%
