@@ -15,7 +15,7 @@ vbox2jpg
 --------
 
 ``--dir=<dir>``
-    指定 ``all_*.dat`` 数据所在目录，``<dir>`` 为 ``all_*.dat`` 所在目录。
+    指定 ``all_*.dat`` 数据所在目录，``<dir>`` 为 ``all_*.dat`` 所在目录。例如``./data``
 
 
 可选选项
@@ -39,17 +39,23 @@ vbox2jpg
 ``--ymove=<float>``
     坐标沿y轴偏移量，默认0.0
 
-``--major_locator=<int>``
-    主坐标刻度间隔，默认10000
+``--major_locator=<float>``
+    主坐标刻度间隔，默认10000.0
     
 ``--minor_locator=<float>``
-    次坐标刻度间隔，默认10000
+    次坐标刻度间隔，默认1000.0
     
 ``--fontsize=<int>``
     坐标刻度字体大小，默认12
     
 ``--max_workers=<float>``
     并行进程数，默认24
+
+``--dpi=<int>``
+    图片分辨率，默认300
+
+``--linewidth=<float>``
+    线条粗细，默认1.0
 
     
 - 实例 ``vbox2jpg --dir=./data``

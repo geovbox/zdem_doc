@@ -12,7 +12,7 @@
 
 使用 ``Xshell`` 登陆南京大学高性能计算中心集群，运行 ``push.py`` 脚本::
 
-   vbox push.py
+   vboxdaily push.py
 
 
 ``push.py`` 中完整脚本命令如下
