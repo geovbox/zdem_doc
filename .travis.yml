@@ -1,30 +1,54 @@
 language: python
-sudo: required
-dist: trusty
-python: 3.6
-
-branches:
-    only:
-        - master
-        # Regex to build tagged commits with version numbers
-        - /\d+\.\d+(\.\d+)?(\S*)?$/
+python: 3.7
 
 env:
     global:
         - BUILD_PDF="true"
         - HTML_BUILDDIR=build/dirhtml
         - VBOX_VERSION=1.3
+        # TeXLive install location
+        - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
+        # PATH
+        - PATH=${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
+
+cache:
+  pip: true
+  directories:
+    - ${TEXLIVE_INSTALL_PREFIX}
+
+
+# Only build pushes to select branches and tags. This avoids the double
+# builds than happen when working on a branch instead of a fork.
+branches:
+  only:
+    - master
+    # Regex to build versioned branches, e.g. 5.4, 6.1
+    - /^\d+\.\d+$/
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - build-essential
+      - libcurl4-gnutls-dev
+      - libnetcdf-dev
+      - libgdal-dev
+      - libfftw3-dev
+      - libpcre3-dev
+      - liblapack-dev
+      - ghostscript
+      - curl
 
 install:
     # Install Python dependencies
     - pip install -r requirements.txt
-    # Install TexLive 
-    - curl -sSL https://raw.githubusercontent.com/geovbox/vbox_doc/master/ci/install-texlive.sh -o install-tl.sh
-    - sudo bash install-tl.sh
     # Install SourceCodePro fonts
     - curl -sSL https://raw.githubusercontent.com/geovbox/vbox_doc/master/ci/install-SourceCodePro.sh | sudo bash
-    - source ~/.bash_profile
-
+    # Install tinytex (https://github.com/yihui/tinytex)
+    - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
+    - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
+            float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
+            pdftexcmds
 
 script:
     # build html or/and PDF
@@ -34,5 +58,10 @@ script:
         make dirhtml;
       fi
 
-after_success:
-    - bash ci/deploy-gh-pages.sh
+deploy:
+  provider: script
+  script: bash ci/deploy-gh-pages.sh
+  skip_cleanup: true
+  on:
+    branch:
+      - master
