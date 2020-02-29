@@ -9,7 +9,7 @@
 
     - 2015年，李长圣开发了VBOX的最原始版本VBOX 1.0；
     - 2018年8月10日，VBOX 1.3发布；
-    - 目前最新版本 VBOX |VBOX_latest_release|
+    - 目前最新版本 VBOX |VBOX_latest_release| ( ``vboxdaily`` )
       发布于 |VBOX_latest_release_date|\ 。
 
 

@@ -5,7 +5,7 @@ env:
     global:
         - BUILD_PDF="true"
         - HTML_BUILDDIR=build/dirhtml
-        - VBOX_VERSION=1.3
+        - VBOX_VERSION=1.4
         # TeXLive install location
         - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
         # PATH

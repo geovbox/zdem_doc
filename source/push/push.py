@@ -13,7 +13,7 @@
 #程序初始化
 START
 #颗粒设为球，计算颗粒体积用4/3*pi*r^3计算
-set disk off
+SET disk off
 #设置研究范围 
 BOX left 0.0 right 41000.0 bottom 0.0 height 11000.0 kn=0e10 ks=0e10 fric 0.00 
 #设置挡板墙，这里模型采用hertz接触模型，挡板墙的kn ks无效，计算时取颗粒的参数
@@ -21,25 +21,27 @@ WALL ID 0, NODES (      0.0 ,     10.0 ) (  40000.0 ,     10.0 ), kn=0e10 ks=0e1
 WALL ID 1, NODES (     10.0 ,  10000.0 ) (     10.0 ,     10.0 ), kn=0e10 ks=0e10 fric 0.0 COLOR blue
 WALL ID 2, NODES (  40000.0 ,     10.0 ) (  40000.0 ,  10000.0 ), kn=0e10 ks=0e10 fric 0.0 COLOR red
 #在矩形范围内生成颗粒
-GEN NUM 100000.0 rad discrete 60.0 80.0,  x ( 10.0, 40000.0), y ( 10.0, 10000.0), COLOR black GROUP ball_rand
-#设置颗粒的微观参数
-PROP DENSITY 2.5e3, fric 0.0, shear 2.9e9, poiss 0.2, damp 0.4, hertz
+GEN NUM 100000 rad discrete 60.0 80.0,  x ( 10.0, 40000.0), y ( 10.0, 10000.0), COLOR black GROUP ball_rand
+#设置颗粒的微观参数　density 密度，firc 摩擦系数，shear 剪切模量，poiss　泊松比，damp 局部阻尼常数，heart　Hertz-Mindlin接触模型
+PROP density 2.5e3, fric 0.0, shear 2.9e9, poiss 0.2, damp 0.4, hertz
 #设置时间步及重力加速度
 SET  DT 5e-2,  GRAVITY  0.0,  -9.8 
+#设置每1000步保存一次vtk格式的计算结果
+SET  vtk 1000
 #设置每1000步保存一次ps格式的计算结果
 SET  ps 1000
 #设置每1000步保存一次dat格式的计算结果
 SET  print 1000
 #沉积，计算5000步
 CYC 5000
-#删除6000米以上的颗粒
+#删除4000米以上的颗粒
 DEL RANGE y 4000.0 999000.0
 #平衡，计算1000步
 CYC 1000
 #输出包含颗粒的[x y r]信息的初始模型 init_xyr.dat
 #EXP init_xyr.dat
 
-#设置bond粘结，使颗粒具有粘聚力
+#设置bond粘结，使颗粒具有粘聚力，ebmod 杨氏模量，　gbmod 剪切模量，tstrength 抗拉强度，sstrength　聚合强度，　firc 摩擦系数
 PROP ebmod 2e8 gbmod 2e8  tstrength 2e7 sstrength 4e7 fric 0.3 
 #给地层赋上颜色
 PROP COLOR lg          range y    0.0   500.0
@@ -59,6 +61,6 @@ WALL id 2 fric 0.3
 #设置墙的挤压速度 x方向速度为2.0
 WALL id 1 xv 2.0
 #设置墙的挤压量x方向推进10000.0，每挤压2000.0保存一次计算结果
-IMPLE wall id 1 xmove 10000.0 save 2000.0 print 1000.0 ps 1000.0
+IMPLE wall id 1 xmove 10000.0 save 2000.0 print 1000.0 ps 1000.0 vtk 1000.0
 #计算停止
 STOP

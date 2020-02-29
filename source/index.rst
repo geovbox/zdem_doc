@@ -1,4 +1,4 @@
-VBOX手册 1.3
+VBOX手册 1.4
 ############
 
 欢迎来到 `VBOX <https://geovbox.com>`_ 的世界。
@@ -21,10 +21,15 @@ VBOX手册 1.3
 - ``#`` ``!`` ``;`` 均是注释符，注释符后面的所有内容（可以使用中文）会被忽略。 
 - 程序必须以START、RESTORE或LOAD开始一个计算。
 
+**VBOX初级视频教程**
+
+- `geovbox@哔哩哔哩 <https://space.bilibili.com/31815571/channel/detail?cid=105901>`_
+
 **相关链接：**
 
 - VBOX官网：https://geovbox.com
 - VBOX手册：https://doc.geovbox.com
+
 
 
 

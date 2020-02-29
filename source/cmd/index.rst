@@ -21,14 +21,14 @@
 
 - 主程序
 
-  - :doc:`vbox` : ``vbox cmd.txt`` , 运行 ``cmd.txt`` 脚本
+  - :doc:`vbox` : ``vbox push.py`` , 运行 ``push.py`` 脚本
 
 
-- 格式转换
+- 格式转换、gif制作
 
   - :doc:`vbox2jpg` : 将计算结果绘制成 ``jpg`` 格式，同 ``vboxplot``
   - :doc:`gmt psconvert <psconvert>` : 将VBOX生成的PS文件转换为其他图片格式。`GMT <https://gmt-china.org/>`_ 命令
-
+  - :doc:`convert` : 制作 gif  
 
 *脚本* ``cmd.txt`` *中支持的命令如下：*
 
@@ -79,6 +79,7 @@
 
    ball
    bond
+   convert
    cyc
    del
    exp

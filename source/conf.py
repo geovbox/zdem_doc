@@ -40,11 +40,11 @@ master_doc = 'index'
 project = u'VBOX手册'
 copyright = '2014 - {}, VBOX官网'.format(datetime.date.today().year)
 author = u'李长圣'
-version = '1.3'
+version = '1.4'
 release = version
 rst_prolog = '''
-.. |VBOX_latest_release| replace:: 1.3
-.. |VBOX_latest_release_date| replace:: 2019-01-10
+.. |VBOX_latest_release| replace:: 1.4 beta 
+.. |VBOX_latest_release_date| replace:: 2019-12-02
 '''
 
 # -- Options for HTML output ----------------------------------------------
