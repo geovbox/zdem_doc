@@ -8,8 +8,9 @@ vbox2jpg
 
    同 ``vboxplot`` 
 
-:说明: 读取VBOX生成的 ``all_*.dat`` 文件绘制如 ``jpg`` ``pdf`` 等格式的图片
+:说明: 读取VBOX生成的 ``all_*.dat`` 文件绘制如 ``jpg`` 格式的图片
 
+- 实例　``vbox2jpg --dir=./data --ymin=0.0 --xmin=0.0 --xmove=-1000.0 --ymove=-1000.0 --linewidth=0.8 --fontsize=8 --xmax=50000.0 --ymax=10000.0 --dpi=600 --pagesize=14 --topshow=false --rightshow=false`` 
 
 必选选项
 --------
@@ -46,18 +47,33 @@ vbox2jpg
     次坐标刻度间隔，默认1000.0
     
 ``--fontsize=<int>``
-    坐标刻度字体大小，默认12
+    坐标刻度字体大小，默认9
     
 ``--max_workers=<float>``
     并行进程数，默认24
 
 ``--dpi=<int>``
-    图片分辨率，默认300
+    图片分辨率，默认600
 
 ``--linewidth=<float>``
-    线条粗细，默认1.0
+    线条粗细，默认0.8
 
-    
+``--pagesize=<int>``
+    图片大小，单位cm，默认14
+
+``--leftshow=<bool>``
+    显示坐标轴左线框，取值true/false，默认true
+
+``--rightshow=<bool>``
+    显示坐标轴左线框，取值true/false，默认true
+
+``--bottomshow=<bool>``
+    显示坐标轴左线框，取值true/false，默认true
+
+``--topshow=<bool>``
+    显示坐标轴左线框，取值true/false，默认true
+
+
 - 实例 ``vbox2jpg --dir=./data``
     读取目录 ``./data`` 中的计算数据 ``all_*.dat`` ，并生成 ``jpg`` 格式的图片，保存到 ``./data`` 中。
 
