@@ -5,14 +5,18 @@ load
 
 :说明: ``loa[d]`` 从xyr.dat文件中读取颗粒坐标和半径，并生成这些颗粒。
 
-使用方法::
+:使用方法:
+
+::
 
     #从 xyr.dat 中读取颗粒坐标和半径
     LOAD xyr.dat [scale <float>] [x <float> <float> ] [y <float> <float> ]
 
 其中，``xyr.dat`` 是 ``x y r [GROUP]`` 格式的ASCII文件，可由VBOX或者其他软件生成。
 
-实例::
+:实例:
+
+::
 
    # 导入全部颗粒的x y r [group]信息，其中 xyr.dat文件可以包含GROUP信息
    LOAD xyr.dat

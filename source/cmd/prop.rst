@@ -5,7 +5,9 @@ prop
 
 :说明: ``pro[p]`` 设置材料参数
 
-使用方法::
+:使用方法:
+
+::
 
    PROP DENSITY <float>, FRIC <float>, SHEAR <float>, POISS <float>, DAMP <float>, HERTZ [RANGE ...]
    PROP ebmod <float>, gbmod <float>, tstrength <float>, sstrength <float>, [tolerate 10.0] [fric <float>] [RANGE ...]
@@ -14,7 +16,9 @@ prop
 
 其中， ``tolerate`` 默认值为1e-6，``rext`` 默认值为1.0。 ``rext`` 可与 ``gline`` 的 cratio，联合使用，设置 ``rext=cratio``，可以避免0-1-2-3-4...线性叠合的颗粒，出现0-2跨颗粒1产生粘结。
 
-实例::
+:实例:
+
+::
 
    # Model 1. ref. [Morgan 2015 JGR] 和 [李长圣博士论文,2019]
    # 设置材料参数 密度DEM，摩擦系数FRIC，剪切模量shear，泊松比poiss，阻尼DAMP
