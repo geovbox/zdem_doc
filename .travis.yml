@@ -49,6 +49,9 @@ install:
     - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
             float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
             pdftexcmds
+    - tlmgr install upquote
+    - tlmgr install oberdiek
+    - tlmgr install caption
 
 script:
     # build html or/and PDF
