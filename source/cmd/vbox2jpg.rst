@@ -80,6 +80,9 @@ vbox2jpg
 
 ``--wallshow=<bool>``
     显示wall墙，取值true/false，默认true
+``--colormap=<str>`` 
+    指定颜色配置文件，格式为10x3的矩阵，对应十个RGB值，默认取值及文件格式见 `颜色表 <https://doc.geovbox.com/latest/color/>`_ ．建议直接制定该文件的绝对路径或者相对路径，如 ``--colormap=/home/zhangsan/MyColorMap.txt`` 或 ``--colormap=./ＭyColorMap.txt`` ．如果仅指定文件名，如 ``--colormap=ＭyColorMap.txt`` ，搜索顺序为 当前目录 > --dir指定的目录 > Home目录．
+
 
 - 实例 ``vbox2jpg --dir=./data``
     读取目录 ``./data`` 中的计算数据 ``all_*.dat`` ，并生成 ``jpg`` 格式的图片，保存到 ``./data`` 中。
