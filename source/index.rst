@@ -45,6 +45,7 @@ VBOX手册 1.4
    clac
    struct/index
    cmd/index
+   theory/index
    color
    hpc
    linux
