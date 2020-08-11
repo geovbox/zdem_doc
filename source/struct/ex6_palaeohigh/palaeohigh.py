@@ -1,5 +1,6 @@
 ######################################
 # title: 古隆起设置方法
+# date: 2020-08-11 添加INI，初始化古隆起颗粒速度为零
 # date: 2019-06-29
 # authors: 李长圣
 # E-mail: sheng0619@163.com
@@ -43,6 +44,9 @@ PROP GROUP palaeohigh RANGE ellipse ( 20000.0,  0.0)  2000.0, 1000.0
 PROP GROUP palaeohigh RANGE P4 ( 10000.0,  0.0) ( 12000.0,  0.0) ( 15000.0  0.0) ( 12500.0  1500.0)
 #打断struct1组内的颗粒粘结
 BOND break RANGE GROUP palaeohigh
+#初始化古隆起颗粒速度为零
+INI xv 0.0 yv 0.0 spin 0.0 RANGE GROUP palaehigh
+#限制古隆起颗粒运动
 FIX x y spin RANGE GROUP palaeohigh
 #将palaeohigh组的颗粒颜色设置为黑色 
 PROP COLOR black  RANGE GROUP palaeohigh
