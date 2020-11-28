@@ -50,3 +50,4 @@ VBOX手册 1.4
    hpc
    linux
    thanks
+   vbox1.4_license
