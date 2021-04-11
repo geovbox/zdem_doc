@@ -49,7 +49,7 @@ install:
         wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
         tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
             float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
-            pdftexcmds upquote oberdiek caption;
+            pdftexcmds upquote oberdiek caption everysel;
       fi
 
 script:
