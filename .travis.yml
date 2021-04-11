@@ -45,13 +45,12 @@ install:
     # Install SourceCodePro fonts
     - curl -sSL https://raw.githubusercontent.com/geovbox/vbox_doc/master/ci/install-SourceCodePro.sh | sudo bash
     # Install tinytex (https://github.com/yihui/tinytex)
-    - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
-    - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
-            float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
-            pdftexcmds
-    - tlmgr install upquote
-    - tlmgr install oberdiek
-    - tlmgr install caption
+    - if [ ! -x "${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux/tlmgr" ]; then
+        wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
+        tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
+        float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
+        pdftexcmds upquote oberdiek caption;
+    fi
 
 script:
     # build html or/and PDF
