@@ -71,6 +71,8 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
     
+    'versions': ['2.0', '1.4'],
+    
      "menu_links": [
         (
             '<i class="fa fa-download fa-fw"></i> PDF版本手册',
