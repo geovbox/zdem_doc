@@ -61,7 +61,9 @@ html_last_updated_fmt = u'%Y年%m月%d日'
 html_secnumber_suffix = ' '  # default is '.'
 html_search_language = 'zh'
 html_theme_options = {
+    'canonical_url': 'https://doc.geovbox.com/latest/',
     'prev_next_buttons_location': 'both',
+    'sticky_navigation': False,
 }
 html_context = {
     'display_github': True,
@@ -70,6 +72,7 @@ html_context = {
     'github_version': 'master',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
+    'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     
     'versions': ['2.0', '1.4'],
     
