@@ -1,5 +1,5 @@
 # VBOX 1.4 手册
-2021-04-11 1.4停止更新
+2021-04-11 1.4停止更新，将跳到2.0
 
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![Build Status](https://travis-ci.org/geovbox/vbox_doc.svg?branch=master)](https://travis-ci.org/geovbox/vbox_doc)
