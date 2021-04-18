@@ -62,21 +62,21 @@ var _hmt = _hmt || [];
     {% endif %}
     </a>
 
-    {% if theme_display_version %}
-    {%- set nav_version = version %}
-    {% if READTHEDOCS and current_version %}
-    {%- set nav_version = current_version %}
-    {% endif %}
-    {% if nav_version %}
-    <div class="version">
-        <select onchange="location = this.options[this.selectedIndex].value;">
-            {% for ver in versions %}
-            <option value="/{{ ver }}/" {% if nav_version == ver %} selected {% endif %}> v{{ ver }} </option>
-            {% endfor %}
-        </select>
-    </div>
-    {% endif %}
-    {% endif %}
+<!--    {% if theme_display_version %}-->
+<!--    {%- set nav_version = version %}-->
+<!--    {% if READTHEDOCS and current_version %}-->
+<!--    {%- set nav_version = current_version %}-->
+<!--    {% endif %}-->
+<!--    {% if nav_version %}-->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            {% for ver in versions %}-->
+<!--            <option value="/{{ ver }}/" {% if nav_version == ver %} selected {% endif %}> {{ ver }} </option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+<!--    </div>-->
+<!--    {% endif %}-->
+<!--    {% endif %}-->
 
     {% include "./searchbox_bing.html" %}
 {% endblock %}

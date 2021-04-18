@@ -44,7 +44,7 @@ version = '1.4'
 release = version
 rst_prolog = '''
 .. |VBOX_latest_release| replace:: 1.4 beta 
-.. |VBOX_latest_release_date| replace:: 2019-12-02
+.. |VBOX_latest_release_date| replace:: 2021-04-11
 '''
 
 # -- Options for HTML output ----------------------------------------------
@@ -74,7 +74,8 @@ html_context = {
     'theme_vcs_pageview_mode': 'blob',
     'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     
-    'versions': ['2.0', '1.4'],
+    #'versions': ['2.0', '1.4'],
+    'versions': ['1.4'],
     
      "menu_links": [
         (
