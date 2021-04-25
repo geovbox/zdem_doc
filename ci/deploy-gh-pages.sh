@@ -20,9 +20,9 @@ HTML_SRC=${TRAVIS_BUILD_DIR}/${HTML_BUILDDIR}
 #if [[ "${TRAVIS_TAG}" != "" ]]; then
 #    VERSION=${TRAVIS_TAG}
 #else
-#    VERSION=${VBOX_VERSION}
+#    VERSION=${VERSION}
 #fi
-VERSION=${VBOX_VERSION}
+VERSION=${VERSION}
 
 echo -e "DEPLOYING HTML TO GITHUB PAGES:"
 echo -e "Target: branch ${BRANCH} of ${REPO}"
@@ -72,7 +72,7 @@ git commit --amend --no-edit
 
 ## If this is a dev build and the last commit was from a dev build, reuse the
 ## same commit
-#if [[ "${TRAVIS_TAG}" != "" && `git log -1 --format='%s'` == *"${VBOX_VERSION}"* ]]; then
+#if [[ "${TRAVIS_TAG}" != "" && `git log -1 --format='%s'` == *"${VERSION}"* ]]; then
 #    echo -e "Amending last commit"
 #    git commit --amend --reset-author --no-edit
 #else

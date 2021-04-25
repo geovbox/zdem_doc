@@ -1,28 +1,26 @@
-# VBOX 1.4 手册
-2021-04-11 1.4停止更新，将跳到2.0
+# ZDEM 2.0 手册
 
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![Build Status](https://travis-ci.org/geovbox/vbox_doc.svg?branch=master)](https://travis-ci.org/geovbox/vbox_doc)
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
-欢迎来到 [VBOX](https://geovbox.com/) 的世界，`VBOX` 是一个用于构造模拟的二维离散元软件。
+欢迎来到 [ZDEM](https://geovbox.com/) 的世界，`ZDEM` 是一个用于构造模拟的二维离散元软件。
 
-本项目开始于2019年初，由南京大学李长圣维护的 `VBOX` 手册，即可以作为日常参考，也可以作为离散与的入门读物。希望通过阅读本手册，能够让用户尽快掌握 `VBOX` 的使用方法。
+本项目开始于2019年初，由[李长圣](https://geovbox.com/lichangsheng/)维护的 `ZDEM` 手册，即可以作为日常参考，也可以作为离散与的入门读物。希望通过阅读本手册，能够让用户尽快掌握 `ZDEM` 的使用方法。
 
 ## 相关链接
 
-- VBOX官网：https://geovbox.com/
-- VBOX手册：https://doc.geovbox.com/
+- 官网：https://geovbox.com/
+- 手册：https://doc.geovbox.com/
 
 
 ## 版本说明
 
 - 在线阅读： https://doc.geovbox.com
 
-文档的维护可以通过如下几个方式：
+文档的维护可以通过如下方式：
 
-1. 在文档页面的底部评论区留言
-2. 发送相关建议或投稿至 `geovbox@163.com`
+#. 发送相关建议或投稿至 `sheng0619@163.com`
 
 ## 致谢
 

@@ -3,23 +3,7 @@
 
 这里是一个 ``滑脱层`` 设置的实例，一般地，将滑脱层设置为没有粘结，类似松散石英砂，摩擦系数则可以设置为 0.0。
 
- ``ex5`` 目录中文件有
- 
-- `lsf.sh <lsf.sh>`_
-- `detachment.py <detachment.py>`_
-- `init_xyr.dat <init_xyr.dat>`_
-
-
-
-## 进入 `ex5` 目录，在终端或 `xshell` 中运行 ::
-
-   $ bsub < lsf.sh   # 提交计算
-   $ bjobs           # 查看计算是否提交成功
-
-
-``lsf.sh`` 中内容如下：
-
-.. literalinclude:: lsf.sh
+`detachment.py <detachment.py>`_ 和 `init_xyr.dat <init_xyr.dat>`_ 需放在同一目录下。
 
 ``detachment.py`` 中内容如下：
 

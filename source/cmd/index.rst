@@ -21,16 +21,15 @@
 
 - 主程序
 
-  - :doc:`vbox` : ``vbox push.py`` , 运行 ``push.py`` 脚本
+  - :doc:`zdem` : ``zdem script.py`` , 运行 ``script.py`` 脚本
 
 
 - 格式转换、gif制作
 
-  - :doc:`vbox2jpg` : 将计算结果绘制成 ``jpg`` 格式，同 ``vboxplot``
-  - :doc:`gmt psconvert <psconvert>` : 将VBOX生成的PS文件转换为其他图片格式。`GMT <https://gmt-china.org/>`_ 命令
+  - :doc:`zdem2jpg` : 将计算结果绘制成 ``jpg`` 格式。
   - :doc:`convert` : 制作 gif  
 
-*脚本* ``cmd.txt`` *中支持的命令如下：*
+*脚本* ``script.py`` *中支持的命令如下：*
 
 - 程序开始
 
@@ -90,12 +89,11 @@
    imple
    load
    prop
-   psconvert
    range
    restore
    set
    start
    wall
-   vbox
-   vbox2jpg
+   zdem
+   zdem2jpg
 

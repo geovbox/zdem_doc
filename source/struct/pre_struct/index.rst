@@ -3,11 +3,6 @@
 
 这里是一个 ``断层`` 设置实例。
 
-登陆南京大学高性能计算中心集群，运行 ``pre_struct.py`` 脚本::
-
-   vbox pre_struct.py
-
-
 ``pre_struct.py`` 中完整脚本命令如下
 
 .. literalinclude:: pre_struct.py

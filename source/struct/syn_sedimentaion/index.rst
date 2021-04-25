@@ -3,11 +3,6 @@
 
 这里是一个 ``同构造沉积`` 计算实例。
 
-登陆南京大学高性能计算中心集群，运行 ``syn_sedimentaion.py`` 脚本::
-
-   vbox syn_sedimentaion.py
-
-
 ``syn_sedimentaion.py`` 中完整脚本命令如下
 
 .. literalinclude:: syn_sedimentaion.py

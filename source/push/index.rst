@@ -1,6 +1,6 @@
 .. _firstexample:
 
-一个示例学会VBOX
+一个示例学会ZDEM
 ================
 
 
@@ -11,9 +11,9 @@
 
 下面是一个最简单的挤压计算实例，26行命令即可完成该计算。学会了该命令脚本，基本掌握VBOX的使用方法。
 
-使用 ``Xshell`` 登陆南京大学高性能计算中心集群，运行 ``push.py`` 脚本::
+登陆 `并行超算云 <https://geovbox.com/hpc/>`_ ，运行 ``push.py`` 脚本::
 
-   vboxdaily push.py
+   zdem push.py
 
 
 ``push.py`` 中完整脚本命令如下

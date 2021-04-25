@@ -1,20 +1,15 @@
-.. index:: ! vbox2jpg
+.. index:: ! zdem2jpg
 
-vbox2jpg
+zdem2jpg
 ========
 
-
-.. note::
-
-   同 ``vboxplot`` 
-
-:说明: 读取VBOX生成的 ``all_*.dat`` 文件绘制如 ``jpg`` 格式的图片
+:说明: 读取软件生成的 ``all_*.dat`` 文件绘制如 ``jpg`` 格式的图片
 
 :实例:
 
 ::
 
-    vbox2jpg --dir=./data --ymin=0.0 --xmin=0.0 --xmove=-1000.0 --ymove=-1000.0 --linewidth=0.8 --fontsize=8 --xmax=50000.0 --ymax=10000.0 --dpi=600 --pagesize=14 --topshow=false --rightshow=false
+    zdem2jpg --dir=./data --ymin=0.0 --xmin=0.0 --xmove=-1000.0 --ymove=-1000.0 --linewidth=0.8 --fontsize=8 --xmax=50000.0 --ymax=10000.0 --dpi=600 --pagesize=14 --topshow=false --rightshow=false
 
 
 必选选项
@@ -91,10 +86,10 @@ vbox2jpg
     指定颜色配置文件，格式为10x3的矩阵，对应十个RGB值，默认取值及文件格式见 `颜色表 <https://doc.geovbox.com/latest/color/>`_ ．建议直接制定该文件的绝对路径或者相对路径，如 ``--colormap=/home/zhangsan/MyColorMap.txt`` 或 ``--colormap=./ＭyColorMap.txt`` ．如果仅指定文件名，如 ``--colormap=ＭyColorMap.txt`` ，搜索顺序为 当前目录 > --dir指定的目录 > Home目录．
 
 
-- 实例 ``vbox2jpg --dir=./data``
+- 实例 ``zdem2jpg --dir=./data``
     读取目录 ``./data`` 中的计算数据 ``all_*.dat`` ，并生成 ``jpg`` 格式的图片，保存到 ``./data`` 中。
 
-- 实例 ``vbox2jpg --dir=./data --xmax=40000.0 --ymax=10000.0`` 
+- 实例 ``zdem2jpg --dir=./data --xmax=40000.0 --ymax=10000.0`` 
     读取目录 ``./data`` 中的计算数据 ``all_*.dat`` ，并生成 ``jpg`` 格式的图片，保存到 ``./data`` 中。图片X轴最大值为40000.0, y轴最大值为10000.0
 
 

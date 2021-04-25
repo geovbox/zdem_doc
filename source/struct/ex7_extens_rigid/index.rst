@@ -3,24 +3,8 @@
 
 这里是一个 ``刚性基底 伸展构造`` 设置的实例，使用上下两个刚性板完成。
 
- ``ex7`` 目录中文件有
+`extens_rigid.py <palaeohigh.py>`_ 和 `init_xyr.dat <init_xyr.dat>`_ 需放在同一目录下。
  
-- `lsf.sh <lsf.sh>`_
-- `extens_rigid.py <palaeohigh.py>`_
-- `init_xyr.dat <init_xyr.dat>`_
-
-
-
-## 进入 `ex7` 目录，在终端或 `xshell` 中运行 ::
-
-   $ bsub < lsf.sh   # 提交计算
-   $ bjobs           # 查看计算是否提交成功
-
-
-``lsf.sh`` 中内容如下：
-
-.. literalinclude:: lsf.sh
-
 ``extens_rigid.py`` 中内容如下：
 
 .. literalinclude:: extens_rigid.py

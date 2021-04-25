@@ -11,7 +11,10 @@ gline
 
    GLINE RAD=<float> P1 ( <float> <float> ) P2 ( <float> <float> ), KN=<float> KS=<float> FRIC=<float>, [COLOR=<str>] , [GROUP=<str>], [CRATIO=<float>] 
 
-其中，CRATIO为初始叠和率，cratio = |OA|/(rO+rA)，取值范围(0.0~1.0]。当颗粒刚好接触时，cratio=(rO+rA)/(rO+rA)=1.0；当颗粒完全重合时，cratio=0.0/(rO+rA)=0.0
+其中，CRATIO(即 :math:`c_{ratio}` )为初始叠和率， :math:`c_{ratio} = |OA|/(r_O+r_A)` ， :math:`c_{ratio}` 取值范围  :math:`(0.0~1.0]` 。
+
++ 当颗粒刚好接触时， :math:`c_{ratio}=(r_O+r_A)/(r_O+r_A)=1.0` ；
++ 当颗粒完全重合时， :math:`c_{ratio}=0.0/(r_O+r_A)=0.0`
 
 :实例:
 

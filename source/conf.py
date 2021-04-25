@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# VBOX 手册配置文件
+# zdem 手册配置文件
 #
 # 1. http://www.sphinx-doc.org/en/stable/config.html
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
@@ -37,14 +37,14 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
-project = u'VBOX手册'
-copyright = '2014 - {}, VBOX官网'.format(datetime.date.today().year)
+project = u'ZDEM手册'
+copyright = '2019 - {}, ZDEM'.format(datetime.date.today().year)
 author = u'李长圣'
-version = '1.4'
+version = '2.0'
 release = version
 rst_prolog = '''
-.. |VBOX_latest_release| replace:: 1.4 beta 
-.. |VBOX_latest_release_date| replace:: 2021-04-11
+.. |zdem_latest_release| replace:: 2.0 
+.. |zdem_latest_release_date| replace:: 2021-04-19
 '''
 
 # -- Options for HTML output ----------------------------------------------
@@ -75,15 +75,15 @@ html_context = {
     'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     
     #'versions': ['2.0', '1.4'],
-    'versions': ['1.4'],
+    'versions': ['2.0'],
     
      "menu_links": [
         (
             '<i class="fa fa-download fa-fw"></i> PDF版本手册',
-            "https://doc.geovbox.com/vbox_doc.pdf",
+            "https://doc.geovbox.com/2.0/zdem_doc.pdf",
         ),
         (
-            '<i class="fa fa-globe fa-fw"></i> VBOX官网',
+            '<i class="fa fa-globe fa-fw"></i> 官网',
             "https://geovbox.com",
         ),
         (
@@ -96,16 +96,16 @@ html_context = {
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
 latex_documents = [
-    (master_doc, 'vbox_doc.tex', "{} v{}".format(project, version), author, 'ctexbook'),
+    (master_doc, 'zdem_doc.tex', "{} v{}".format(project, version), author, 'ctexbook'),
 ]
 latex_logo = None
 latex_toplevel_sectioning = 'chapter'
-latex_additional_files = ['vbox_style.sty']
+latex_additional_files = ['zdem_style.sty']
 latex_elements = {
     'papersize' : 'a4paper',
     'pointsize' : '11pt',
     'extraclassoptions' : 'UTF8,twoside,punct=CCT',
-    'preamble'  : r'\input{vbox_style.sty}',
+    'preamble'  : r'\input{zdem_style.sty}',
     'figure_align' : 'H',
     'geometry'  : r'\usepackage[top=3.0cm, bottom=2.0cm, left=3.5cm, right=2.5cm]{geometry}',
     # customized tableofcontents

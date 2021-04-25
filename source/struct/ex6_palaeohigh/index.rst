@@ -3,23 +3,7 @@
 
 这里是一个 ``古隆起`` 设置的实例，将古隆起的 x,y,spin（角速度）固定。
 
- ``ex6`` 目录中文件有
- 
-- `lsf.sh <lsf.sh>`_
-- `palaeohigh.py <palaeohigh.py>`_
-- `init_xyr.dat <init_xyr.dat>`_
-
-
-
-## 进入 `ex6` 目录，在终端或 `xshell` 中运行 ::
-
-   $ bsub < lsf.sh   # 提交计算
-   $ bjobs           # 查看计算是否提交成功
-
-
-``lsf.sh`` 中内容如下：
-
-.. literalinclude:: lsf.sh
+`palaeohigh.py <palaeohigh.py>`_ 和 `init_xyr.dat <init_xyr.dat>`_ 需放在同一目录下。
 
 ``palaeohigh.py`` 中内容如下：
 

@@ -1,15 +1,15 @@
-.. index:: ! vbox
+.. index:: ! zdem
 
-vbox
+zdem
 ====
 
-:说明: ``VBOX`` 主程序。
+:说明: ``zdem`` 主程序。
 
 :使用方法:
 
-``vbox [可选项] [script.py]`` 
+``zdem [可选项] [script.py]`` 
 
-其中，　``script.py`` 为脚本名，如　``vbox script.py``　，运行脚本 ``script.py`` , ``cmd.txt`` 为 ``ASCII`` 码格式文件。
+其中，　``script.py`` 为脚本名，如　``zdem script.py``　，运行脚本 ``script.py`` , ``script.py`` 为 ``ASCII`` 码格式文件。
 
 可选项
 ------
@@ -30,23 +30,22 @@ vbox
 
 :实例:
 
-``vbox -v``
+``zdem -v``
 
 ::
 
     *************************************************************
-        Virtual SandBox(2D) version 1.4(2020-03-19) 教育版 
+        zdem 2.0(2021-04-19)  
         官网: www.geovbox.com 
         邮箱: sheng0619@163.com 
-        Copyright © 南京大学, 2014/2019
-        Copyright © VBOX, 2019/2020
+        Copyright © zdem, 2019/2021
     *************************************************************
 
-``vbox -h``
+``zdem -h``
 
-``vbox -j 8 script.py``　使用8个线程并行计算
+``zdem -j 8 script.py``　使用8个线程并行计算
 
-``vbox -s ./data``　读取 ``./data`` 中的数据计算应力应变
+``zdem -s ./data``　读取 ``./data`` 中的数据计算应力应变
 
 
 
