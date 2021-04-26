@@ -10,6 +10,6 @@ Thanks to YADE, MatDEM, DICE2D, PFC2D/3D, TRUBAL, RICEBAL, `gtkmm <https://gtkmm
 Especially, we thank `Julia Morgan <https://earthscience.rice.edu/directory/user/100>`_  for generously sharing her discrete element code RICEBAL (v. 5.4, modified from Peter Cundall's TRUBAL v. 1.51), along with her post-processing scripts and algorithms, which have been used to process and display the model outputs presented in this website. Further details about these methods can be found in the following reference: `Morgan (2015) <http://onlinelibrary.wiley.com/doi/10.1002/2014JB011455/full>`_ (DOI: 10.1002/2014JB011455). 
 
 
-We would like to thank Thomas Fournier provided an open source MATLAB code for calculating stress and strain in his homepage hosted on the website of rice university, Chun LIU and Qian HUANG for discussions on development of VBOX.
+We would like to thank Thomas Fournier provided an open source MATLAB code for calculating stress and strain in his homepage hosted on the website of rice university, Chun LIU and Qian HUANG for discussions on development of ZDEM.
 
 

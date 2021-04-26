@@ -19,7 +19,7 @@ set
    
     SET stepbar <int>
    
-   设置VBOX格式的 ``.sav`` 文件保存间隔::
+   设置ZDEM格式的 ``.sav`` 文件保存间隔::
    
     SET sav <int>
   
@@ -27,7 +27,7 @@ set
    
     SET ps <int>
    
-   设置VBOX格式的 ``.dat`` ASCII文件保存间隔::
+   设置ZDEM格式的 ``.dat`` ASCII文件保存间隔::
    
     SET print <int>
    

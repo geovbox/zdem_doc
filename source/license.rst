@@ -31,4 +31,4 @@
 
     * 邮件: sheng0619@163.com
     * QQ: 836745132 (Neo)
-    * VBOX官网: `https://geovbox.com <https://geovbox.com/>`_
+    * 官网: `https://geovbox.com <https://geovbox.com/>`_

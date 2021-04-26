@@ -71,7 +71,7 @@
 
 - 同类产品
 
-    在构造模拟方面，还有一些软件也可以实现类似的功能，可以作为VBOX的替代品。
+    在构造模拟方面，还有一些软件也可以实现类似的功能。
 
     #. VBOX: `VBOX1.4 <https://doc.geovbox.com/1.4/>`_ 暂停更新
     #. PFC2D: `PFC2D <https://www.itascacg.com/software/pfc>`_

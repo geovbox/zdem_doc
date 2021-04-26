@@ -5,7 +5,7 @@
 # E-mail: sheng0619@163.com
 # more info, see www.geovbox.com
 #######################################
-# init_xyr.dat 保存了沉积后的所有颗粒的[x y r]信息，由一个实例学会VBOX生成
+# init_xyr.dat 保存了沉积后的所有颗粒的[x y r]信息，由一个实例学会ZDEM生成
 LOAD init_xyr.dat
 #导入的颗粒命名为 ball_rand
 PROP GROUP ball_rand

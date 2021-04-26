@@ -12,7 +12,7 @@ load
     #从 xyr.dat 中读取颗粒坐标和半径
     LOAD xyr.dat [scale <float>] [x <float> <float> ] [y <float> <float> ]
 
-其中，``xyr.dat`` 是 ``x y r [GROUP]`` 格式的ASCII文件，可由VBOX或者其他软件生成。
+其中，``xyr.dat`` 是 ``x y r [GROUP]`` 格式的ASCII文件，可由ZDEM或者其他软件生成。
 
 :实例:
 

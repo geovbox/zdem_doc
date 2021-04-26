@@ -12,7 +12,7 @@ exp
     #从 xyr.dat 中读取颗粒坐标、半径和[所属组]
     exp xyr.dat [GROUP] [RANGE ...]
 
-其中，``xyr.dat`` 是 ``x y r [GROUP]`` 格式的ASCII文件，可由VBOX或者其他软件生成。
+其中，``xyr.dat`` 是 ``x y r [GROUP]`` 格式的ASCII文件，可由ZDEM或者其他软件生成。
 
 :实例:
 
