@@ -17,7 +17,9 @@
    \setcounter{secnumdepth}{0}
 
 .. toctree::
-
+   :maxdepth: 2
+   :caption: 离散元原理
+   
    miniDEM/index
    updatepostion/index
    updateforce/index

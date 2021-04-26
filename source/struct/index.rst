@@ -10,7 +10,9 @@
    \setcounter{secnumdepth}{0}
 
 .. toctree::
-
+   :maxdepth: 2
+   :caption: 构造模拟
+   
    syn_erosion/index
    syn_sedimentaion/index
    pre_struct/index

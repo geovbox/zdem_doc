@@ -96,7 +96,7 @@ html_context = {
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
 latex_documents = [
-    (master_doc, 'zdem_doc.tex', "{} v{}".format(project, version), author, 'ctexbook'),
+    (master_doc, 'zdem_doc.tex', "{} {}".format(project, version), author, 'ctexbook'),
 ]
 latex_logo = None
 latex_toplevel_sectioning = 'chapter'
@@ -104,7 +104,7 @@ latex_additional_files = ['zdem_style.sty']
 latex_elements = {
     'papersize' : 'a4paper',
     'pointsize' : '11pt',
-    'extraclassoptions' : 'UTF8,twoside,punct=CCT',
+    'extraclassoptions' : 'UTF8,oneside,punct=CCT',
     'preamble'  : r'\input{zdem_style.sty}',
     'figure_align' : 'H',
     'geometry'  : r'\usepackage[top=3.0cm, bottom=2.0cm, left=3.5cm, right=2.5cm]{geometry}',

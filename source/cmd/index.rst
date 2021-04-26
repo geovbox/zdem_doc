@@ -73,7 +73,7 @@
    \setcounter{secnumdepth}{0}
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: 命令列表
 
    ball
