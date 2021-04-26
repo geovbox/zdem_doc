@@ -35,7 +35,7 @@ ZDEM手册 2.0
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 2
+   :numbered: 3
    :caption: 目 录
    :hidden:
 

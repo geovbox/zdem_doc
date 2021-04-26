@@ -1,6 +1,6 @@
 % 文档相关信息
 \newcommand{\ZDEMDOCTITLE}{ZDEM\textbf{参考手册}}   % 文档标题
-\newcommand{\ZDEMDOCAUTHOR}{ZDEM官网}               % 文档作者
+\newcommand{\ZDEMDOCAUTHOR}{www.geovbox.com}        % 文档作者
 \newcommand{\ZDEMDOCVERSION}{ZDEM 2.0}              % 文档版本
 
 % 字体设置
@@ -52,40 +52,40 @@
     itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt, itemindent=0pt
 }
 
-% 双栏目录
-\usepackage{multicol}
-\makeatletter
-\renewcommand{\tableofcontents}{%
-\setlength{\columnsep}{2.5em}
-\begin{multicols}{2}[\chapter*{\contentsname}]%
-    \@starttoc{toc}%
-\end{multicols}}
-\makeatother
+%% 双栏目录
+%\usepackage{multicol}
+%\makeatletter
+%\renewcommand{\tableofcontents}{%
+%\setlength{\columnsep}{2.5em}
+%\begin{multicols}{2}[\chapter*{\contentsname}]%
+%    \@starttoc{toc}%
+%\end{multicols}}
+%\makeatother
 
-% 空白页
-\makeatletter	% copy from lnotes
-\def\cleardoublepage{
-    \clearpage
-    \if@twoside
-        \ifodd
-            \c@page
-        \else
-            \hbox{}
-            \vspace*{\fill}
-            \begin{center}
-           保护环境，从阅读电子文档开始！
-            \end{center}
-            \vspace{\fill}
-            \thispagestyle{empty}
-            \newpage
-            \if@twocolumn
-                \hbox{}
-                \newpage
-            \fi
-        \fi
-    \fi
-}
-\makeatother
+%% 空白页
+%\makeatletter	% copy from lnotes
+%\def\cleardoublepage{
+%    \clearpage
+%    \if@twoside
+%        \ifodd
+%            \c@page
+%        \else
+%            \hbox{}
+%            \vspace*{\fill}
+%            \begin{center}
+%           保护环境，从阅读电子文档开始！
+%            \end{center}
+%            \vspace{\fill}
+%            \thispagestyle{empty}
+%            \newpage
+%            \if@twocolumn
+%                \hbox{}
+%                \newpage
+%            \fi
+%        \fi
+%    \fi
+%}
+%\makeatother
 
 % 图表标题
 \usepackage[labelfont={small,bf}, textfont=small]{caption}
@@ -98,3 +98,32 @@
 
 % 代码部分
 \fvset{fontsize=\scriptsize} % 设置全局代码字体为footnotesize
+
+%页眉页脚
+\makeatletter
+  \fancypagestyle{normal}
+  {
+    \fancyhf{}% 清空当前设置
+    \fancyfoot[LE,RO]{}
+    %\fancyhead[LE,RO]{\thepage}
+    \fancyhead[CE,CO]{ZDEM 2.0} % 在偶数页的右侧显示章名
+    \fancyhead[RE,RO]{\thepage} % 在偶数页的左侧，奇数页的右侧显示页码
+    \renewcommand{\headrulewidth}{0.7pt} % 页眉与正文之间的水平线粗细
+    \renewcommand{\footrulewidth}{0pt}
+  }
+  
+  
+\fancypagestyle{plain}{%重新定义plain样式，在章的首页使用plain样式
+    \fancyhf{}
+    \fancyfoot[LE,RO]{}
+    \fancyhead[CE,CO]{ZDEM 2.0} % 在偶数页的右侧显示章名
+    \fancyhead[RE,RO]{\thepage} % 在偶数页的左侧，奇数页的右侧显示页码
+    \renewcommand{\headrulewidth}{0.7pt} % 页眉与正文之间的水平线粗细
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+%\clearpage {\pagestyle{empty}
+%\origdoublepage}% }
+
+\makeatother
+

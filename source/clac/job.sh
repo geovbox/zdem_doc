@@ -8,6 +8,8 @@
 #SBATCH --error=%j.err
 
 source /public1/soft/modules/module.sh
+source /public1/soft/other/module_zdem.sh
+module load zdem/2.0
 
 srun -n 1 zdem push.py
 srun -n 1 zdem2jpg --dir=./data

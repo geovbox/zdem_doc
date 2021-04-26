@@ -19,7 +19,7 @@
 ``9``  ``violet``   violet       101
 =====  ===========  ===========  ======
 
-后处理阶段，使用 `vbox2jpg <https://doc.geovbox.com/latest/cmd/vbox2jpg/>`_ 命令时， 可以通过 ``--colormap``　制定自己的RGB格式的颜色配置表，默认颜色配置为 ``ColorRicebal.txt`` 格式如下:
+后处理阶段，使用 `zdem2jpg <https://doc.geovbox.com/latest/cmd/zdem2jpg/>`_ 命令时， 可以通过 ``--colormap``　制定自己的RGB格式的颜色配置表，默认颜色配置为 ``ColorRicebal.txt`` 格式如下:
 
 .. literalinclude::  ColorRicebal.txt
 
