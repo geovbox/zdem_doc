@@ -49,7 +49,7 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
     #SBATCH --partition=v6_384   #Submit to v6_384 queue
     #SBATCH -n 1
     #SBATCH -c 12   #Use 12 core
-    #SBATCH -t 14400   #Forced to stop running for more than 14400 min (24 hours)
+    #SBATCH -t 1440   #Forced to stop running for more than 1440 min (24 hours)
     #SBATCH --output=%j.out
 
     source /public1/soft/modules/module.sh
