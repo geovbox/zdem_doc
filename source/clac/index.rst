@@ -42,7 +42,7 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 
     Submitted batch job 134573 
 
-说明提交成功。 `job.sh </clac/job.sh>`_  (**点击下载**) 内容如下::
+说明提交成功。 `job.sh <https://github.com/geovbox/vbox_doc/blob/master/source/clac/job.sh>`_  (**点击下载**) 内容如下::
 
     #!/bin/bash
     #SBATCH --job-name=test
@@ -54,7 +54,7 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 
     source /public1/soft/modules/module.sh
     source /public1/soft/other/module_zdem.sh
-    module load zdem/2.0 
+    module load zdem2.0 
 
     srun -n 1 zdem push.py # run zdem
     srun -n 1 zdem2jpg --dir=./data # gen jpg

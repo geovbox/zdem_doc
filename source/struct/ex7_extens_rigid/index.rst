@@ -2,8 +2,6 @@
 =================
 
 这里是一个 ``刚性基底 伸展构造`` 设置的实例，使用上下两个刚性板完成。
-
-`extens_rigid.py <palaeohigh.py>`_ 和 `init_xyr.dat <init_xyr.dat>`_ 需放在同一目录下。
  
 ``extens_rigid.py`` 中内容如下：
 
