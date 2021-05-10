@@ -42,7 +42,7 @@ PROP GROUP palaeohigh RANGE ellipse ( 20000.0,  0.0)  2000.0, 1000.0
 #用range P4 (point1) (point2) (point3) (point4) 命令，逆时针指定四个点
 #四个点组成的多边形，设置为组 palaeohigh
 PROP GROUP palaeohigh RANGE P4 ( 10000.0,  0.0) ( 12000.0,  0.0) ( 15000.0  0.0) ( 12500.0  1500.0)
-#打断struct1组内的颗粒粘结
+#打断palaeohigh组内的颗粒粘结
 BOND break RANGE GROUP palaeohigh
 #初始化古隆起颗粒速度为零
 INI xv 0.0 yv 0.0 spin 0.0 RANGE GROUP palaehigh
