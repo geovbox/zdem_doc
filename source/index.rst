@@ -44,6 +44,7 @@ ZDEM手册 2.0
    push/index
    clac/index
    struct/index
+   strainstress/index
    cmd/index
    theory/index
    color
