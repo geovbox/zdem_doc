@@ -20,6 +20,8 @@
     #zdemss
     export PATH=/public1/home/sc80502/bin:$PATH
 
+.. note::
+    不会配置zdemss环境变量的小白用户可参考 `bilibili视频之配置zdemss的环境变量 <https://www.bilibili.com/video/BV1qq4y177Ni?p=4>`_
 
 步骤
 ====
