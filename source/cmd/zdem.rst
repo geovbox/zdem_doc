@@ -45,7 +45,7 @@ zdem
 
 ``zdem -j 8 script.py``　使用8个线程并行计算
 
-``zdem -s ./data``　读取 ``./data`` 中的数据计算应力应变
+``zdem -s ./data``　读取 ``./data`` 中的数据计算应力应变 ，参考应力应变 :ref:`push_add_del`
 
 
 

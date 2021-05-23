@@ -17,6 +17,6 @@ module load GMT_5.4.5
 
 export PATH=/public1/home/sc80502/bin:$PATH
 
-time srun -n 1 zdem push.py
+time srun -n 1 zdem push_add_del.py
 time srun -n 1 zdem2jpg --dir=./data
 
