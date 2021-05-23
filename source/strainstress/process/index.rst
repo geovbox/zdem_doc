@@ -59,7 +59,7 @@
     ::
 
         |-- ex_strain_stress
-            |-- push.py
+            |-- push_add_del.py
             |-- data
                 |--  all_0000000000_ini.dat
                 |--  ...    
@@ -74,7 +74,7 @@
     ::
 
         |-- ex_strain_stress
-            |-- push.py
+            |-- push_add_del.py
             |-- data
                 |--  all_0000000000_ini.dat
                 |--  all_0000000000_ini.jpg
@@ -108,7 +108,7 @@
     ::
 
         |-- ex_strain_stress
-            |-- push.py
+            |-- push_add_del.py
             |-- data
                 |--  all_0000000000_ini.dat
                 |--  all_0000000000_ini.jpg
@@ -139,7 +139,7 @@
     ::
 
         |-- ex_strain_stress
-            |-- push.py
+            |-- push_add_del.py
             |-- data
                 |--  all_0000000000_ini.dat
                 |--  all_0000000000_ini.jpg
@@ -225,9 +225,7 @@
     ::
 
         |-- ex_strain_stress
-            |-- job1.sh
-            |-- job2.sh
-            |-- push.py
+            |-- push_add_del.py
             |-- data
                 |--  all_0000000000_ini.dat
                 |--  ...    
@@ -277,8 +275,4 @@
 
         实例：
         zdemss --dir .
-
-.. _push_add_del.py:
-
-
 

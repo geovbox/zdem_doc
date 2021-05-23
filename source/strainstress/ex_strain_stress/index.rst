@@ -3,15 +3,15 @@
 实例
 ====
 
-1. ``sbatch jobs1.sh`` 提交，将完成上节 :ref:`ss_process` 1和2
-2. **此步最关键!** 新建datass文件夹，将需要处理的dat复制到datass文件夹，完成上节  :ref:`ss_process` 3。
+1. ``sbatch jobs1.sh`` 提交，将完成6.2.2 :ref:`ss_process` 1和2
+2. **此步最关键!** 新建datass文件夹，将需要处理的dat复制到datass文件夹，完成6.2.2  :ref:`ss_process` 3。
 完成此步后，目录结构：
 
 ::
 
     |-- ex1
-        |-- lsf1.sh
-        |-- lsf2.sh
+        |-- job1.sh
+        |-- job2.sh
         |-- push_add_del.py
         |-- data
             |--  all_0000000000_ini.dat

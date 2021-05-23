@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=core8
+#SBATCH --job-name=core12
 #SBATCH --partition=v6_384
 #SBATCH -n 1
-#SBATCH -c 8
+#SBATCH -c 12
 #SBATCH -t 1440
 #SBATCH --output=%j.out
 #SBATCH --error=%j.err
