@@ -11,5 +11,5 @@
    :caption: 应力应变
    
    set/index
-   process/index
-   ex_strain_stress/index
+   no_add_del/index
+   add_del/index

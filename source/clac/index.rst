@@ -42,7 +42,7 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 
     Submitted batch job 134573 
 
-说明提交成功。 `job.sh <https://github.com/geovbox/vbox_doc/blob/master/source/clac/job.sh>`_  (**点击下载**) 内容如下::
+说明提交成功。 `job.sh <https://github.com/geovbox/vbox_doc/blob/master/source/clac/job.sh>`_  内容如下::
 
     #!/bin/bash
     #SBATCH --job-name=test
@@ -58,6 +58,17 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 
     srun -n 1 zdem push.py # run zdem
     srun -n 1 zdem2jpg --dir=./data # gen jpg
+
+.. warning::
+
+    注意job.sh的行结尾符需采用 Unix 的 ``\n`` 格式，否则将产生如下错误信息：
+    
+    ::
+    
+        sbatch: error: Batch script contains DOS line breaks (\r\n)
+        sbatch: error: instead of expected UNIX line breaks (\n).
+    
+    修改 ``job.sh`` 的行结尾符 见 `第00课 并行超算云上使用ZDEM <https://www.bilibili.com/video/BV1m7411M7rz?p=1>`_ 的 10:15
 
 查看作业状态 ``squeue``
 --------------------------

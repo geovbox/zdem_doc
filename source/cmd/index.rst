@@ -29,6 +29,10 @@
   - :doc:`zdem2jpg` : 将计算结果绘制成 ``jpg`` 格式。
   - :doc:`convert` : 制作 gif  
 
+- 绘制应力应变
+
+  - :doc:`zdemss` : 绘制应力应变  
+
 *脚本* ``script.py`` *中支持的命令如下：*
 
 - 程序开始
@@ -95,5 +99,6 @@
    start
    wall
    zdem
+   zdemss
    zdem2jpg
 

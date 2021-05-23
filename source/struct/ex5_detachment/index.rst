@@ -5,7 +5,7 @@
 
 这里是一个 ``滑脱层`` 设置的实例，一般地，将滑脱层设置为没有粘结，类似松散石英砂，摩擦系数则可以设置为 0.0。
 
-``detachment.py`` 和 `init_xyr.dat <https://github.com/geovbox/vbox_doc/blob/master/source/struct/ex5_detachment/init_xyr.dat>`_ 需放在同一目录下。
+``detachment.py`` 和 `init_xyr.dat <https://geovbox.com/example/ex5_detachment/init_xyr.dat>`_ 需放在同一目录下。
 
 ``detachment.py`` 中内容如下：
 
