@@ -178,17 +178,6 @@
 实例
 ----
 
-
-.. figure:: strainstressShear250.png
-  :width: 60%
-  :align: center
-  
-.. figure:: all0000108000.jpg
-  :width: 60%
-  :align: center
-
-  **处理结果示意图**
-
 1. ``sbatch jobs1.sh`` 提交，将完成 :ref:`add_del_process` 1和2
 2. **此步最关键!** 新建datass文件夹，将需要处理的dat复制到datass文件夹，完成 :ref:`add_del_process` 3。完成此步后，目录结构：
 
@@ -231,7 +220,19 @@
                 |-- all_0000058000_ini.dat
                 |-- all_0000078000.dat
                 |-- all_0000108000.dat
-3. ``sbatch jobs2.sh`` 提交，将完成 :ref:`add_del_process` 4和5。
+3. ``sbatch jobs2.sh`` 提交，将完成 :ref:`add_del_process` 4和5。等待计算完成，生成的应力应变图见 ``./datass/ss/*jpg`` 。
+
+.. figure:: strainstressShear250.png
+  :width: 60%
+  :align: center
+  
+.. figure:: all0000108000.jpg
+  :width: 60%
+  :align: center
+
+  **处理结果示意图**
+
+
 
 ``job1.sh`` ``job2.sh`` ``push_add_del.py`` 文件内容：
 
