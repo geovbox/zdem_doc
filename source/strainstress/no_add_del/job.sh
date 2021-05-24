@@ -22,6 +22,6 @@ export PATH=/public1/home/sc80502/bin:$PATH
 
 time srun -n 1 zdem detachment.py
 time srun -n 1 zdem2jpg --dir=./data
-time srun -n 1 zdem -s ./data
+time srun -n 1 zdem -j 12 -s ./data
 time srun -n 1 zdemss --dir ./data
 

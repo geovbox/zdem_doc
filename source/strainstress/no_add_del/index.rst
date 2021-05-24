@@ -27,7 +27,7 @@
 
 - ``time`` 记录该行命令的运行时间，输出到 ``%j.err``
 - ``zdem2jpg --dir=./data`` 生成jpg, 详解见 :ref:`zdem2jpg` 。
-- ``zdem -s ./data`` 计算应力应变, 详解见 :ref:`zdem` 。
+- ``zdem -j 12 -s ./data`` 计算应力应变, 详解见 :ref:`zdem` 。
 - ``zdemss --dir ./data`` 绘制应力应变， 详解见 :ref:`zdemss` 。
 
 
