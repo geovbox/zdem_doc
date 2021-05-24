@@ -10,7 +10,7 @@
 
 .. warning::
 
-    此节仅为了帮助用户理解应力应变计算过程，仍需要 Slurm 作业调度系统提交计算，方法见  :ref:`ex_strain_stress` 。
+    此节仅为了帮助用户理解应力应变计算过程，用户仍需要 Slurm 作业调度系统( :ref:`slurm` )提交计算，具体方法见  :ref:`ex_strain_stress` 。 
 
 初始目录结构：
 
@@ -136,8 +136,8 @@
                 |-- all_0000078000.dat
                 |-- all_0000108000.dat
     
-5.  ``zdemss --dir ./datass  --addball ON --delball ON --xmax 40.0 --ymax 10.0 --maxstress 250.0``   
-    使用GMT绘制应力应变。``zdemss`` 将会读取 ``zdem`` 生成的应力应变数据 ``./datass/ss/data``，生成应力应变云图到 ``./datass/ss/*jpg`` 。设置x轴最大值 40.0 km，设置y轴最大值 10.0 km，设置颜色条应力最大值400 MPa。
+5.  ``zdemss --dir ./datass  --addball ON --delball ON --xmax 40.0 --ymax 10.0 --maxstress 250.0``  
+    使用GMT绘制应力应变。``zdemss`` 将会读取 ``zdem`` 生成的应力应变数据 ``./datass/ss/data``，生成应力应变云图到 ``./datass/ss/*jpg`` 。设置x轴最大值 40.0 km，设置y轴最大值 10.0 km，设置颜色条应力最大值250 MPa。
     
 
     .. note::

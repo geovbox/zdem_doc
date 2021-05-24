@@ -1,4 +1,5 @@
 .. index:: ! zdem2jpg
+.. _zdem2jpg:
 
 zdem2jpg
 ========

@@ -5,7 +5,7 @@
 
 **使用软件需要遵守用户协议**，见 :ref:`license` 。
 
-申请 `并行超算云 <https://geovbox.com/hpc/>`_ 帐号，请联系 `北京并行科技股份有限公司 <https://www.paratera.com/>`_ 的
+申请 `并行超算云 <https://geovbox.com/download/>`_ 帐号，请联系 `北京并行科技股份有限公司 <https://www.paratera.com/>`_ 的
 
 ====== ====================== 
 周凤   客户经理  

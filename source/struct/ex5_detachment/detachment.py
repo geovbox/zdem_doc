@@ -5,7 +5,7 @@
 # E-mail: sheng0619@163.com
 # more info, see www.geovbox.com
 #######################################
-# init_xyr.dat 保存了沉积后的所有颗粒的[x y r]信息，由一个实例学会ZDEM生成
+# init_xyr.dat 保存了沉积后的所有颗粒的[x y r]信息，由一个实例学会VBOX生成
 LOAD init_xyr.dat
 #导入的颗粒命名为 ball_rand
 PROP GROUP ball_rand
@@ -52,6 +52,6 @@ WALL ID 2 fric 0.3
 #设置墙的挤压速度 x方向速度为2.0
 WALL ID 1 XV 2.0
 #设置墙的挤压量x方向推进10000.0，每挤压1000.0保存一次计算结果
-IMPLE WALL ID 1 XMOVE 10000.0 SAVE 1000.0 PRINT 1000.0 PS 1000.0
+IMPLE WALL ID 1 XMOVE 10000.0 SAVE 5000.0 PRINT 1000.0 PS 5000.0
 #计算停止
 STOP
