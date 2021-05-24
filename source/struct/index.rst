@@ -13,9 +13,10 @@
    :maxdepth: 2
    :caption: 构造模拟
    
-   syn_erosion/index
-   syn_sedimentaion/index
-   pre_struct/index
+   ex2_syn_erosion/index
+   ex3_syn_sedimentaion/index
+   ex4_pre_struct/index
    ex5_detachment/index
    ex6_palaeohigh/index
    ex7_extens_rigid/index
+   ex8_dem_am/index

@@ -19,6 +19,8 @@
 
 本文涉及的接触模型分成两类线弹性模型和 Hertz-Mindlin 模型。
 
+.. _liner:
+
 线弹性模型
 ----------
 Cundall 和 Strack(Cundall and Strack,1979)于 1979 年的给出线弹性模型，该模型是 DEM
