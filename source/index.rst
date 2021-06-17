@@ -1,4 +1,4 @@
-ZDEM手册 2.0
+ZDEM手册 2.1
 ############
 
 欢迎来到 `离散元 <https://geovbox.com>`_ 的世界。
@@ -50,5 +50,6 @@ ZDEM手册 2.0
    color
    hpc
    linux
-   thanks
    license
+   updatelog
+   thanks

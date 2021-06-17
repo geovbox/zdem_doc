@@ -18,6 +18,11 @@
         | -- job.sh
 
 - ``detachment.py`` 见 :ref:`detachment`
+
+.. warning::
+
+    注意示例 ``detachment.py`` 中没有使用 ``GEN`` 命令生成颗粒，而是采用的 ``LOAD init_xyr.dat`` 导入初始模型。如果使用了 ``GEN``，那么你可能引入了沉积过程，需要参考 :ref:`add_del` 去除沉积过程生成的 ``all_*.dat`` 。
+    
 - ``init_xyr.dat`` 见 :ref:`detachment`
 - ``job.sh`` 内容如下：
 

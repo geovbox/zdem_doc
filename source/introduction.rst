@@ -8,8 +8,8 @@
 - ZDEM的历史
 
     - 2021年4月19日，ZDEM 2.0发布；
-    - 目前最新版本 ZDEM |zdem_latest_release| ( ``zdem`` )
-      发布于 |zdem_latest_release_date|\ 。
+    - 2021年6月17日，ZDEM 2.1发布；
+    - 目前最新版本 ZDEM |zdem_latest_release| 发布于 |zdem_latest_release_date|\ 。
 
 
 - 开发者

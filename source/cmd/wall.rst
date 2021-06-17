@@ -1,4 +1,5 @@
 .. index:: ! wall
+.. _wall:
 
 wall
 ====

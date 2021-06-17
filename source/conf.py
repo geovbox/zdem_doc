@@ -40,11 +40,11 @@ master_doc = 'index'
 project = u'ZDEM手册'
 copyright = '2019 - {}, ZDEM'.format(datetime.date.today().year)
 author = u'李长圣'
-version = '2.0'
+version = '2.1'
 release = version
 rst_prolog = '''
-.. |zdem_latest_release| replace:: 2.0 
-.. |zdem_latest_release_date| replace:: 2021-04-19
+.. |zdem_latest_release| replace:: 2.1 
+.. |zdem_latest_release_date| replace:: 2021-06-17
 '''
 
 # -- Options for HTML output ----------------------------------------------
