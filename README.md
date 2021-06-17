@@ -1,4 +1,4 @@
-# ZDEM 2.0 手册
+# ZDEM 2.1 手册
 
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![Build Status](https://travis-ci.org/geovbox/zdem_doc.svg?branch=master)](https://travis-ci.org/geovbox/zdem_doc)
