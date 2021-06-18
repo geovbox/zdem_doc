@@ -1,7 +1,7 @@
 # ZDEM 2.1 手册
 
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
-[![Build Status](https://travis-ci.org/geovbox/zdem_doc.svg?branch=master)](https://travis-ci.org/geovbox/zdem_doc)
+[![Build Status](https://travis-ci.com/geovbox/zdem_doc.svg?branch=master)](https://travis-ci.com/geovbox/zdem_doc)
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
 欢迎来到 [ZDEM](https://geovbox.com/) 的世界，`ZDEM` 是一个用于构造模拟的二维离散元软件。
