@@ -80,7 +80,7 @@ html_context = {
      "menu_links": [
         (
             '<i class="fa fa-download fa-fw"></i> PDF版本手册',
-            "https://doc.geovbox.com/2.0/zdem_doc.pdf",
+            "https://doc.geovbox.com/2.x/zdem_doc.pdf",
         ),
         (
             '<i class="fa fa-globe fa-fw"></i> 官网',
