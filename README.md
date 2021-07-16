@@ -1,7 +1,7 @@
 # ZDEM 2.x 手册
 
 [![Deploy](https://github.com/geovbox/zdem_doc/actions/workflows/deploy.yml/badge.svg)](https://github.com/geovbox/zdem_doc/actions/workflows/deploy.yml)
-[![Documentation version](https://img.shields.io/badge/版本-v6.2-blue.svg)](https://docs.geovbox.com/2.x/)
+[![Documentation version](https://img.shields.io/badge/版本-v2.x-blue.svg)](https://docs.geovbox.com/2.x/)
 ![Repository size](https://img.shields.io/github/repo-size/geovbox/zdem_doc)
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
