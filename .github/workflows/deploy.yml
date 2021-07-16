@@ -37,13 +37,13 @@ jobs:
           #conda install gmt=${GMT_VERSION}
           pip install -r requirements.txt
 
-      - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v2.14.0
-        with:
-          workflow: cache-data.yml
-          workflow_conclusion: success
-          name: gmt-cache
-          path: .gmt
+#      - name: Download remote data from GitHub
+#        uses: dawidd6/action-download-artifact@v2.14.0
+#        with:
+#          workflow: cache-data.yml
+#          workflow_conclusion: success
+#          name: gmt-cache
+#          path: .gmt
 
 #      # Move downloaded files to ~/.gmt directory and list them
 #      - name: Move and list downloaded remote files
