@@ -19,7 +19,7 @@ DEM与AM模拟结果较为一致，基本反映了AM中石英砂的变形行为�
 数值模拟分两步进行：
 
 1. ``gen.py``  生成颗粒，沉积，构建初始模型。 
-2. ``imple.py`` 给定颜色、粘结参数，挤压。 
+2. ``push.py`` 给定颜色、粘结参数，挤压。 
 
 **表 1  颗粒微观参数表.** [Li2021]_
 
@@ -37,9 +37,9 @@ DEM与AM模拟结果较为一致，基本反映了AM中石英砂的变形行为�
 
 .. literalinclude:: gen.py
 
-``imple.py`` 
+``push.py`` 
 
-.. literalinclude:: imple.py
+.. literalinclude:: push.py
 
 
 计算结束后，将得到以下结果：

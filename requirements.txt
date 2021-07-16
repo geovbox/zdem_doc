@@ -1,4 +1,7 @@
 sphinx
+sphinx-cjkspace
+sphinx-copybutton
 sphinx_rtd_theme
-sphinx-cjkspace>=0.1.1
+# jieba is necessary for Chinese search
+jieba
 
