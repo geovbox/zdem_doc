@@ -85,7 +85,7 @@ jobs:
           # generate the .nojekyll file in the root directory
           touch .nojekyll
           # generate CNAME in the root directory
-          echo docs.geovbox.com > CNAME
+          echo doc.geovbox.com > CNAME
           # Use the old PDF documentation if the new PDF documentation is not built
           if [ ! -f ../build/dirhtml/zdem_doc.pdf ]; then
             cp ${ZDEM_DOC_VERSION}/zdem_doc.pdf ../build/dirhtml/
