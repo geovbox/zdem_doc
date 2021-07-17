@@ -56,7 +56,8 @@
 
 - 颗粒参数设置
 
-  - :doc:`prop` ：设置颗粒的微观参数
+  - :doc:`prop` ：设置颗粒的微观参数(包括密度、刚度系数、速度等)
+  - :doc:`init` : 同 :ref:`prop`
   - :doc:`bond` ：断开粘结 ``bond``
   - :doc:`fix` ：限制颗粒运动
   - :doc:`free` ：释放颗粒运动，与 ``fix`` 相反
@@ -91,6 +92,7 @@
    gen
    gline
    imple
+   init
    load
    prop
    range
