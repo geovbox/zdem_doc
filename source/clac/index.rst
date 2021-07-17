@@ -17,6 +17,7 @@
 .. warning::
 
     这种方式只能作简单测试用，长时间使用会被管理员封号。
+    如果想交互式的提交计算，可采用如下命令 ``srun -n 1 -c 12 zdem push.py`` ，即采用1个节点 ``-n 1`` ， 12个核 ``-c 12`` 计算。这种方式会正常计费，不会被管理员封号。
 
 .. _slurm:
 
@@ -44,22 +45,9 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 
     Submitted batch job 134573 
 
-说明提交成功。 `job.sh <https://github.com/geovbox/vbox_doc/blob/master/source/clac/job.sh>`_  内容如下::
+说明提交成功。 `job.sh <https://github.com/geovbox/vbox_doc/blob/master/source/clac/job.sh>`_  内容如下:
 
-    #!/bin/bash
-    #SBATCH --job-name=test
-    #SBATCH --partition=v6_384   #Submit to v6_384 queue
-    #SBATCH -n 1
-    #SBATCH -c 12   #Use 12 core
-    #SBATCH -t 1440   #Forced to stop running for more than 1440 min (24 hours)
-    #SBATCH --output=%j.out
-
-    source /public1/soft/modules/module.sh
-    source /public1/soft/other/module_zdem.sh
-    module load zdem2.0 
-
-    srun -n 1 zdem push.py # run zdem
-    srun -n 1 zdem2jpg --dir=./data # gen jpg
+.. literalinclude:: job.sh
 
 .. warning::
 

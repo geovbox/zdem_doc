@@ -11,5 +11,5 @@ source /public1/soft/modules/module.sh
 source /public1/soft/other/module_zdem.sh
 module load zdem2.0
 
-srun -n 1 zdem push.py
-srun -n 1 zdem2jpg --dir=./data
+time srun -n 1 zdem push.py
+time srun -n 1 zdem2jpg --dir=./data
