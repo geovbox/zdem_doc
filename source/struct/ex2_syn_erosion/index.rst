@@ -3,7 +3,7 @@
 
 这里是一个 ``同构造剥蚀`` 计算实例。
 
-``syn_erosion.py`` 和 `0000046000.sav <https://github.com/geovbox/vbox_doc/blob/master/source/struct/syn_erosion/0000046000.sav>`_ 需放在同一目录下。
+``syn_erosion.py`` 和 `0000046000.sav <https://github.com/geovbox/zdem_doc/blob/master/source/struct/syn_erosion/0000046000.sav>`_ 需放在同一目录下。
 
 ``syn_erosion.py`` 中完整脚本命令如下
 
