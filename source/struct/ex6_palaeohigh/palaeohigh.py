@@ -45,7 +45,7 @@ PROP GROUP palaeohigh RANGE P4 ( 10000.0,  0.0) ( 12000.0,  0.0) ( 15000.0  0.0)
 #打断palaeohigh组内的颗粒粘结
 BOND break RANGE GROUP palaeohigh
 #初始化古隆起颗粒速度为零
-INI xv 0.0 yv 0.0 spin 0.0 RANGE GROUP palaehigh
+INI xv 0.0 yv 0.0 spin 0.0 RANGE GROUP palaeohigh
 #限制古隆起颗粒运动
 FIX x y spin RANGE GROUP palaeohigh
 #将palaeohigh组的颗粒颜色设置为黑色 
