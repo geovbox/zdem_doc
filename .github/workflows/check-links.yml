@@ -4,9 +4,11 @@ name: Check Links
 on:
   # Uncomment the 'pull_request' line below to trigger the workflow in PR
   #pull_request:
-  # Schedule runs on 12 noon every Sunday
+  # Schedule runs on 12:00 on day-of-month 1
+  # see https://crontab.guru/
+  # min hour day month day(week)
   schedule:
-    - cron: '0 12 * * 0'
+    - cron: '0 12 1 * *'
 
 jobs:
   check_links:
