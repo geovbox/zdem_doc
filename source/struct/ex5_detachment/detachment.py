@@ -41,7 +41,7 @@ PROP COLOR violet      range y 4000.0  4500.0
 PROP GROUP detachment RANGE y ( 0.0, 1000.0)
 #打断detachment组内的颗粒粘结
 BOND break RANGE GROUP detachment
-#将detachment组的颗粒颜色设置为红色，摩擦系数设置为0.0，摩擦系数可以根据断层强弱改变
+#将detachment组的颗粒颜色设置为红色，摩擦系数设置为0.0，摩擦系数可以根据滑脱层强弱改变
 PROP COLOR red FRIC 0.0 DEN 2.2e3 RANGE GROUP detachment
 ################################################################################
 

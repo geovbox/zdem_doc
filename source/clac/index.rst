@@ -51,6 +51,10 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 
 .. warning::
 
+    这里配置 ``module load zdem2.0`` ，将使用 ``2.*`` 系列的最新版本。
+
+.. warning::
+
     注意job.sh的行结尾符需采用 Unix 的 ``\n`` 格式，否则将产生如下错误信息：
     
     ::

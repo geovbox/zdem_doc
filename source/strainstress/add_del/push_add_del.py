@@ -32,7 +32,7 @@ DEL RANGE y 4000.0 999000.0
 #平衡，计算1000步
 CYC 1000
 #输出包含颗粒的[x y r]信息的初始模型 init_xyr.dat
-#EXP init_xyr.dat
+EXP init_xyr.dat
 
 #设置bond粘结，使颗粒具有粘聚力
 PROP ebmod 2e8 gbmod 2e8  tstrength 2e7 sstrength 4e7 fric 0.3 
@@ -72,8 +72,9 @@ WALL id 1 xv 0.0
 GEN NUM 100000.0 rad discrete 60.0 80.0,  x ( 10000.0, 41000.0), y ( 4000.0, 6000.0), COLOR gb GROUP sed
 #设置沉积颗粒 GROUP=sed 的微观参数
 PROP DENSITY 2.5e3, fric 0.3, shear 2.9e9, poiss 0.2, damp 0.4, hertz range GROUP sed
+#每 100 步输出一次计算结果
+SET print 100 
 #计算2000步，让颗粒沉积下来
-SET print 100 #每 100 步输出一次计算结果
 CYC 2000
 ################################################################################
 

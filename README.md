@@ -22,6 +22,19 @@
 - 官网：https://geovbox.com/
 - 手册：https://doc.geovbox.com/
 
+## 编译生成文档
+
+- 网页版
+	```
+	$ make html
+	$ firefox build/html/index.html&
+	````
+- PDF版
+	```
+	$ make latexpdf
+	$ evince build/latex/vbox_doc.pdf&
+	```
+- 详细过程见 https://github.com/geovbox/zdem_doc/wiki
 
 ## 版本说明
 

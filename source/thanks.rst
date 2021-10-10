@@ -1,6 +1,8 @@
 致谢
 ====
 
+南京大学徐雯峤、河北地质大学杨克基参与了本手册的修订工作，在此表示感谢。
+
 感谢 `GMT中文社区 <https://gmt-china.org/>`_ 开源的网站及手册代码，对本站的建设提供了很大帮助。
 
 感谢 `YADE <http://yade-dem.org/>`_ , `MatDEM <http://www.matdem.com/>`_ , `DICE2D <http://www.dembox.org/>`_ , `PFC2D/3D <http://www.itascacg.com/software/pfc>`_, TRUBAL, RICEBAL提供的离散元原理及代码开发方面的知识。

@@ -65,6 +65,8 @@ IMPLE WALL ID 1 XMOVE 2000.0 SAVE 2000.0 PRINT 1000.0 PS 1000.0
 ################################# 沉积1 #########################################
 gen NUM 200000, rad discrete 60.0 80.0 , x( 10000.0, 42000.0)   y (10000.0, 14000.0 )  GROUP ballsed1
 PROP COLOR blue DEN 2.5e3 FRIC 0.3 SHEAR 2.9e9 POISS 0.2  DAMP 0.0  HERTZ RANGE GROUP ballsed1 
+#新沉积的颗粒粘结（胶结）在一起
+#prop ebmod 2e8 gbmod 2e8 tstrength 2e7 sstrength 4e7 fric 0.3 range group ballsed1 
 INI  XV 0.0 RANGE GROUP bom_wall2
 WALL ID 1 XV 0.0
 set ps    1000
@@ -96,7 +98,6 @@ IMPLE WALL ID 1 XMOVE 2000.0 SAVE 2000.0 PRINT 1000.0 PS 1000.0
 ################################# 沉积3 #########################################
 gen NUM 200000, rad discrete 60.0 80.0 , x( 10000.0, 46000.0)   y (10000.0, 14000.0 ),  GROUP ballsed3
 PROP color mg den 2.5e3, fric 0.3, shear 2.9e9, poiss 0.2, damp 0.0, hertz  range group ballsed3 
-;prop ebmod 2e8 gbmod 2e8 tstrength 2e7 sstrength 4e7 fric 0.3 range group ball_rand
 INI  XV 0.0 RANGE GROUP bom_wall2
 WALL ID 1 XV 0.0
 set ps    1000
@@ -113,7 +114,6 @@ IMPLE WALL ID 1 XMOVE 2000.0 SAVE 2000.0 PRINT 1000.0 PS 1000.0
 ################################# 沉积4 #########################################
 gen NUM 200000, rad discrete 60.0 80.0 , x( 10000.0, 48000.0)   y (10000.0, 14000.0 ),  GROUP ballsed4
 PROP color gb den 2.5e3, fric 0.3, shear 2.9e9, poiss 0.2, damp 0.0, hertz  range group ballsed4 
-;prop ebmod 2e8 gbmod 2e8 tstrength 2e7 sstrength 4e7 fric 0.3 range group ball_rand
 INI  XV 0.0 RANGE GROUP bom_wall2
 WALL ID 1 XV 0.0
 set ps    1000

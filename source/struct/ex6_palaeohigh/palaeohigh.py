@@ -37,7 +37,7 @@ PROP COLOR gb          range y 3500.0  4000.0
 PROP COLOR violet      range y 4000.0  4500.0
 
 ################################### 隆起设置 ####################################
-#用ellipse指定椭圆，椭圆的中心（2000.0, 0.0） 长轴 2000.0 短轴 1000.0
+#用ellipse指定椭圆，椭圆的中心（20000.0, 0.0） 长轴 2000.0 短轴 1000.0
 PROP GROUP palaeohigh RANGE ellipse ( 20000.0,  0.0)  2000.0, 1000.0
 #用range P4 (point1) (point2) (point3) (point4) 命令，逆时针指定四个点
 #四个点组成的多边形，设置为组 palaeohigh
