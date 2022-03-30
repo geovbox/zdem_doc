@@ -55,3 +55,33 @@ zdemss
 .. note::
     详细用法，参考应力应变 :ref:`no_add_del` 和 :ref:`add_del`
 
+高级功能
+--------
+``--straincolormap`` default/filename.cpt
+    绘制颜色映射表，默认default，示例 ``--straincolormap ./data/ss/gradwhite-invar.cpt``
+
+- 示例1  
+    
+    .. figure:: 1600.jpg
+      :width: 60%
+      :align: center
+  
+  
+    ``./data/ss/gradwhite-invar.cpt`` 内容如下：
+
+    .. literalinclude::  gradwhite-invar2.cpt
+
+- 示例2 
+
+    .. figure:: 10000.jpg
+      :width: 60%
+      :align: center
+  
+    ``./data/ss/gradwhite-invar2.cpt``  中内容如下：
+
+    .. literalinclude::  gradwhite-invar.cpt
+
+
+.. note::
+    - 颜色映射表内容解释参考 https://docs.gmt-china.org/5.4/cpt/format/
+    - 颜色映射表制作方法参考 https://docs.gmt-china.org/5.4/cpt/makecpt/
