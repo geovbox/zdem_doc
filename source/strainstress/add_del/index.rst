@@ -168,9 +168,10 @@
                 |-- all_0000026000.dat
 
 
-    - ``./datass/ss/data/*.out`` 应力应变原始数据
+    - ``./datass/ss/data/*.out`` :ref:`zdem` 输出的颗粒位置和(假)应力的原始数据
+    - ``./datass/ss/data2ps/*.out``   (真)应力应变数据，用于绘制应力应变图(ps)，用户可以用于定量分析
     - ``./datass/ss/ps/*.ps``  **输出的应力应变图(矢量图)**
-    - ``./datass/ss/tmp/*.grd`` 计算应力应变产生的中间数据
+    - ``./datass/ss/Tmp/*.grd`` 计算应力应变产生的中间数据
     - ``./datass/ss/*.jpg`` **输出的应力应变图(位图)**
 
 .. _ex_strain_stress:
