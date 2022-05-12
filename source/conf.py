@@ -43,8 +43,8 @@ author = u'李长圣'
 version = '2.1'
 release = version
 rst_prolog = '''
-.. |zdem_latest_release| replace:: 2.1 
-.. |zdem_latest_release_date| replace:: 2021-06-17
+.. |zdem_latest_release| replace:: 2.2 
+.. |zdem_latest_release_date| replace:: 2022-05-11
 '''
 
 # -- Options for HTML output ----------------------------------------------
