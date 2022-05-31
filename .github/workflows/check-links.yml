@@ -28,7 +28,7 @@ jobs:
         path: documentation
 
     - name: Link Checker
-      uses: lycheeverse/lychee-action@v1.0.8
+      uses: lycheeverse/lychee-action@v1.5.0
       with:
         # 429: Too many requests
         args: >
