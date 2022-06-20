@@ -33,8 +33,8 @@
 
 第5步中可以绘制最大主应力矢量。
 
-5. ``zdemss --dir ./datass --strainvol OFF --stressshear ON --sigma1 ON --scale 1.0 --gridsize 600.0 --stressmean OFF --stressshear OFF --addball ON --delball ON --xmax 40.0 --ymax 10.0`` 
-    使用GMT绘制最大主应力矢量，叠加在变形应变[stressshear]上。``zdemss`` 将会读取 ``zdem`` 生成的应力应变数据 ``./datass/ss/data``，生成应力应变云图到 ``./datass/ss/*jpg`` 。设置x轴最大值 40.0 km，设置y轴最大值 10.0 km。 
+5. ``zdemss --dir ./datass --strainvol OFF --strainshear ON --sigma1 ON --scale 1.0 --gridsize 600.0 --stressmean OFF --stressshear OFF --addball ON --delball ON --xmax 40.0 --ymax 10.0`` 
+    使用GMT绘制最大主应力矢量，叠加在变形应变[strainshear]上。``zdemss`` 将会读取 ``zdem`` 生成的应力应变数据 ``./datass/ss/data``，生成应力应变云图到 ``./datass/ss/*jpg`` 。设置x轴最大值 40.0 km，设置y轴最大值 10.0 km。 
     
     - ``--sigma1 ON`` 绘制最大主应力矢量 ，注意 ``--scale 1.0 --gridsize 600.0`` 是 ``--sigma1`` 的子参数，如打算修改 ``scale`` 或者 ``gridsize`` 的值， 必须跟在 ``--sigma1`` 后，不可随意调换参数位置。
     - ``--scale 1.0`` 最大主应力矢量缩放系数，该值越大，矢量越长，大小用户可以根据出图效果自主调节。默认1.0
