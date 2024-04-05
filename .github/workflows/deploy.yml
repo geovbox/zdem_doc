@@ -59,15 +59,10 @@ jobs:
         run: make build_html
 
       - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v1
+        uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install LaTeX packages
-        run: |
-          tlmgr update --self
-          tlmgr install capt-of caption ctex enumitem everysel fancyhdr fandol \
-                        float ms needspace oberdiek parskip pdftexcmds tabulary \
-                        titlesec ulem upquote varwidth wrapfig xcolor xecjk \
-                        xindy zhnumber
+        run: bash scripts/setup-latex.sh
 
       - name: Build PDF
         run: make build_pdf
