@@ -20,3 +20,4 @@
    ex6_palaeohigh/index
    ex7_extens_rigid/index
    ex8_dem_am/index
+   ex9_extens_ductile_patent/index
