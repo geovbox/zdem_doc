@@ -8,7 +8,7 @@
 #######################################
 start
 set disk hex
-BOX left 0.5e-3 right 615.0e-3 bottom 0.5e-3 height 110.0e-3 kn=1.5e4 ks=1.5e4 fric 0.3 
+BOX left 0.5e-3 right 615.0e-3 bottom 0.5e-3 height 160.0e-3 kn=1.5e4 ks=1.5e4 fric 0.3 
 
 wall id 4, nodes (     5e-3  158.0e-3) (  5.0e-3     5.0e-3), kn= 1.5e4 ks= 1.5e4 fric 0.0 
 wall id 5, nodes (     5e-3    5.0e-3) (605.0e-3     5.0e-3), kn= 1.5e4 ks= 1.5e4 fric 0.0 

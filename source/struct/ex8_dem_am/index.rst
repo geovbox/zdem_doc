@@ -18,8 +18,8 @@ DEM与AM模拟结果较为一致，基本反映了AM中石英砂的变形行为�
 
 数值模拟分两步进行：
 
-1. ``gen.py``  生成颗粒，沉积，构建初始模型。 
-2. ``push.py`` 给定颜色、粘结参数，挤压。 
+1. ``ex8_dem_am_gen.py``  生成颗粒，沉积，构建初始模型。 
+2. ``ex8_dem_am_push.py`` 给定颜色、粘结参数，挤压。 
 
 **表 1  颗粒微观参数表.** [Li2021]_
 
@@ -33,13 +33,13 @@ DEM与AM模拟结果较为一致，基本反映了AM中石英砂的变形行为�
 `The particle packing consists of four particle sizes, with diameters and quantity ratio of 0.2 mm, 0.4 mm, 0.5 mm, and 0.6 mm and 2:2:1:1, respectively. :math:`d` , largest particle diameter. :math:`ρ` , particle density. :math:`g` , gravitational acceleration. :math: `f` , safety factor of the time step. :math:`k` , stiffness of the contact. :math:`μ` , friction coefficient. :math:`η` , dynamic viscosity. :math:`υ` , velocity of the mobile wall.`
 
 
-``gen.py`` 
+``ex8_dem_am_gen.py`` 
 
-.. literalinclude:: gen.py
+.. literalinclude:: ex8_dem_am_gen.py
 
-``push.py`` 
+``ex8_dem_am_push.py`` 
 
-.. literalinclude:: push.py
+.. literalinclude:: ex8_dem_am_push.py
 
 
 计算结束后，将得到以下结果：
