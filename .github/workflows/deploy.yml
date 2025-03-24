@@ -9,64 +9,95 @@ on:
     branches:
       - master
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      #GMT_VERSION: 6.2.0
       ZDEM_DOC_VERSION: 2.x
+
     defaults:
       run:
         shell: bash -l {0}
+
     steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4
 
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v2.0.4
         with:
-          python-version: 3.8
-          channels: conda-forge
-          miniconda-version: "latest"
+          environment-file: environment.yml
+          cache-downloads: false
+          cache-environment: true
 
-      - name: Install packages
-        run: |
-          #conda install gmt=${GMT_VERSION}
-          conda install ghostscript
-          pip install -r requirements.txt
-
-#      - name: Download remote data from GitHub
-#        uses: dawidd6/action-download-artifact@v2.14.0
-#        with:
-#          workflow: cache-data.yml
-#          workflow_conclusion: success
-#          name: gmt-cache
-#          path: .gmt
-
-#      # Move downloaded files to ~/.gmt directory and list them
-#      - name: Move and list downloaded remote files
+#      - name: Download and list cached files
 #        run: |
-#          mkdir -p ~/.gmt
-#          mv .gmt/* ~/.gmt
+#          gh run download --name gmt-cache --dir ~/.gmt/
 #          # Change modification times of the two files, so GMT won't refresh it
 #          touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
 #          ls -lhR ~/.gmt
+#        env:
+#          GH_TOKEN: ${{ github.token }}
+
+      # Because building the PDF document is slow, the building and deployment
+      # process is designed as follows:
+      #
+      # 1. Build the HTML document and use the old PDF document and HTML zip if available
+      # 2. Deploy the HTML document
+      # 3. Build the HTML document again (html, not dirhtml) and make a zip
+      # 4. Build the PDF document
+      # 5. Deploy the PDF document and HTML zip
+      #
 
       - name: Build HTML
-        run: make build_html
+        run: make dirhtml
 
-# 2025-03-24 install latex by tectonic 
-#      - name: Install TinyTeX
-#        uses: r-lib/actions/setup-tinytex@v2
+      - name: Checkout the gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: deploy
+          fetch-depth: 0
 
-#      - name: Install LaTeX packages
-#        run: bash scripts/setup-latex.sh
 
-#      - name: Build PDF
-#        run: make build_pdf
+      - name: Prepare the documentation for deployment
+        run: |
+          cd deploy
+          # generate the .nojekyll file in the root directory
+          touch .nojekyll
+          # generate CNAME in the root directory
+          echo doc.geovbox.com > CNAME
+          # Use the old PDF documentation because the new PDF documentation is not built
+          if [ -e ${ZDEM_DOC_VERSION}/ZDEM_docs.pdf ]; then
+            cp ${ZDEM_DOC_VERSION}/ZDEM_docs.pdf ../build/dirhtml/
+          fi
+          # Use the old HTML zip because the new HTML zip is not built
+          if [ -e ${ZDEM_DOC_VERSION}/ZDEM_docs.zip ]; then
+            cp ${ZDEM_DOC_VERSION}/ZDEM_docs.zip ../build/dirhtml/
+          fi
+          # Replace the old documentation with tht new one.
+          rm -rvf ${ZDEM_DOC_VERSION}
+          cp -rvf ../build/dirhtml/ ${ZDEM_DOC_VERSION}/
+          # let "latest" link to the latest version
+          rm -rfv latest
+          ln -sfv ${ZDEM_DOC_VERSION} latest
+          cd ..
+
+      - name: Deploy the HTML documentation to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true
+          publish_dir: deploy
+
+      - name: Build the HMTL zip
+        run: |
+          make htmlzip
+          mv build/ZDEM_docs.zip deploy/${ZDEM_DOC_VERSION}/
 
       - name: Setup tectonic
         uses: wtfjoke/setup-tectonic@v3
@@ -74,37 +105,11 @@ jobs:
       - name: Build the PDF
         run: |
           make pdf optimize_pdf
-#          cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          cp build/ZDEM_docs.pdf deploy/${ZDEM_DOC_VERSION}/
 
-      - name: Checkout the gh-pages branch
-        uses: actions/checkout@v2.3.4
+      - name: Deploy the PDF documentation to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          ref: gh-pages
-          path: deploy
-          fetch-depth: 0
-
-      - name: Push the documentation to gh-pages
-        run: |
-          cd deploy
-          # generate the .nojekyll file in the root directory
-          touch .nojekyll
-          # generate CNAME in the root directory
-          echo doc.geovbox.com > CNAME
-          # Use the old PDF documentation if the new PDF documentation is not built
-          if [ ! -f ../build/dirhtml/zdem_doc.pdf ]; then
-            cp ${ZDEM_DOC_VERSION}/zdem_doc.pdf ../build/dirhtml/
-          fi
-          # Replace the old documentation with tht new one.
-          rm -rvf ${ZDEM_DOC_VERSION}
-          cp -rvf ../build/dirhtml/ ${ZDEM_DOC_VERSION}/
-          # let "latest" link to the latest version
-          rm -f latest
-          ln -sf ${ZDEM_DOC_VERSION} latest
-          # commit all changes
-          git add -A .
-          git status
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          message="Deploy ${GITHUB_SHA::8}"
-          git commit --amend --reset-author -m "$message"
-          git push -fq origin gh-pages 2>&1 >/dev/null
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true
+          publish_dir: deploy
