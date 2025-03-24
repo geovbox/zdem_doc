@@ -1,4 +1,4 @@
-name: gmtdocs
+name: zdemdocs
 channels:
   - conda-forge
   - nodefaults
@@ -7,6 +7,7 @@ dependencies:
   - myst-parser
   - sphinx
   - sphinx-copybutton
+  - sphinx-cjkspace
   - sphinx-design=0.5.0
   - sphinx_rtd_theme<3
   - pip
