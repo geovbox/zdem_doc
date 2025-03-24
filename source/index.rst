@@ -50,6 +50,7 @@ ZDEM手册 2.2
    color
    hpc
    linux
+   papers
    license
    updatelog
    thanks
