@@ -58,11 +58,15 @@ jobs:
       - name: Build HTML
         run: make build_html
 
-      - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
+# 2025-03-24 install latex by tectonic 
+#      - name: Install TinyTeX
+#        uses: r-lib/actions/setup-tinytex@v2
 
-      - name: Install LaTeX packages
-        run: bash scripts/setup-latex.sh
+#      - name: Install LaTeX packages
+#        run: bash scripts/setup-latex.sh
+
+      - name: Setup tectonic
+        uses: wtfjoke/setup-tectonic@v3
 
       - name: Build PDF
         run: make build_pdf
