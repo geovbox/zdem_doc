@@ -1,0 +1,130 @@
+---
+title: 官方示例
+gallery:
+  - image: push/10km.png
+    title: 一个示例学会ZDEM
+    target: push/index
+  - image: struct/ex2_syn_erosion/100.png
+    title: 同构造剥蚀
+    target: struct/ex2_syn_erosion/index
+  - image: struct/ex3_syn_sedimentaion/100.png
+    title: 同构造沉积
+    target: struct/ex3_syn_sedimentaion/index
+  - image: struct/ex4_pre_struct/2.png
+    title: 先存断层设置
+    target: struct/ex4_pre_struct/index
+  - image: struct/ex5_detachment/10.jpg
+    title: 滑脱层
+    target: struct/ex5_detachment/index
+  - image: struct/ex6_palaeohigh/10.jpg
+    title: 古隆起
+    target: struct/ex6_palaeohigh/index
+  - image: struct/ex7_extens_rigid/08.jpg
+    title: 刚性基底 伸展构造
+    target: struct/ex7_extens_rigid/index
+  - image: struct/ex8_dem_am/dem_and_am16.jpg
+    title: 与物理模拟对比实验
+    target: struct/ex8_dem_am/index
+  - image: struct/ex9_extens_ductile_patent/all_0000046001.png
+    title: 韧性基底 伸展构造
+    target: struct/ex9_extens_ductile_patent/index
+    
+---
+title: 用户实例
+gallery:
+  - image: https://geovbox.com/blog/20240726/Figure4.jpg
+    title: 褶皱-冲断楔内部远端变形传递的离散元模拟及其对青藏高原北部和伊朗高原北部早期变形的启示（Journal of Structural Geology）
+    target: https://geovbox.com/blog/20240726/
+  - image: https://geovbox.com/blog/20240721/%e5%9b%be4.jpg
+    title: 库车坳陷西部阿瓦特—博孜地区构造变形差异及数值模拟分析（地质科学）
+    target: https://geovbox.com/blog/20240721/
+  - image: https://geovbox.com/blog/20240720/%e5%9b%be9%e6%a8%a1%e5%9e%8b4%e6%9e%84%e9%80%a0%e5%8f%98%e5%bd%a2%e4%b8%8e%e4%bd%93%e7%a7%af%e5%ba%94%e5%8f%98.png
+    title: 边缘海盆地断层差异演化成因的数值模拟：以西湖凹陷平北斜坡带为例（海洋地质与第四纪地质）
+    target: https://geovbox.com/blog/20240720/
+  - image: https://geovbox.com/blog/20240601/fig3.jpg
+    title: 基底滑脱层强度对川西南褶皱冲断带形成演化的影响:基于离散元模拟的认识
+    target: https://geovbox.com/blog/20240601/
+  - image: https://geovbox.com/blog/20240228/bre12850-fig-0016-m.jpg
+    title: 塔里木盆地库车坳陷先存构造对盐构造变形的影响:来自地震资料和数值模拟的启示
+    target: https://geovbox.com/blog/20240228/
+  - image: https://geovbox.com/blog/20240227/1-s2.0-S0191814123002225-gr14_lrg.jpg
+    title: 挤压环境下盐刺穿构造的形成机制：以塔里木盆地库车坳陷为例
+    target: https://geovbox.com/blog/20240227/
+  - image: https://geovbox.com/blog/20240214/figure6-1.png
+    title: 多滑脱层对川东薄皮褶皱冲断带构造倾向的影响及其演化：来自数值模拟的启示
+    target: https://geovbox.com/blog/20240214/
+  - image: https://geovbox.com/blog/20231015/1.png
+    title: CGU报告-离散元数值模拟在含油气盆地构造变形定量分析中的应用(2023-10-16)
+    target: https://geovbox.com/blog/20231015/
+  - image: https://geovbox.com/blog/20230413/1.PNG
+    title: 会议报告-离散元数值模拟在沉积盆地构造变形定量分析中的应用-研究现状、应用实例、优势挑战(2023-04-16)
+    target: https://geovbox.com/blog/20230413/
+  - image: https://geovbox.com/blog/20221110/tect21806-fig-0010-m.jpg
+    title: 地表过程对龙门山褶皱冲断带应变分布及地震活动的影响：基于离散元模拟的认识(Tectonics)
+    target: https://geovbox.com/blog/20221110/
+  - image: https://geovbox.com/blog/20220901/fig4.jpg
+    title: 基于离散元的挤压构造定量分析与模拟 (大地构造与成矿学)
+    target: https://geovbox.com/blog/20220901/
+  - image: https://geovbox.com/blog/20220805/figure4.jpg
+    title: 双滑脱层强度对博格达山北缘构造变形的影响：基于离散元数值模拟（地球科学）
+    target: https://geovbox.com/blog/20220805/
+  - image: https://geovbox.com/blog/20220406/Figure8.png
+    title: 力学分层对塔里木克拉通内走滑断裂分层样式的控制作用(Tectonophysics)
+    target: https://geovbox.com/blog/20220406/
+  - image: https://geovbox.com/blog/20230315/ex3.6.png
+    title: 西南天山山前冲断带构造变形控制因素研究——基于离散元数值模拟
+    target: https://geovbox.com/blog/20230315/
+  - image: https://geovbox.com/blog/20221031/3.png
+    title: 离散元后处理技术及其在构造模拟中的应用（预告）
+    target: https://geovbox.com/blog/20221031/
+  - image: https://geovbox.com/blog/20211019/40.PNG
+    title: ZDEM报告-第八届“国产应用软件”专题论坛 | CCF HPC China 2021(2021年10月23日)
+    target: https://geovbox.com/blog/20211019/
+  - image: https://geovbox.com/blog/20210824/feart-09-655173-g005.jpg
+    title: Effects of Salt Thickness on the Structural Deformation of Foreland Fold-and-Thrust Belt in the Kuqa Depression
+    target: https://geovbox.com/blog/20210824/
+  - image: https://geovbox.com/blog/20210724/ex3.6.png
+    title: 多滑脱层褶皱冲断构造分析模拟-以龙门山断层马角坝断裂为例
+    target: https://geovbox.com/blog/20210724/
+  - image: https://geovbox.com/blog/20210721/1.jpg
+    title: 基于离散元的褶皱冲断带构造变形定量分析与模拟
+    target: https://geovbox.com/blog/20210721/
+  - image: https://geovbox.com/blog/20210716/figure13.jpg
+    title: Influence of Regional Erosion and Sedimentary Loading on Fault Activities in Active Fold-Thrust Belts
+    target: https://geovbox.com/blog/20210716/
+  - image: https://geovbox.com/blog/20210410/figure2.png
+    title: 西南天山山前冲断带构造变形控制因素的离散元数值模拟（地质学报）
+    target: https://geovbox.com/blog/20210410/
+  - image: https://geovbox.com/blog/20210409/figure1.png
+    title: 库车坳陷东西段盐下构造变形差异演化的离散元数值模拟（地质学报）
+    target: https://geovbox.com/blog/20210409/
+  - image: https://geovbox.com/blog/20210329/figure6-1.png
+    title: 川西北双层滑脱体系构造变形过程离散元数值模拟
+    target: https://geovbox.com/blog/20210329/
+  - image: https://geovbox.com/blog/20210323/4.png
+    title: 正态分布钉板实验
+    target: https://geovbox.com/blog/20210323/
+  - image: https://geovbox.com/blog/20201111/31.jpg
+    title: 基于离散元的构造变形数值模拟实验技术(会议报告)-第十二届全国石油地质实验技术学术会议(2020年11月13日)
+    target: https://geovbox.com/blog/20201111/
+  - image: https://geovbox.com/blog/20201102/all_0000260000_ini.jpg
+    title: 伸展、生长、断层传播褶皱的离散元模拟(Basin Research)
+    target: https://geovbox.com/blog/20201102/
+  - image: https://geovbox.com/blog/20200724/1.png
+    title: 龙门山新生代构造变形与模拟
+    target: https://geovbox.com/blog/20200724/
+  - image: https://geovbox.com/blog/20191029/1.png
+    title: 2019CGU报告:基底性质差异对东海陆架盆地构造特征和演化的影响
+    target: https://geovbox.com/blog/20191029/
+  - image: https://geovbox.com/blog/20191028/6.png
+    title: 2019CGU报告:我国东部茅东断裂带反转构造特征及控震机制探讨
+    target: https://geovbox.com/blog/20191028/
+  - image: https://geovbox.com/am/ex001/AM_sun2017_a_f.jpg
+    title: 简单的挤压构造物理模拟
+    target: https://geovbox.com/am/ex001/
+  - image: https://geovbox.com/blog/CGU2017/overview.jpg
+    title: 2017年中国地球科学联合学术年会：滑脱层强度对挤压构造的影响
+    target: https://geovbox.com/blog/CGU2017/
+  - image: https://geovbox.com/blog/VBOX-overview/VBOX_GUI.png
+    title: ZDEM概览
+    target: https://geovbox.com/blog/VBOX-overview/

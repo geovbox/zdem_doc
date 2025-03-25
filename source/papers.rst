@@ -1,4 +1,4 @@
-.. _license:
+.. _papers:
 
 相关文章
 ========
@@ -77,8 +77,8 @@
 13. `Xu W, Yin H, Li C. 2024. Complex subsalt fault system in a compressional environment: Examples from the Kuqa Depression, western China. AGU24. <https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1679910>`_
 
 
-+ 基于ZDEM发表的最新文章，欢迎发给李长圣，新文章不定期更新到本页面。
+**基于ZDEM发表的最新文章，欢迎发给李长圣，新文章不定期更新到本页面。**
 
-    * 邮件: sheng0619@163.com
-    * QQ: 836745132 (Neo)
-    * 官网: `https://geovbox.com <https://geovbox.com/>`_
+- 邮件: sheng0619@163.com
+- QQ: 836745132 (Neo)
+- 官网: `https://geovbox.com <https://geovbox.com/>`_

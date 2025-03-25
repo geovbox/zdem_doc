@@ -36,7 +36,7 @@ ZDEM手册 2.2
 .. toctree::
    :maxdepth: 2
    :numbered: 3
-   :caption: 目 录
+   :caption: 目录
    :hidden:
 
    introduction
@@ -54,3 +54,11 @@ ZDEM手册 2.2
    license
    updatelog
    thanks
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 附录
+   :hidden:
+
+   gallery/index
+   

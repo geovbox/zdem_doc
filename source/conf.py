@@ -32,6 +32,9 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
     'sphinx_cjkspace.cjkspace',
+    "sphinx.ext.extlinks",
+    "sphinx_design",
+    "sphinxcontrib.datatemplates",
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
@@ -40,7 +43,7 @@ master_doc = 'index'
 project = u'ZDEM手册'
 copyright = '2019 - {}, ZDEM'.format(datetime.date.today().year)
 author = u'李长圣'
-version = '2.1'
+version = '2.2'
 release = version
 rst_prolog = '''
 .. |zdem_latest_release| replace:: 2.2 
@@ -65,6 +68,18 @@ html_theme_options = {
     'prev_next_buttons_location': 'both',
     'sticky_navigation': False,
 }
+
+# set site url of the image gallery for different use cases
+if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
+    siteurl_for_gallery = f"https://doc.geovbox.com/{version}"
+    basedir_for_gallery = "source/"
+elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
+    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    basedir_for_gallery = "./"
+else:  # build locally
+    siteurl_for_gallery = ""
+    basedir_for_gallery = "source/"
+
 html_context = {
     'display_github': True,
     'github_user': 'geovbox',
@@ -73,14 +88,16 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
     'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
-    
+        # Passed to sphinxcontrib.datatemplates
+    "siteurl": siteurl_for_gallery,
+    "basedir": basedir_for_gallery,
     #'versions': ['2.0', '1.4'],
     'versions': ['2.0'],
     
      "menu_links": [
         (
             '<i class="fa fa-download fa-fw"></i> PDF版本手册',
-            "https://doc.geovbox.com/2.x/zdem_doc.pdf",
+            "https://doc.geovbox.com/2.x/ZDEM_docs.pdf",
         ),
         (
             '<i class="fa fa-globe fa-fw"></i> 官网',
