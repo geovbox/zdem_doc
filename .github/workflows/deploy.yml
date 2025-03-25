@@ -34,6 +34,11 @@ jobs:
           cache-downloads: false
           cache-environment: true
 
+      - name: Install packages
+        run: |
+          conda install ghostscript
+          pip install -r requirements.txt
+
 #      - name: Download and list cached files
 #        run: |
 #          gh run download --name gmt-cache --dir ~/.gmt/
