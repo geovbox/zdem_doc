@@ -96,7 +96,7 @@ html_context = {
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
 latex_documents = [
-    (master_doc, 'zdem_doc.tex', "{} {}".format(project, version), author, 'ctexbook'),
+    (master_doc, 'ZDEM_docs.tex', "{} {}".format(project, version), author, 'ctexbook'),
 ]
 latex_logo = None
 latex_toplevel_sectioning = 'chapter'
