@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1 简介 &mdash; VBOX手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/introduction.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="2 Windows下使用" href="../use/" />
+    <link rel="prev" title="VBOX手册 1.4" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../" class="icon icon-home"> VBOX手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/1.4/"  selected > 1.4 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use/">2 Windows下使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../push/">3 一个示例学会VBOX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmd/">6 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">7 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../color/">8 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/">9 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/">10 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thanks/">11 致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox1.4_license/">12 使用协议</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/vbox_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> VBOX官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">VBOX手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">1 </span>简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/introduction.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../use/" class="btn btn-neutral float-right" title="2 Windows下使用" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral float-left" title="VBOX手册 1.4" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">1 </span>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<ul>
+<li><p>VBOX是什么</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">VBOX</span></code> ，全称 <code class="docutils literal notranslate"><span class="pre">Virtual</span> <span class="pre">sandBOX</span></code> ，即虚拟沙箱软件，是一个用于构造变形研究的二维离散元软件。始于2014年，采用C语言编写，并用OpenMP完成了并行设计，已获软件著作权。主要面向构造模拟，用来补充构造物理沙箱实验在应力应变及材料选取上的局限性，为构造变形研究提供一种新的方法。</p>
+</div></blockquote>
+</li>
+<li><p>VBOX的历史</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>2015年，李长圣开发了VBOX的最原始版本VBOX 1.0；</p></li>
+<li><p>2018年8月10日，VBOX 1.3发布；</p></li>
+<li><p>目前最新版本 VBOX 1.4 beta ( <code class="docutils literal notranslate"><span class="pre">vboxdaily</span></code> )
+发布于 2021-04-11。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>VBOX开发者</p>
+<blockquote>
+<div><p>VBOX源码由 <a class="reference external" href="https://geovbox.com/about/lichangsheng/">李长圣</a> 开发并负责维护。</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/LiChangSheng.png"><img alt="../_images/LiChangSheng.png" src="../_images/LiChangSheng.png" style="width: 20%;" /></a>
+<p class="caption"><span class="caption-number">图 1.1 </span><span class="caption-text">VBOX的维护者</span><a class="headerlink" href="#id6" title="永久链接至图片">¶</a></p>
+</div>
+<ul>
+<li><p>VBOX的特点</p>
+<blockquote>
+<div><p>为什么选择VBOX作为构造模拟呢？</p>
+<ol class="arabic">
+<li><p>免费</p>
+<p>VBOX是免费软件，托管在南京大学高性能计算中心，任何人均可使用。</p>
+</li>
+<li><p>使用门槛低</p>
+<p>命令参数采用PFC4.0类似参数，并配有丰富的测试、休止角、三轴、构造模拟等相关实例。</p>
+</li>
+<li><p>面向构造变形研究</p>
+<p>针对构造中的速度不连续面等编写了相应的模块，让构造模拟更方便。</p>
+</li>
+<li><p>高性能</p>
+<p>采用C语言，基于OpenMP完成并行设计。</p>
+</li>
+<li><p>跨平台</p>
+<p>支持linux和windows操作系统，官方提供ubuntu14.04 和 windows7, windows10 支持。</p>
+</li>
+<li><p>模块化</p>
+<p>VBOX遵循模块化设计思想，将不同的接触力学模型划分到不同的模块中。当前支持固体晶格模型，线弹模型及赫兹模型。这样的模块化设计有很多优点：</p>
+<ul class="simple">
+<li><p>只需要少量的模块</p></li>
+<li><p>各个模块之间相互独立且代码量少，易于更新和维护</p></li>
+</ul>
+</li>
+<li><p>支持多种格式的高精度矢量图和位图</p>
+<p>VBOX支持多种高精度的矢量图片格式和位图图片格式。</p>
+<ul class="simple">
+<li><p>VTK格式：<a class="reference external" href="https://www.paraview.org/">ParaView</a> 支持，可以直接观看制作动画，修改配色等其他操作</p></li>
+<li><p>矢量图片格式，如PDF、PS、EPS和SVG，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊</p></li>
+<li><p>位图图片格式，如BMP、JPG、PNG、PPM和TIFF格式，可用于日常的文档及演示</p></li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>VBOX替代品</p>
+<blockquote>
+<div><p>在构造模拟方面，还有一些软件也可以实现类似的功能，可以作为VBOX的替代品。</p>
+<ol class="arabic simple">
+<li><p>PFC2D: <a class="reference external" href="https://www.itascacg.com/software/pfc">PFC2D</a></p></li>
+<li><p>Yade: <a class="reference external" href="https://yade-dem.org/doc/">手册</a> | <a class="reference external" href="https://launchpad.net/yade/">代码下载</a></p></li>
+<li><p>MatDEM: <a class="reference external" href="http://matdem.com">MatDEM</a></p></li>
+<li><p>DICE2D: <a class="reference external" href="http://www.dembox.org">DICE2D</a></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">待处理</p>
+<p>介绍更多VBOX替代品，如 TRUBAL, RICEBAL等。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../use/" class="btn btn-neutral float-right" title="2 Windows下使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../" class="btn btn-neutral float-left" title="VBOX手册 1.4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014 - 2021, VBOX官网.
+      <span class="lastupdated">
+        最后更新于 2021年04月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
