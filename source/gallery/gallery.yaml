@@ -32,6 +32,18 @@ gallery:
 ---
 title: 用户实例
 gallery:
+  - image: https://geovbox.com/blog/20250409/Figure11.jpg
+    title: 四川盆地威远背斜诱发地震的构造控制机理(Tectonics,附zdem脚本)
+    target: https://geovbox.com/blog/20250409/
+  - image: https://geovbox.com/blog/20250320/Figure6.jpg
+    title: 中间滑脱层之下冲断系统构造指向的离散元模拟：对扎格罗斯简单褶皱带沿走向变化的启示（GSA Bulletin）
+    target: https://geovbox.com/blog/20250320/
+  - image: https://geovbox.com/blog/20250219/Figure16.png
+    title: 库车前陆盆地秋里塔格褶皱冲断带东段盐相关构造变形：来自地震解释及数值模拟分析的证据（Journal of Structural Geology）
+    target: https://geovbox.com/blog/20250219/
+  - image: https://geovbox.com/blog/20241021/fig5.jpg
+    title: 基于离散元数值模拟的雪峰山前陆褶皱冲断带齐岳山分界断裂性质与形成过程（现代地质）
+    target: https://geovbox.com/blog/20241021/
   - image: https://geovbox.com/blog/20240726/Figure4.jpg
     title: 褶皱-冲断楔内部远端变形传递的离散元模拟及其对青藏高原北部和伊朗高原北部早期变形的启示（Journal of Structural Geology）
     target: https://geovbox.com/blog/20240726/

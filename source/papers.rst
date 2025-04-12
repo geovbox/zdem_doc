@@ -45,7 +45,10 @@
 23. `Zhou C, He J, Su H, et al. 2024. Discrete element modeling of distal deformation propagation in thrust wedge and implications for early deformation on northern Tibetan and Iranian Plateaus. Journal of Structural Geology, 184: 105150. <https://doi.org/10.1016/j.jsg.2024.105150>`_
 24. `屈会志, 尹宏伟, 李晨, 等. 2024. 盐构造变形特征与变形机制:基于地震解析与构造模拟的研究探讨及对复杂构造区岩盐迁移与成矿的启示. 地质学报, 98(10): 2916-2930. <https://doi.org/10.19762/j.cnki.dizhixuebao.2024300>`_
 25. `于宝利, 刘可禹, 郭泊洋, 等. 2024. 基于离散元数值模拟的构造变形机制分析方法——以准噶尔盆地南缘为例. 石油地球物理勘探, 59(05): 1080-1098. <https://doi.org/10.13810/j.cnki.issn.1000-7210.2024.05.021>`_
-26. `Zhu Y, Li C, Jiang X, et al. 2025. Differential salt-related structural deformation in the Eastern segment of the Qiulitage fold and thrust belt, Kuqa Foreland Basin: Evidences from seismic interpretation and numerical simulation analysis. Journal of Structural Geology, 194: 105372. <https://doi.org/10.1016/j.jsg.2025.105372>`_
+26. `Zhu Y, Li C, Jiang X, et al. 2025. Differential salt-related structural deformation in the Eastern segment of the Qiulitage fold and thrust belt, Kuqa Foreland Basin: Evidences from seismic interpretation and numerical simulation analysis. Journal of Structural Geology, 194: 105372.  <https://doi.org/10.1016/j.jsg.2025.105372>`_
+27. `王帅杰,颜丹平,周志成,等.2025.基于离散元数值模拟的雪峰山前陆褶皱冲断带齐岳山分界断裂性质与形成过程.现代地质,39(01):18-30. <https://doi.org/10.19657/j.geoscience.1000-8527.2024.126>`_
+28. `Zhou C, He J, Su H, et al. 2025. Discrete element modeling of the structural vergence beneath intermediate décollements: Implications for along-strike variations in the Zagros Simply Folded Belt. GSA Bulletin. <https://doi.org/10.1130/B37988.1>`_
+29. `Ma H, Wang M. 2025. Structural control of induced seismicity in the Weiyuan anticline, southwestern Sichuan foreland thrust belt, China. Tectonics, 44, e2024TC008617. <https://doi.org/10.1029/2024TC008617>`_
 
 本硕博
 ------
