@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4 提交计算 &mdash; VBOX手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/clac.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="5 构造模拟" href="../struct/" />
+    <link rel="prev" title="3 一个示例学会VBOX" href="../push/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../" class="icon icon-home"> VBOX手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/1.4/"  selected > 1.4 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use/">2 Windows下使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../push/">3 一个示例学会VBOX</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4 提交计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.1 直接提交</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lsf">4.2 LSF调度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sge">4.3 SGE调度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pbs">4.4 PBS调度</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmd/">6 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">7 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../color/">8 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/">9 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/">10 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thanks/">11 致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vbox1.4_license/">12 使用协议</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/vbox_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> VBOX官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">VBOX手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">4 </span>提交计算</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/clac.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../struct/" class="btn btn-neutral float-right" title="5 构造模拟" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../push/" class="btn btn-neutral float-left" title="3 一个示例学会VBOX" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">4 </span>提交计算<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">push.py</span></code> 为要运行的脚本名</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2><span class="section-number">4.1 </span>直接提交<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#程序名 脚本名</span>
+vbox push.py
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>优点：实时查看计算是否正确，使用 <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code> 结束计算</p></li>
+<li><p>缺点：关闭 <code class="docutils literal notranslate"><span class="pre">xshell</span></code> ，计算停止</p></li>
+</ul>
+</div>
+<div class="section" id="lsf">
+<h2><span class="section-number">4.2 </span>LSF调度<a class="headerlink" href="#lsf" title="永久链接至标题">¶</a></h2>
+<p>南京大学高性能计算中心安装了该调度系统。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bsub</span> <span class="pre">&lt;</span> <span class="pre">lsf.sh</span></code> 提交</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bjobs</span></code>　查看</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bkill</span> <span class="pre">&lt;id&gt;</span></code>　删除</p></li>
+</ul>
+<ul class="simple">
+<li><p>优点：同时计算多个，关闭 <code class="docutils literal notranslate"><span class="pre">xshell</span></code> ，不影响计算</p></li>
+<li><p>缺点：不能实时查看计算情况</p></li>
+</ul>
+<ol class="arabic">
+<li><p>提交计算</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bsub &lt; lsf.sh
+</pre></div>
+</div>
+<p>显示 <code class="docutils literal notranslate"><span class="pre">Job</span> <span class="pre">&lt;230259&gt;</span> <span class="pre">is</span> <span class="pre">submitted</span> <span class="pre">to</span> <span class="pre">queue</span> <span class="pre">&lt;mpi&gt;.</span></code> 说明提交成功。</p>
+<p><code class="docutils literal notranslate"><span class="pre">lsf.sh</span></code> 中内容如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#</span>
+<span class="c1">#BSUB -J sheng</span>
+<span class="c1">#BSUB -q mpi</span>
+<span class="c1">#BSUB -n 24</span>
+<span class="c1">#BSUB -R &quot;span[ptile=24]&quot;</span>
+vboxdaily push.py
+vbox2jpg --dir<span class="o">=</span>./data  <span class="c1"># 生成 jpg</span>
+convert -delay <span class="m">100</span> ./data/*<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>.jpg -loop <span class="m">0</span> ./data/process.gif  <span class="c1">#　制作 gif</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>查看计算状态</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bjobs
+</pre></div>
+</div>
+<p>显示</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>JOBID   USER    STAT  QUEUE      FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME
+<span class="m">230259</span>  hwyin   RUN   mpi        c01n02      <span class="m">24</span>*c38n11   *push.py Apr  <span class="m">1</span> <span class="m">12</span>:44
+</pre></div>
+</div>
+<p>从上面的输出可知，该任务的 <code class="docutils literal notranslate"><span class="pre">id</span></code> 为 <code class="docutils literal notranslate"><span class="pre">230259</span></code> 。<code class="docutils literal notranslate"><span class="pre">STAT</span></code> 状态为 <code class="docutils literal notranslate"><span class="pre">RUN</span></code> 说明正在计算。任务分配给了节点 <code class="docutils literal notranslate"><span class="pre">c38n11</span></code>，调用了 <code class="docutils literal notranslate"><span class="pre">24</span></code> 个核计算。更为详细的说明，可以查询 <code class="docutils literal notranslate"><span class="pre">LSF</span></code> 调度系统教程。其中，　<code class="docutils literal notranslate"><span class="pre">-J</span></code>　参数为任务名，可自定义。</p>
+</div></blockquote>
+</li>
+<li><p>强制结束计算</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bkill &lt;id&gt;
+</pre></div>
+</div>
+<p>我们要杀死上面的任务， <code class="docutils literal notranslate"><span class="pre">bkill</span>&#160; <span class="pre">230259</span></code> 即可以。输出</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Job &lt;<span class="m">230259</span>&gt; is being terminated
+</pre></div>
+</div>
+<p>说明任务已经被杀死。</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="sge">
+<h2><span class="section-number">4.3 </span>SGE调度<a class="headerlink" href="#sge" title="永久链接至标题">¶</a></h2>
+<p>南京大学尹宏伟课题组和东华理工大学并行计算实验室集群安装了该调度系统</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">sge.sh</span></code> 提交</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qstat</span></code> 查看</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">&lt;id&gt;</span></code> 删除</p></li>
+</ul>
+<ul class="simple">
+<li><p>优点：同时计算多个，关闭 <code class="docutils literal notranslate"><span class="pre">xshell</span></code> ，不影响计算</p></li>
+<li><p>缺点：不能实时查看计算情况</p></li>
+</ul>
+<ol class="arabic">
+<li><p>提交计算</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub sge.sh
+</pre></div>
+</div>
+<p>显示 <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">job</span> <span class="pre">3136</span> <span class="pre">(&quot;example&quot;)</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">submitted</span></code> 说明提交成功。</p>
+<p><code class="docutils literal notranslate"><span class="pre">sge.sh</span></code> 中内容如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">#$ -S /bin/bash</span>
+<span class="c1">#$ -N example #设置任务的名字</span>
+<span class="c1">#$ -j y</span>
+<span class="c1">#$ -M sheng@163.com #修改为自己邮箱</span>
+<span class="c1">#$ -m e</span>
+<span class="c1">#$ -o log.txt #程序执行日志，记录了错误信息</span>
+<span class="c1">#$ -V</span>
+<span class="c1">#$ -cwd</span>
+<span class="c1">#$ -pe orte 8 #调用8个核计算</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$NSLOTS</span>
+<span class="nb">time</span> vboxdaily push.py <span class="c1">#提交计算</span>
+vbox2jpg --dir<span class="o">=</span>./data  <span class="c1"># 生成 jpg</span>
+convert -delay <span class="m">100</span> ./data/*<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>.jpg -loop <span class="m">0</span> ./data/process.gif  <span class="c1"># 制作 gif</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>查看计算状态</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat
+</pre></div>
+</div>
+<p>显示</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>job-ID  prior   name       user         state submit/start at      queue                          slots ja-task-ID
+-----------------------------------------------------------------------------------------------------------------
+<span class="m">3136</span>    <span class="m">0</span>.55500 example    zhangsan     r     <span class="m">01</span>/20/2019 <span class="m">14</span>:43:53  all.q@sand-0-0.local              <span class="m">8</span>
+</pre></div>
+</div>
+<p>从上面的输出可知，该任务的 <code class="docutils literal notranslate"><span class="pre">id</span></code> 为 <code class="docutils literal notranslate"><span class="pre">3136</span></code> 。<code class="docutils literal notranslate"><span class="pre">state</span></code> 状态为 <code class="docutils literal notranslate"><span class="pre">r</span></code> 说明正在计算，如果为 <code class="docutils literal notranslate"><span class="pre">w</span></code> 为排队等待状态。任务分配给了节点 <code class="docutils literal notranslate"><span class="pre">sand-0-0</span></code>，调用了 <code class="docutils literal notranslate"><span class="pre">16</span></code> 个核计算。更为详细的说明，可以查询 <code class="docutils literal notranslate"><span class="pre">SGE</span></code> 调度系统教程。</p>
+</div></blockquote>
+</li>
+<li><p>强制结束计算</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qdel &lt;id&gt;
+</pre></div>
+</div>
+<p>我们要杀死上面的任务， <code class="docutils literal notranslate"><span class="pre">qdel</span>&#160; <span class="pre">3136</span></code> 即可以。输出</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zhangsan has registered the job <span class="m">3136</span> <span class="k">for</span> deletion
+</pre></div>
+</div>
+<p>说明任务已经被杀死。</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="pbs">
+<h2><span class="section-number">4.4 </span>PBS调度<a class="headerlink" href="#pbs" title="永久链接至标题">¶</a></h2>
+<p>中国石油勘探开发研究院(北京)集群安装了该调度系统</p>
+<p>PBS(Portable Batch System)最初由NASA的Ames研究中心开发，主要为了提供一个能满足异构计算网络需要的软件包，用于灵活的批处理，特别是满足高性能计算的需要，如集群系统、超级计算机和大规模并行系统。PBS的主要特点有：代码开放，免费获取；支持批处理、交互式作业和串行、多种并行作业。</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">qsub</span>&#160; <span class="pre">pbs.sh</span></code> 提交</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>zhangsan@mu01 ~<span class="o">]</span>$ qsub pbs.sh
+<span class="m">28</span>.mu01
+</pre></div>
+</div>
+<p>其中， <code class="docutils literal notranslate"><span class="pre">pbs.sh</span></code>　中内容：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#PBS -N sheng ##可以给任务一个名字,方便辨识</span>
+<span class="c1">#PBS -l nodes=1:ppn=12 ##使用1节点，每个节点12核</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span> <span class="c1">##到当前工作目录下（此为PBS提供的环境变量）</span>
+vboxdaily push.py
+vbox2jpg --dir<span class="o">=</span>./data
+convert -delay <span class="m">100</span> ./data/*<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>.jpg -loop <span class="m">0</span> ./data/process.gif
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qstat</span></code> 查看</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>zhangsan@mu01 ~<span class="o">]</span>$ qstat
+Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+<span class="m">31</span>.mu01                    zhangsan         lichangsheng    <span class="m">00</span>:00:13 R batch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">31</span></code> 删除作业号为31的作业</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>zhangsan@mu01 ~<span class="o">]</span>$ qdel <span class="m">28</span>
+<span class="o">[</span>zhangsan@mu01 ~<span class="o">]</span>$ qstat
+Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+<span class="m">31</span>.mu01                    sheng            zhangsan     <span class="m">00</span>:22:43 C batch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>参数解释</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Job id      Name       User      Time Use    S        Queue
+作业号      作业名     提交人    运行的时间  作业状态  队列
+</pre></div>
+</div>
+<p>通常作业状态：</p>
+<ul class="simple">
+<li><p>Q 作业排队</p></li>
+<li><p>R 作业执行</p></li>
+<li><p>C 作业清除</p></li>
+<li><p>E 作业退出</p></li>
+<li><p>H 作业挂起</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../struct/" class="btn btn-neutral float-right" title="5 构造模拟" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../push/" class="btn btn-neutral float-left" title="3 一个示例学会VBOX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014 - 2021, VBOX官网.
+      <span class="lastupdated">
+        最后更新于 2021年04月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

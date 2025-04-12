@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图库 &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/gallery/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=beaddf03"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="prev" title="15 致谢" href="../thanks/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">图库</a><ul>
+<li><a class="reference internal" href="#id2">官方示例</a></li>
+<li><a class="reference internal" href="#id3">用户实例</a></li>
+</ul>
+</li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">图库</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/gallery/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../thanks/" class="btn btn-neutral float-left" title="15 致谢" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>图库<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<section id="id2">
+<h2>官方示例<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-4 sd-row-cols-md-4 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/10km.png" src="../_images/10km.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>一个示例学会ZDEM</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../push/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/100.png" src="../_images/100.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>同构造剥蚀</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex2_syn_erosion/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/1001.png" src="../_images/1001.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>同构造沉积</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex3_syn_sedimentaion/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/2.png" src="../_images/2.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>先存断层设置</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex4_pre_struct/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/10.jpg" src="../_images/10.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>滑脱层</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex5_detachment/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/101.jpg" src="../_images/101.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>古隆起</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex6_palaeohigh/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/08.jpg" src="../_images/08.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>刚性基底 伸展构造</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex7_extens_rigid/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/dem_and_am16.jpg" src="../_images/dem_and_am16.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>与物理模拟对比实验</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex8_dem_am/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="../_images/all_0000046001.png" src="../_images/all_0000046001.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>韧性基底 伸展构造</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../struct/ex9_extens_ductile_patent/"><span class="doc"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>用户实例<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-4 sd-row-cols-md-4 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20250409/Figure11.jpg" src="https://geovbox.com/blog/20250409/Figure11.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>四川盆地威远背斜诱发地震的构造控制机理(Tectonics,附zdem脚本)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20250409/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20250320/Figure6.jpg" src="https://geovbox.com/blog/20250320/Figure6.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>中间滑脱层之下冲断系统构造指向的离散元模拟：对扎格罗斯简单褶皱带沿走向变化的启示（GSA Bulletin）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20250320/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20250219/Figure16.png" src="https://geovbox.com/blog/20250219/Figure16.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>库车前陆盆地秋里塔格褶皱冲断带东段盐相关构造变形：来自地震解释及数值模拟分析的证据（Journal of Structural Geology）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20250219/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20241021/fig5.jpg" src="https://geovbox.com/blog/20241021/fig5.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>基于离散元数值模拟的雪峰山前陆褶皱冲断带齐岳山分界断裂性质与形成过程（现代地质）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20241021/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240726/Figure4.jpg" src="https://geovbox.com/blog/20240726/Figure4.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>褶皱-冲断楔内部远端变形传递的离散元模拟及其对青藏高原北部和伊朗高原北部早期变形的启示（Journal of Structural Geology）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240726/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240721/%e5%9b%be4.jpg" src="https://geovbox.com/blog/20240721/%e5%9b%be4.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>库车坳陷西部阿瓦特—博孜地区构造变形差异及数值模拟分析（地质科学）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240721/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240720/%e5%9b%be9%e6%a8%a1%e5%9e%8b4%e6%9e%84%e9%80%a0%e5%8f%98%e5%bd%a2%e4%b8%8e%e4%bd%93%e7%a7%af%e5%ba%94%e5%8f%98.png" src="https://geovbox.com/blog/20240720/%e5%9b%be9%e6%a8%a1%e5%9e%8b4%e6%9e%84%e9%80%a0%e5%8f%98%e5%bd%a2%e4%b8%8e%e4%bd%93%e7%a7%af%e5%ba%94%e5%8f%98.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>边缘海盆地断层差异演化成因的数值模拟：以西湖凹陷平北斜坡带为例（海洋地质与第四纪地质）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240720/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240601/fig3.jpg" src="https://geovbox.com/blog/20240601/fig3.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>基底滑脱层强度对川西南褶皱冲断带形成演化的影响:基于离散元模拟的认识</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240601/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240228/bre12850-fig-0016-m.jpg" src="https://geovbox.com/blog/20240228/bre12850-fig-0016-m.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>塔里木盆地库车坳陷先存构造对盐构造变形的影响:来自地震资料和数值模拟的启示</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240228/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240227/1-s2.0-S0191814123002225-gr14_lrg.jpg" src="https://geovbox.com/blog/20240227/1-s2.0-S0191814123002225-gr14_lrg.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>挤压环境下盐刺穿构造的形成机制：以塔里木盆地库车坳陷为例</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240227/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20240214/figure6-1.png" src="https://geovbox.com/blog/20240214/figure6-1.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>多滑脱层对川东薄皮褶皱冲断带构造倾向的影响及其演化：来自数值模拟的启示</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20240214/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20231015/1.png" src="https://geovbox.com/blog/20231015/1.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>CGU报告-离散元数值模拟在含油气盆地构造变形定量分析中的应用(2023-10-16)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20231015/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20230413/1.PNG" src="https://geovbox.com/blog/20230413/1.PNG" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>会议报告-离散元数值模拟在沉积盆地构造变形定量分析中的应用-研究现状、应用实例、优势挑战(2023-04-16)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20230413/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20221110/tect21806-fig-0010-m.jpg" src="https://geovbox.com/blog/20221110/tect21806-fig-0010-m.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>地表过程对龙门山褶皱冲断带应变分布及地震活动的影响：基于离散元模拟的认识(Tectonics)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20221110/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20220901/fig4.jpg" src="https://geovbox.com/blog/20220901/fig4.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>基于离散元的挤压构造定量分析与模拟 (大地构造与成矿学)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20220901/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20220805/figure4.jpg" src="https://geovbox.com/blog/20220805/figure4.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>双滑脱层强度对博格达山北缘构造变形的影响：基于离散元数值模拟（地球科学）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20220805/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20220406/Figure8.png" src="https://geovbox.com/blog/20220406/Figure8.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>力学分层对塔里木克拉通内走滑断裂分层样式的控制作用(Tectonophysics)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20220406/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20230315/ex3.6.png" src="https://geovbox.com/blog/20230315/ex3.6.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>西南天山山前冲断带构造变形控制因素研究——基于离散元数值模拟</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20230315/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20221031/3.png" src="https://geovbox.com/blog/20221031/3.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>离散元后处理技术及其在构造模拟中的应用（预告）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20221031/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20211019/40.PNG" src="https://geovbox.com/blog/20211019/40.PNG" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>ZDEM报告-第八届“国产应用软件”专题论坛 | CCF HPC China 2021(2021年10月23日)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20211019/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210824/feart-09-655173-g005.jpg" src="https://geovbox.com/blog/20210824/feart-09-655173-g005.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>Effects of Salt Thickness on the Structural Deformation of Foreland Fold-and-Thrust Belt in the Kuqa Depression</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210824/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210724/ex3.6.png" src="https://geovbox.com/blog/20210724/ex3.6.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>多滑脱层褶皱冲断构造分析模拟-以龙门山断层马角坝断裂为例</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210724/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210721/1.jpg" src="https://geovbox.com/blog/20210721/1.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>基于离散元的褶皱冲断带构造变形定量分析与模拟</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210721/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210716/figure13.jpg" src="https://geovbox.com/blog/20210716/figure13.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>Influence of Regional Erosion and Sedimentary Loading on Fault Activities in Active Fold-Thrust Belts</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210716/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210410/figure2.png" src="https://geovbox.com/blog/20210410/figure2.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>西南天山山前冲断带构造变形控制因素的离散元数值模拟（地质学报）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210410/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210409/figure1.png" src="https://geovbox.com/blog/20210409/figure1.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>库车坳陷东西段盐下构造变形差异演化的离散元数值模拟（地质学报）</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210409/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210329/figure6-1.png" src="https://geovbox.com/blog/20210329/figure6-1.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>川西北双层滑脱体系构造变形过程离散元数值模拟</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210329/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20210323/4.png" src="https://geovbox.com/blog/20210323/4.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>正态分布钉板实验</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20210323/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20201111/31.jpg" src="https://geovbox.com/blog/20201111/31.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>基于离散元的构造变形数值模拟实验技术(会议报告)-第十二届全国石油地质实验技术学术会议(2020年11月13日)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20201111/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20201102/all_0000260000_ini.jpg" src="https://geovbox.com/blog/20201102/all_0000260000_ini.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>伸展、生长、断层传播褶皱的离散元模拟(Basin Research)</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20201102/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20200724/1.png" src="https://geovbox.com/blog/20200724/1.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>龙门山新生代构造变形与模拟</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20200724/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20191029/1.png" src="https://geovbox.com/blog/20191029/1.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>2019CGU报告:基底性质差异对东海陆架盆地构造特征和演化的影响</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20191029/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/20191028/6.png" src="https://geovbox.com/blog/20191028/6.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>2019CGU报告:我国东部茅东断裂带反转构造特征及控震机制探讨</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/20191028/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/am/ex001/AM_sun2017_a_f.jpg" src="https://geovbox.com/am/ex001/AM_sun2017_a_f.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>简单的挤压构造物理模拟</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/am/ex001/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/CGU2017/overview.jpg" src="https://geovbox.com/blog/CGU2017/overview.jpg" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>2017年中国地球科学联合学术年会：滑脱层强度对挤压构造的影响</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/CGU2017/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://geovbox.com/blog/VBOX-overview/VBOX_GUI.png" src="https://geovbox.com/blog/VBOX-overview/VBOX_GUI.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>ZDEM概览</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://geovbox.com/blog/VBOX-overview/"></a></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../thanks/" class="btn btn-neutral float-left" title="15 致谢" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2025, ZDEM.
+      <span class="lastupdated">最后更新于 2025年04月12日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

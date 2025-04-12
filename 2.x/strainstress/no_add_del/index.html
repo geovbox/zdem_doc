@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.2 无沉积剥蚀 &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/strainstress/no_add_del/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="6.3 有沉积剥蚀" href="../add_del/" />
+    <link rel="prev" title="6.1 配置环境变量" href="../set/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../struct/">5 构造模拟</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">6 应力应变</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../set/">6.1 配置环境变量</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2 无沉积剥蚀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../add_del/">6.3 有沉积剥蚀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot_sigma1/">6.4 绘制最大主应力矢量</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">图库</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../"><span class="section-number">6 </span>应力应变</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.2 </span>无沉积剥蚀</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/strainstress/no_add_del/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../set/" class="btn btn-neutral float-left" title="6.1 配置环境变量" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../add_del/" class="btn btn-neutral float-right" title="6.3 有沉积剥蚀" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="no-add-del">
+<span id="id1"></span><h1><span class="section-number">6.2 </span>无沉积剥蚀<a class="headerlink" href="#no-add-del" title="Link to this heading">¶</a></h1>
+<p>如果没有沉积和剥蚀过程， <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">jobs.sh</span></code> 提交，应力应变将输出到 <code class="docutils literal notranslate"><span class="pre">ex5_detachment/data/ss</span></code>。</p>
+<p>这里采用 <code class="docutils literal notranslate"><span class="pre">构造模拟</span></code> 中的 <a class="reference internal" href="../../struct/ex5_detachment/#detachment"><span class="std std-ref">滑脱层</span></a> 示例</p>
+<p>目录结构：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span><span class="w"> </span>--<span class="w"> </span>ex5_detachment
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>--<span class="w"> </span>detachment.py
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>--<span class="w"> </span>init_xyr.dat
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>--<span class="w"> </span>job.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">detachment.py</span></code> 见 <a class="reference internal" href="../../struct/ex5_detachment/#detachment"><span class="std std-ref">滑脱层</span></a></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>注意示例 <code class="docutils literal notranslate"><span class="pre">detachment.py</span></code> 中没有使用 <code class="docutils literal notranslate"><span class="pre">GEN</span></code> 命令生成颗粒，而是采用的 <code class="docutils literal notranslate"><span class="pre">LOAD</span> <span class="pre">init_xyr.dat</span></code> 导入初始模型。如果使用了 <code class="docutils literal notranslate"><span class="pre">GEN</span></code>，那么你可能引入了沉积过程，需要参考 <a class="reference internal" href="../add_del/#add-del"><span class="std std-ref">有沉积剥蚀</span></a> 去除沉积过程生成的 <code class="docutils literal notranslate"><span class="pre">all_*.dat</span></code> 。</p>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">init_xyr.dat</span></code> 见 <a class="reference internal" href="../../struct/ex5_detachment/#detachment"><span class="std std-ref">滑脱层</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">job.sh</span></code> 内容如下：</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=core12</span>
+<span class="c1">#SBATCH --partition=v6_384</span>
+<span class="c1">#SBATCH -n 1</span>
+<span class="c1">#SBATCH -c 12</span>
+<span class="c1">#SBATCH -t 1440</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+<span class="c1">#zdem environment variable </span>
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_zdem.sh
+module<span class="w"> </span>load<span class="w"> </span>zdem2.0
+
+<span class="c1">#GMT environment variable </span>
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_GMT.sh
+module<span class="w"> </span>load<span class="w"> </span>GMT_5.4.5
+
+<span class="c1">#zdemss environment variable </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/public1/home/sc80502/bin:<span class="nv">$PATH</span>
+
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem<span class="w"> </span>detachment.py
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem2jpg<span class="w"> </span>--dir<span class="o">=</span>./data
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem<span class="w"> </span>-j<span class="w"> </span><span class="m">12</span><span class="w"> </span>-s<span class="w"> </span>./data
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdemss<span class="w"> </span>--dir<span class="w"> </span>./data
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>其中，</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> 记录该行命令的运行时间，输出到 <code class="docutils literal notranslate"><span class="pre">%j.err</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zdem2jpg</span> <span class="pre">--dir=./data</span></code> 生成jpg, 详解见 <a class="reference internal" href="../../cmd/zdem2jpg/#zdem2jpg"><span class="std std-ref">zdem2jpg</span></a> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zdem</span> <span class="pre">-j</span> <span class="pre">12</span> <span class="pre">-s</span> <span class="pre">./data</span></code> 计算应力应变, 详解见 <a class="reference internal" href="../../cmd/zdem/#zdem"><span class="std std-ref">zdem</span></a> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zdemss</span> <span class="pre">--dir</span> <span class="pre">./data</span></code> 绘制应力应变， 详解见 <a class="reference internal" href="../../cmd/zdemss/#zdemss"><span class="std std-ref">zdemss</span></a> 。</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>本示例采用 Slurm 作业调度系统提交计算。 注意 <code class="docutils literal notranslate"><span class="pre">job.sh</span></code> 的行结尾符需采用 Unix 的 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 格式，否则将产生如下错误信息：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch:<span class="w"> </span>error:<span class="w"> </span>Batch<span class="w"> </span>script<span class="w"> </span>contains<span class="w"> </span>DOS<span class="w"> </span>line<span class="w"> </span>breaks<span class="w"> </span><span class="o">(</span><span class="se">\r\n</span><span class="o">)</span>
+sbatch:<span class="w"> </span>error:<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>expected<span class="w"> </span>UNIX<span class="w"> </span>line<span class="w"> </span>breaks<span class="w"> </span><span class="o">(</span><span class="se">\n</span><span class="o">)</span>.
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">job.sh</span></code> 中命令解析 及 如何修改 <code class="docutils literal notranslate"><span class="pre">job.sh</span></code> 的行结尾符 见 <a class="reference external" href="https://www.bilibili.com/video/BV1m7411M7rz?p=1">第00课 并行超算云上使用ZDEM</a> 的 10:15</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/strainstress300.jpg"><img alt="../../_images/strainstress300.jpg" src="../../_images/strainstress300.jpg" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/all0000100000.jpg"><img alt="../../_images/all0000100000.jpg" src="../../_images/all0000100000.jpg" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 6.1 </span><span class="caption-text"><strong>处理结果示意图。从上到下，分别为：变形图，体积应变，变形应变，平均应力，最大剪切应力。</strong></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../set/" class="btn btn-neutral float-left" title="6.1 配置环境变量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../add_del/" class="btn btn-neutral float-right" title="6.3 有沉积剥蚀" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2025, ZDEM.
+      <span class="lastupdated">最后更新于 2025年04月12日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

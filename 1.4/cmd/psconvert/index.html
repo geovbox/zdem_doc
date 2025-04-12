@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>6.14 psconvert &mdash; VBOX手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/cmd/psconvert.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="6.15 range" href="../range/" />
+    <link rel="prev" title="6.13 prop" href="../prop/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> VBOX手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/1.4/"  selected > 1.4 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 Windows下使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会VBOX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../struct/">5 构造模拟</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">6 命令参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ball/">6.1 ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bond/">6.2 bond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">6.3 convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyc/">6.4 cyc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../del/">6.5 del</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp/">6.6 exp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fix/">6.7 fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../free/">6.8 free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gen/">6.9 gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gline/">6.10 gline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imple/">6.11 imple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../load/">6.12 load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prop/">6.13 prop</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.14 psconvert</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../range/">6.15 range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restore/">6.16 restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">6.17 set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/">6.18 start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wall/">6.19 wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vbox/">6.20 vbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vbox2jpg/">6.21 vbox2jpg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">7 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">8 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">9 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">10 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">11 致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vbox1.4_license/">12 使用协议</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/vbox_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> VBOX官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">VBOX手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../"><span class="section-number">6 </span>命令参考</a> &raquo;</li>
+        
+      <li><span class="section-number">6.14 </span>psconvert</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/cmd/psconvert.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../range/" class="btn btn-neutral float-right" title="6.15 range" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../prop/" class="btn btn-neutral float-left" title="6.13 prop" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="psconvert">
+<span id="index-0"></span><h1><span class="section-number">6.14 </span>psconvert<a class="headerlink" href="#psconvert" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">简介</dt>
+<dd class="field-odd"><p>将 VBOX 生成的 PS/EPS 文件转换为其他图片格式</p>
+</dd>
+</dl>
+<p>该模块通过调用 GhostScript 将 PS/EPS 文件转换为其他图片格式，包括BMP、EPS、JPEG、PDF、PNG、PPM、SVG、TIFF 格式。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">psfiles</span></code></dt><dd><p>要转换格式的 PS 文件名</p>
+<p>默认情况下，转换后的文件与转换前的文件有相同的文件名，文件后缀由文件格式决定。</p>
+<p>如下命令会将PS文件转换成JPG格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert test.ps
+gmt psconvert test1.ps test2.ps map*.ps
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt><dd><p>对输出的图片做裁边</p>
+<p>默认情况下，转换得到的图片的大小由PS文件的纸张尺寸决定。通常画图的时候是不会把一张A4纸画满的，所以在图片周围就会出现多余的白色部分。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项会对PS文件进行裁剪，仅保留其中有绘图的部分:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -A test.ps
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;outdir&gt;</span></code></dt><dd><p>设置输出目录</p>
+<p>默认情况下，会在PS文件同一目录中生成其他图片文件，使用 <code class="docutils literal notranslate"><span class="pre">-D&lt;outdir&gt;</span></code> 选项可以指定输出目录， <code class="docutils literal notranslate"><span class="pre">-D.</span></code> 表示在当前目录输出。需注意，输出目录必须已存在，否则会报错。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;dpi&gt;</span></code></dt><dd><p>设置图片精度</p>
+<p>值越大，图片越清晰，文件也越大。PDF格式默认值为720，其他格式默认值为300，单位为dpi。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tj -E600 test.ps
+</pre></div>
+</div>
+<p>说明：</p>
+<ol class="arabic simple">
+<li><p>EPS是矢量图片格式，-E选项对其无效</p></li>
+<li><p>PDF是矢量图片格式，-E选项对其中的pattern和字体有效</p></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Tb|e|E|f|F|j|g|G|m|s|t</span></code></dt><dd><p>指定要转换的图片格式。可以接如下值：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> ：BMP；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">e</span></code> ：EPS；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> ：带有PageSize命令的EPS；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> ：PDF；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> ：多页PDF；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> ：JPEG（默认值）；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code> ：PNG；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> ：透明PNG；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> ：PPM；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> ：SVG；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> ：TIFF；</p></li>
+</ul>
+<p>说明：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code> 和 <code class="docutils literal notranslate"><span class="pre">G</span></code> 的区别在于前者背景色为白色，后者背景色为透明；</p></li>
+<li><p>对于 <code class="docutils literal notranslate"><span class="pre">bjgt</span></code> 格式可以在其后加 <code class="docutils literal notranslate"><span class="pre">-</span></code> 将PS文件转换为灰度图；</p></li>
+<li><p>EPS格式可以与其他格式合在一起使用。比如 <code class="docutils literal notranslate"><span class="pre">-Tef</span></code> 会同时生成EPS和PDF文件。除此之外，该命令一次只能转换一种格式，比如 <code class="docutils literal notranslate"><span class="pre">-Tbf</span></code> 则只会生成PDF格式（即以 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项中的最后一个格式为准）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-TF</span></code> 会将多个PS/PDF文件转换并合并成一个多页的PDF文件，需要使用
+<code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项指定输出的文件名</p></li>
+</ol>
+<p>转换为PDF格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tf test.ps
+</pre></div>
+</div>
+<p>转换为JPG格式的灰度图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tj test.ps
+</pre></div>
+</div>
+<p>利用一堆PS文件生成一个多页PDF:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -TF -Fout.pdf *.ps
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 详解见 <a class="reference external" href="https://docs.gmt-china.org/6.0.0/module/psconvert">https://docs.gmt-china.org/6.0.0/module/psconvert</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../range/" class="btn btn-neutral float-right" title="6.15 range" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../prop/" class="btn btn-neutral float-left" title="6.13 prop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014 - 2021, VBOX官网.
+      <span class="lastupdated">
+        最后更新于 2021年04月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

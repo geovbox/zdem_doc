@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.3 有沉积剥蚀 &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/strainstress/add_del/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="6.4 绘制最大主应力矢量" href="../plot_sigma1/" />
+    <link rel="prev" title="6.2 无沉积剥蚀" href="../no_add_del/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../struct/">5 构造模拟</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">6 应力应变</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../set/">6.1 配置环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../no_add_del/">6.2 无沉积剥蚀</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3 有沉积剥蚀</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-del-process">6.3.1 流程解析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ex-strain-stress">6.3.2 实例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plot_sigma1/">6.4 绘制最大主应力矢量</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">图库</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../"><span class="section-number">6 </span>应力应变</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.3 </span>有沉积剥蚀</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/strainstress/add_del/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../no_add_del/" class="btn btn-neutral float-left" title="6.2 无沉积剥蚀" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../plot_sigma1/" class="btn btn-neutral float-right" title="6.4 绘制最大主应力矢量" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="add-del">
+<span id="id1"></span><h1><span class="section-number">6.3 </span>有沉积剥蚀<a class="headerlink" href="#add-del" title="Link to this heading">¶</a></h1>
+<section id="add-del-process">
+<span id="id2"></span><h2><span class="section-number">6.3.1 </span>流程解析<a class="headerlink" href="#add-del-process" title="Link to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此节仅为了帮助用户理解应力应变计算过程，用户仍需要 Slurm 作业调度系统( <a class="reference internal" href="../../clac/#slurm"><span class="std std-ref">Slurm 作业调度系统</span></a> )提交计算，具体方法见  <a class="reference internal" href="#ex-strain-stress"><span class="std std-ref">实例</span></a> 。</p>
+</div>
+<p>初始目录结构：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">push_add_del.py</span></code> 见  <a class="reference internal" href="#ex-strain-stress"><span class="std std-ref">实例</span></a></p>
+<p>如果有沉积剥蚀过程，需要仔细选择沉积剥蚀的临界文件，详细的流程如下：</p>
+<p><strong>所有操作均在 ex_strain_stress 目录下操作</strong></p>
+<ol class="arabic">
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">zdem</span> <span class="pre">push_add_del.py</span></code></dt><dd><p>计算完成，将生成 <code class="docutils literal notranslate"><span class="pre">./data</span></code> 文件夹。目录结构如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">zdem2jpg</span> <span class="pre">--dir=./data</span></code></dt><dd><p>生成jpg，生成计算过程图．注意：这里，只需指定 <code class="docutils literal notranslate"><span class="pre">--dir</span></code> ，不加其它任何参数．目录结构如下</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.jpg
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>新建datass文件夹，根据jpg挑选需要计算应力应变的.dat文件，复制到datass文件夹中。</dt><dd><p>这里，挑选原则如下：</p>
+<ul>
+<li><dl>
+<dt>刚沉积完，并给定颜色，准备挤压的初始模型，必须。all_0000006000_ini.dat</dt><dd><figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/all_0000006000_ini.jpg"><img alt="../../_images/all_0000006000_ini.jpg" src="../../_images/all_0000006000_ini.jpg" style="width: 100%;" /></a>
+</figure>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>刚剥蚀完，准备挤压的模型，必须。all_0000036000_ini.dat</dt><dd><figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/all_0000036000_ini.jpg"><img alt="../../_images/all_0000036000_ini.jpg" src="../../_images/all_0000036000_ini.jpg" style="width: 100%;" /></a>
+</figure>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>沉积稳定，准备挤压前的模型。all_0000058000_ini.dat</dt><dd><figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/all_0000058000_ini.jpg"><img alt="../../_images/all_0000058000_ini.jpg" src="../../_images/all_0000058000_ini.jpg" style="width: 100%;" /></a>
+</figure>
+</dd>
+</dl>
+</li>
+<li><p>沉积过程不要，其它的可酌情选取。</p>
+<blockquote>
+<div><p>目录结构如下</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.jpg
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>datass
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000026000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000036000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000056000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000078000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000108000.dat
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">zdem</span> <span class="pre">--xmove</span> <span class="pre">-1000.0</span> <span class="pre">--ymove</span> <span class="pre">-1000.0</span> <span class="pre">--addball</span> <span class="pre">--delball</span> <span class="pre">-s</span> <span class="pre">./datass</span></code></dt><dd><p>计算应力和应变。基于步骤2，我们知道 <code class="docutils literal notranslate"><span class="pre">--xmove</span> <span class="pre">--ymove</span></code> 应该设置为 <code class="docutils literal notranslate"><span class="pre">-1000.0</span></code> ， 并且有沉积 <code class="docutils literal notranslate"><span class="pre">--addball</span></code> 和剥蚀 <code class="docutils literal notranslate"><span class="pre">--delball</span></code> 过程。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><code class="docutils literal notranslate"><span class="pre">zdem</span></code> 命令详解见 <a class="reference internal" href="../../cmd/zdem/#zdem"><span class="std std-ref">zdem</span></a> ，或者输入 <code class="docutils literal notranslate"><span class="pre">zdem</span> <span class="pre">-h</span></code> 查看帮助文档。</p>
+</div>
+<p>计算完成，将生成 <code class="docutils literal notranslate"><span class="pre">./datass/ss/data/*.out</span></code> ，供GMT绘图用。目录结构如下</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.jpg
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>datass
+<span class="w">        </span><span class="p">|</span>--ss
+<span class="w">           </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">               </span><span class="p">|</span>--<span class="w"> </span>*.out
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000026000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000036000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000056000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000078000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000108000.dat
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zdemss</span> <span class="pre">--dir</span> <span class="pre">./datass</span>&#160; <span class="pre">--addball</span> <span class="pre">ON</span> <span class="pre">--delball</span> <span class="pre">ON</span> <span class="pre">--xmax</span> <span class="pre">40.0</span> <span class="pre">--ymax</span> <span class="pre">10.0</span> <span class="pre">--maxstress</span> <span class="pre">250.0</span></code>
+使用GMT绘制应力应变。<code class="docutils literal notranslate"><span class="pre">zdemss</span></code> 将会读取 <code class="docutils literal notranslate"><span class="pre">zdem</span></code> 生成的应力应变数据 <code class="docutils literal notranslate"><span class="pre">./datass/ss/data</span></code>，生成应力应变云图到 <code class="docutils literal notranslate"><span class="pre">./datass/ss/*jpg</span></code> 。设置x轴最大值 40.0 km，设置y轴最大值 10.0 km，设置颜色条应力最大值250 MPa。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><code class="docutils literal notranslate"><span class="pre">zdemss</span></code> 命令详解见 <a class="reference internal" href="../../cmd/zdemss/#zdemss"><span class="std std-ref">zdemss</span></a> ，或者输入 <code class="docutils literal notranslate"><span class="pre">zdemss</span> <span class="pre">-h</span></code> 查看帮助文档。</p>
+</div>
+<p>运行完成之后，目录结构：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>datass
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>ss
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">                </span><span class="p">|</span>--<span class="w"> </span>*.out
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>ps
+<span class="w">               </span><span class="p">|</span>--<span class="w"> </span>*.ps
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>tmp
+<span class="w">                </span><span class="p">|</span>--<span class="w"> </span>*.grd
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>*.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000026000.dat
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/data/*.out</span></code> <a class="reference internal" href="../../cmd/zdem/#zdem"><span class="std std-ref">zdem</span></a> 输出的颗粒位置和(假)应力的原始数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/data2ps/*.out</span></code>   (真)应力应变数据，用于绘制应力应变图(ps)，用户可以用于定量分析</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/ps/*.ps</span></code>  <strong>输出的应力应变图(矢量图)</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/Tmp/*.grd</span></code> 计算应力应变产生的中间数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/*.jpg</span></code> <strong>输出的应力应变图(位图)</strong></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ex-strain-stress">
+<span id="id3"></span><h2><span class="section-number">6.3.2 </span>实例<a class="headerlink" href="#ex-strain-stress" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">jobs1.sh</span></code> 提交，将完成 <a class="reference internal" href="#add-del-process"><span class="std std-ref">流程解析</span></a> 1和2</p></li>
+<li><p><strong>此步最关键!</strong> 新建datass文件夹，将需要处理的dat复制到datass文件夹，完成 <a class="reference internal" href="#add-del-process"><span class="std std-ref">流程解析</span></a> 3。完成此步后，目录结构：</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>job1.sh
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>job2.sh
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000001000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000006000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000016000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000026000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000036000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000036000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000046000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000056000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000056000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000056100.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000057900.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000068000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000078000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000088000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000098000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>datass
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000026000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000036000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000056000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000078000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000108000.dat
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">jobs2.sh</span></code> 提交，将完成 <a class="reference internal" href="#add-del-process"><span class="std std-ref">流程解析</span></a> 4和5。等待计算完成，生成的应力应变图见 <code class="docutils literal notranslate"><span class="pre">./datass/ss/*jpg</span></code> 。</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/strainstressShear250.png"><img alt="../../_images/strainstressShear250.png" src="../../_images/strainstressShear250.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/all0000108000.jpg"><img alt="../../_images/all0000108000.jpg" src="../../_images/all0000108000.jpg" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 6.2 </span><span class="caption-text"><strong>处理结果示意图</strong></span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> <code class="docutils literal notranslate"><span class="pre">job2.sh</span></code> <code class="docutils literal notranslate"><span class="pre">push_add_del.py</span></code> 文件内容：</p>
+<p><code class="docutils literal notranslate"><span class="pre">job1.sh</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=core12</span>
+<span class="c1">#SBATCH --partition=v6_384</span>
+<span class="c1">#SBATCH -n 1</span>
+<span class="c1">#SBATCH -c 12</span>
+<span class="c1">#SBATCH -t 1440</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_zdem.sh
+module<span class="w"> </span>load<span class="w"> </span>zdem2.0
+
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_GMT.sh
+module<span class="w"> </span>load<span class="w"> </span>GMT_5.4.5
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/public1/home/sc80502/bin:<span class="nv">$PATH</span>
+
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem<span class="w"> </span>push_add_del.py
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem2jpg<span class="w"> </span>--dir<span class="o">=</span>./data
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">job2.sh</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=core12</span>
+<span class="c1">#SBATCH --partition=v6_384</span>
+<span class="c1">#SBATCH -n 1</span>
+<span class="c1">#SBATCH -c 12</span>
+<span class="c1">#SBATCH -t 1440</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_zdem.sh
+module<span class="w"> </span>load<span class="w"> </span>zdem2.0
+
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_GMT.sh
+module<span class="w"> </span>load<span class="w"> </span>GMT_5.4.5
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/public1/home/sc80502/bin:<span class="nv">$PATH</span>
+
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem<span class="w"> </span>--xmove<span class="w"> </span>-1000.0<span class="w"> </span>--ymove<span class="w"> </span>-1000.0<span class="w"> </span>-j<span class="w"> </span><span class="m">12</span><span class="w"> </span>--addball<span class="w"> </span>--delball<span class="w"> </span>-s<span class="w"> </span>./datass
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdemss<span class="w"> </span>--dir<span class="w"> </span>./datass<span class="w"> </span>--xmax<span class="w"> </span><span class="m">40</span>.0<span class="w"> </span>--ymax<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span>--maxstress<span class="w"> </span><span class="m">250</span>.0<span class="w"> </span>--addball<span class="w"> </span>ON<span class="w"> </span>--delball<span class="w"> </span>ON
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">push_add_del.py</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
+<span class="c1"># title: 一个实例学会VBOX 加入剥蚀 沉积 演示应力应变处理过程</span>
+<span class="c1"># date: 2020-06-28</span>
+<span class="c1"># authors: 李长圣</span>
+<span class="c1"># E-mail: sheng0619@163.com</span>
+<span class="c1"># www.geovbox.com</span>
+<span class="c1">#######################################</span>
+<span class="c1">#程序初始化</span>
+START
+<span class="c1">#颗粒设为球，计算颗粒体积用4/3*pi*r^3计算</span>
+<span class="nb">set</span><span class="w"> </span>disk<span class="w"> </span>off
+<span class="c1">#设置研究范围 </span>
+BOX<span class="w"> </span>left<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>right<span class="w"> </span><span class="m">42000</span>.0<span class="w"> </span>bottom<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>height<span class="w"> </span><span class="m">12000</span>.0<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
+<span class="c1">#设置挡板墙，这里模型采用hertz接触模型，挡板墙的kn ks无效，计算时取颗粒的参数</span>
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span>,<span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">41000</span>.0<span class="w"> </span>,<span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>black
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span>,<span class="w">  </span><span class="m">10000</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span>,<span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>blue
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">2</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">41000</span>.0<span class="w"> </span>,<span class="w">   </span><span class="m">1000</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">41000</span>.0<span class="w"> </span>,<span class="w">  </span><span class="m">10000</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>red
+<span class="c1">#在矩形范围内生成颗粒</span>
+GEN<span class="w"> </span>NUM<span class="w"> </span><span class="m">100000</span>.0<span class="w"> </span>rad<span class="w"> </span>discrete<span class="w"> </span><span class="m">60</span>.0<span class="w"> </span><span class="m">80</span>.0,<span class="w">  </span>x<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">1000</span>.0,<span class="w"> </span><span class="m">41000</span>.0<span class="o">)</span>,<span class="w"> </span>y<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">1000</span>.0,<span class="w"> </span><span class="m">10000</span>.0<span class="o">)</span>,<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w"> </span>GROUP<span class="w"> </span>ball_rand
+<span class="c1">#设置颗粒的微观参数</span>
+PROP<span class="w"> </span>DENSITY<span class="w"> </span><span class="m">2</span>.5e3,<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0,<span class="w"> </span>shear<span class="w"> </span><span class="m">2</span>.9e9,<span class="w"> </span>poiss<span class="w"> </span><span class="m">0</span>.2,<span class="w"> </span>damp<span class="w"> </span><span class="m">0</span>.4,<span class="w"> </span>hertz
+<span class="c1">#设置时间步及重力加速度</span>
+SET<span class="w">  </span>DT<span class="w"> </span>5e-2,<span class="w">  </span>GRAVITY<span class="w">  </span><span class="m">0</span>.0,<span class="w">  </span>-10.0
+<span class="c1">#设置每1000步保存一次ps格式的计算结果</span>
+SET<span class="w">  </span>ps<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#设置每1000步保存一次dat格式的计算结果</span>
+SET<span class="w">  </span>print<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#沉积，计算5000步</span>
+CYC<span class="w"> </span><span class="m">5000</span>
+<span class="c1">#删除4000米以上的颗粒</span>
+DEL<span class="w"> </span>RANGE<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w"> </span><span class="m">999000</span>.0
+<span class="c1">#平衡，计算1000步</span>
+CYC<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#输出包含颗粒的[x y r]信息的初始模型 init_xyr.dat</span>
+EXP<span class="w"> </span>init_xyr.dat
+
+<span class="c1">#设置bond粘结，使颗粒具有粘聚力</span>
+PROP<span class="w"> </span>ebmod<span class="w"> </span>2e8<span class="w"> </span>gbmod<span class="w"> </span>2e8<span class="w">  </span>tstrength<span class="w"> </span>2e7<span class="w"> </span>sstrength<span class="w"> </span>4e7<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>
+<span class="c1">#给地层赋上颜色</span>
+PROP<span class="w"> </span>COLOR<span class="w"> </span>lg<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1000</span>.0<span class="w">  </span><span class="m">1500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>green<span class="w">       </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1500</span>.0<span class="w">  </span><span class="m">2000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>yellow<span class="w">      </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">2000</span>.0<span class="w">  </span><span class="m">2500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>red<span class="w">         </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">2500</span>.0<span class="w">  </span><span class="m">3000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w">       </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">3000</span>.0<span class="w">  </span><span class="m">3500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>mg<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">3500</span>.0<span class="w">  </span><span class="m">4000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>blue<span class="w">        </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w">  </span><span class="m">4500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>gb<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">4500</span>.0<span class="w">  </span><span class="m">5000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>violet<span class="w">      </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">5000</span>.0<span class="w">  </span><span class="m">5500</span>.0
+
+<span class="c1">#设置挡板墙摩擦系数</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">0</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">2</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xv<span class="w"> </span><span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进3000.0，每挤压2000.0保存一次计算结果</span>
+IMPLE<span class="w"> </span>wall<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xmove<span class="w"> </span><span class="m">3000</span>.0<span class="w"> </span>save<span class="w"> </span><span class="m">2000</span>.0<span class="w"> </span>print<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>ps<span class="w"> </span><span class="m">1000</span>.0
+
+<span class="c1">##################################### 剥蚀 #####################################</span>
+<span class="c1"># 删除4000米以上的颗粒</span>
+DEL<span class="w"> </span>RANGE<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w"> </span><span class="m">999000</span>.0
+<span class="c1">################################################################################</span>
+
+<span class="c1">#设置墙的挤压量x方向推进3000.0，每挤压2000.0保存一次计算结果</span>
+IMPLE<span class="w"> </span>wall<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xmove<span class="w"> </span><span class="m">2000</span>.0<span class="w"> </span>save<span class="w"> </span><span class="m">2000</span>.0<span class="w"> </span>print<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>ps<span class="w"> </span><span class="m">1000</span>.0
+
+<span class="c1">##################################### 沉积 #####################################</span>
+<span class="c1">#停止挤压，墙的x方向速度改为0.0</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xv<span class="w"> </span><span class="m">0</span>.0
+<span class="c1">#沉积。在挤压前端12000～40000.0上方，沉积约 1 km 颗粒。y的范围需要设置为4000-6000。</span>
+<span class="c1">#经验：颗粒充填满2km范围，沉积之后的地层厚度约为1km</span>
+GEN<span class="w"> </span>NUM<span class="w"> </span><span class="m">100000</span>.0<span class="w"> </span>rad<span class="w"> </span>discrete<span class="w"> </span><span class="m">60</span>.0<span class="w"> </span><span class="m">80</span>.0,<span class="w">  </span>x<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10000</span>.0,<span class="w"> </span><span class="m">41000</span>.0<span class="o">)</span>,<span class="w"> </span>y<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">4000</span>.0,<span class="w"> </span><span class="m">6000</span>.0<span class="o">)</span>,<span class="w"> </span>COLOR<span class="w"> </span>gb<span class="w"> </span>GROUP<span class="w"> </span>sed
+<span class="c1">#设置沉积颗粒 GROUP=sed 的微观参数</span>
+PROP<span class="w"> </span>DENSITY<span class="w"> </span><span class="m">2</span>.5e3,<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3,<span class="w"> </span>shear<span class="w"> </span><span class="m">2</span>.9e9,<span class="w"> </span>poiss<span class="w"> </span><span class="m">0</span>.2,<span class="w"> </span>damp<span class="w"> </span><span class="m">0</span>.4,<span class="w"> </span>hertz<span class="w"> </span>range<span class="w"> </span>GROUP<span class="w"> </span>sed
+<span class="c1">#每 100 步输出一次计算结果</span>
+SET<span class="w"> </span>print<span class="w"> </span><span class="m">100</span><span class="w"> </span>
+<span class="c1">#计算2000步，让颗粒沉积下来</span>
+CYC<span class="w"> </span><span class="m">2000</span>
+<span class="c1">################################################################################</span>
+
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xv<span class="w"> </span><span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进3000.0，每挤压2000.0保存一次计算结果</span>
+IMPLE<span class="w"> </span>wall<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xmove<span class="w"> </span><span class="m">5000</span>.0<span class="w"> </span>save<span class="w"> </span><span class="m">5000</span>.0<span class="w"> </span>print<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>ps<span class="w"> </span><span class="m">1000</span>.0
+
+<span class="c1">#计算停止</span>
+STOP
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../no_add_del/" class="btn btn-neutral float-left" title="6.2 无沉积剥蚀" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../plot_sigma1/" class="btn btn-neutral float-right" title="6.4 绘制最大主应力矢量" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2025, ZDEM.
+      <span class="lastupdated">最后更新于 2025年04月12日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>7.13 prop &mdash; ZDEM手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/cmd/prop.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="7.14 range" href="../range/" />
+    <link rel="prev" title="7.12 load" href="../load/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/2.0/" > 2.0 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">7 命令参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ball/">7.1 ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bond/">7.2 bond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">7.3 convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyc/">7.4 cyc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../del/">7.5 del</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp/">7.6 exp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fix/">7.7 fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../free/">7.8 free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gen/">7.9 gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gline/">7.10 gline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imple/">7.11 imple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../load/">7.12 load</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.13 prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../range/">7.14 range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../restore/">7.15 restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">7.16 set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/">7.17 start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wall/">7.18 wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zdem/">7.19 zdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zdemss/">7.20 zdemss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zdem2jpg/">7.21 zdem2jpg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">12 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">13 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">14 致谢</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.0/zdem_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../"><span class="section-number">7 </span>命令参考</a> &raquo;</li>
+        
+      <li><span class="section-number">7.13 </span>prop</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/cmd/prop.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../range/" class="btn btn-neutral float-right" title="7.14 range" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../load/" class="btn btn-neutral float-left" title="7.12 load" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="prop">
+<span id="index-0"></span><h1><span class="section-number">7.13 </span>prop<a class="headerlink" href="#prop" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">说明</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pro[p]</span></code> 设置材料参数</p>
+</dd>
+<dt class="field-even">使用方法</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PROP DENSITY &lt;float&gt;, FRIC &lt;float&gt;, SHEAR &lt;float&gt;, POISS &lt;float&gt;, DAMP &lt;float&gt;, HERTZ <span class="o">[</span>RANGE ...<span class="o">]</span>
+PROP ebmod &lt;float&gt;, gbmod &lt;float&gt;, tstrength &lt;float&gt;, sstrength &lt;float&gt;, <span class="o">[</span>tolerate <span class="m">10</span>.0<span class="o">]</span> <span class="o">[</span>fric &lt;float&gt;<span class="o">]</span> <span class="o">[</span>RANGE ...<span class="o">]</span>
+PROP DENSITY &lt;float&gt;, FRIC &lt;float&gt;, KN &lt;float&gt;, KS &lt;float&gt; <span class="o">[</span>tolerate rext <span class="m">0</span>.8<span class="o">]</span> <span class="o">[</span>RANGE ...<span class="o">]</span>
+PROP n_bond &lt;float&gt; s_bond &lt;float&gt; <span class="o">[</span>RANGE ...<span class="o">]</span>
+</pre></div>
+</div>
+<p>其中， <code class="docutils literal notranslate"><span class="pre">tolerate</span></code> 默认值为1e-6，<code class="docutils literal notranslate"><span class="pre">rext</span></code> 默认值为1.0。 <code class="docutils literal notranslate"><span class="pre">rext</span></code> 可与 <code class="docutils literal notranslate"><span class="pre">gline</span></code> 的 cratio，联合使用，设置 <code class="docutils literal notranslate"><span class="pre">rext=cratio</span></code>，可以避免0-1-2-3-4…线性叠合的颗粒，出现0-2跨颗粒1产生粘结。</p>
+<dl class="field-list simple">
+<dt class="field-odd">实例</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model 1. ref. [Morgan 2015 JGR] 和 [李长圣博士论文,2019]</span>
+<span class="c1"># 设置材料参数 密度DEM，摩擦系数FRIC，剪切模量shear，泊松比poiss，阻尼DAMP</span>
+PROP DENSITY <span class="m">2</span>.5e3, fric <span class="m">0</span>.3, shear <span class="m">2</span>.9e9, poiss <span class="m">0</span>.2, damp <span class="m">0</span>.4, HERTZ
+<span class="c1">#设置 range x 1.0 10.0 y 1.0 10.0 中颗粒粘结在一起，使颗粒具有粘聚力</span>
+PROP ebmod 2e8 gbmod 2e8  tstrength 2e7 sstrength 4e7 fric <span class="m">0</span>.3 range x <span class="m">1</span>.0 <span class="m">10</span>.0 y <span class="m">1</span>.0 <span class="m">10</span>.0
+<span class="c1">#</span>
+<span class="c1"># Model 2. ref. [PFC2D 4.0 手册] 和 [李长圣博士论文,2019]</span>
+<span class="c1"># 设置所有颗粒的材料参数 密度DEM，摩擦系数FRIC，法向刚度KN，切向刚度KS，阻尼DAMP</span>
+PROP DENSITY <span class="m">2</span>.5e3, KN 1e4, KS 1e4, FRIC <span class="m">0</span>.3, DAMP <span class="m">0</span>.4
+<span class="c1">#设置所有颗粒粘结在一起，使颗粒具有粘聚力</span>
+PROP n_bond <span class="m">1</span>.0e4 s_bond <span class="m">1</span>.0e4
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#设置( |OA| - (rO+rA)| ) &lt;= tolerate的颗粒粘结在一起，使颗粒具有粘聚力 ,使得更多颗粒粘结到一起</span>
+PROP n_bond <span class="m">1</span>.0e4 s_bond <span class="m">1</span>.0e4 tolerate <span class="m">10</span>.0
+<span class="c1">#</span>
+<span class="c1">#设置( |OA| - (rO+rA)*rext| ) &lt;= tolerate的颗粒粘结在一起，使颗粒具有粘聚力 。这里，tolerate取默认值1e-6</span>
+PROP n_bond <span class="m">1</span>.0e4 s_bond <span class="m">1</span>.0e4 tolerate rext <span class="m">0</span>.8
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../range/" class="btn btn-neutral float-right" title="7.14 range" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../load/" class="btn btn-neutral float-left" title="7.12 load" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2019 - 2021, ZDEM.
+      <span class="lastupdated">
+        最后更新于 2021年06月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

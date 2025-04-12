@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.3 先存断层设置 &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/struct/ex4_pre_struct/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="5.4 滑脱层" href="../ex5_detachment/" />
+    <link rel="prev" title="5.2 同构造沉积" href="../ex3_syn_sedimentaion/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 构造模拟</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ex2_syn_erosion/">5.1 同构造剥蚀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex3_syn_sedimentaion/">5.2 同构造沉积</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3 先存断层设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex5_detachment/">5.4 滑脱层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex6_palaeohigh/">5.5 古隆起</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex7_extens_rigid/">5.6 刚性基底 伸展构造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex8_dem_am/">5.7 与物理模拟对比实验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex9_extens_ductile_patent/">5.8 韧性基底 伸展构造</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">图库</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../"><span class="section-number">5 </span>构造模拟</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.3 </span>先存断层设置</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/struct/ex4_pre_struct/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../ex3_syn_sedimentaion/" class="btn btn-neutral float-left" title="5.2 同构造沉积" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ex5_detachment/" class="btn btn-neutral float-right" title="5.4 滑脱层" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">5.3 </span>先存断层设置<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<p>这里是一个 <code class="docutils literal notranslate"><span class="pre">断层</span></code> 设置实例。</p>
+<p><code class="docutils literal notranslate"><span class="pre">pre_struct.py</span></code> 中完整脚本命令如下</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
+<span class="c1"># title: 断层设置方法</span>
+<span class="c1"># date: 2019-01-20</span>
+<span class="c1"># authors: 李长圣</span>
+<span class="c1"># E-mail: sheng0619@163.com</span>
+<span class="c1"># more info, see www.geovbox.com</span>
+<span class="c1">#######################################</span>
+<span class="c1">#程序初始化</span>
+START
+<span class="c1">#关闭圆盘，颗粒设为球，计算颗粒体积用4/3*pi*r^3计算</span>
+<span class="nb">set</span><span class="w"> </span>disk<span class="w"> </span>off
+<span class="c1">#设置研究范围 </span>
+BOX<span class="w"> </span>left<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>right<span class="w"> </span><span class="m">41000</span>.0<span class="w"> </span>bottom<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>height<span class="w"> </span><span class="m">11000</span>.0<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
+<span class="c1">#设置挡板墙，这里模型采用hertz接触模型，挡板墙的kn ks无效，计算时取颗粒的参数</span>
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">40000</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>black
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">     </span><span class="m">10</span>.0<span class="w"> </span>,<span class="w">  </span><span class="m">10000</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">     </span><span class="m">10</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>blue
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">2</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">40000</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">40000</span>.0<span class="w"> </span>,<span class="w">  </span><span class="m">10000</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>red
+<span class="c1">#在矩形范围内生成颗粒</span>
+GEN<span class="w"> </span>NUM<span class="w"> </span><span class="m">100000</span>.0<span class="w"> </span>rad<span class="w"> </span>discrete<span class="w"> </span><span class="m">60</span>.0<span class="w"> </span><span class="m">80</span>.0,<span class="w">  </span>x<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10</span>.0,<span class="w"> </span><span class="m">40000</span>.0<span class="o">)</span>,<span class="w"> </span>y<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10</span>.0,<span class="w"> </span><span class="m">10000</span>.0<span class="o">)</span>,<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w"> </span>GROUP<span class="w"> </span>ball_rand
+<span class="c1">#设置颗粒的微观参数</span>
+PROP<span class="w"> </span>DENSITY<span class="w"> </span><span class="m">2</span>.5e3,<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0,<span class="w"> </span>shear<span class="w"> </span><span class="m">2</span>.9e9,<span class="w"> </span>poiss<span class="w"> </span><span class="m">0</span>.2,<span class="w"> </span>damp<span class="w"> </span><span class="m">0</span>.4,<span class="w"> </span>hertz
+<span class="c1">#设置时间步及重力加速度</span>
+SET<span class="w">  </span>DT<span class="w"> </span>5e-2,<span class="w">  </span>GRAVITY<span class="w">  </span><span class="m">0</span>.0,<span class="w">  </span>-9.8<span class="w"> </span>
+<span class="c1">#设置每1000步保存一次dat格式的计算结果</span>
+SET<span class="w">  </span>print<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#沉积，计算5000步</span>
+CYC<span class="w"> </span><span class="m">5000</span>
+<span class="c1">#删除4000米以上的颗粒</span>
+DEL<span class="w"> </span>RANGE<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w"> </span><span class="m">999000</span>.0
+<span class="c1">#平衡，计算1000步</span>
+CYC<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#输出包含颗粒的[x y r]信息的初始模型 init_xyr.dat</span>
+EXP<span class="w"> </span>init_xyr.dat
+
+<span class="c1">#设置bond粘结，使颗粒具有粘聚力</span>
+PROP<span class="w"> </span>ebmod<span class="w"> </span>2e8<span class="w"> </span>gbmod<span class="w"> </span>2e8<span class="w">  </span>tstrength<span class="w"> </span>2e7<span class="w"> </span>sstrength<span class="w"> </span>4e7<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>
+<span class="c1">#给地层赋上颜色</span>
+PROP<span class="w"> </span>COLOR<span class="w"> </span>lg<span class="w">          </span>range<span class="w"> </span>y<span class="w">    </span><span class="m">0</span>.0<span class="w">   </span><span class="m">500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>green<span class="w">       </span>range<span class="w"> </span>y<span class="w">  </span><span class="m">500</span>.0<span class="w">  </span><span class="m">1000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>yellow<span class="w">      </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1000</span>.0<span class="w">  </span><span class="m">1500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>white<span class="w">       </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1500</span>.0<span class="w">  </span><span class="m">2000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w">       </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">2000</span>.0<span class="w">  </span><span class="m">2500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>mg<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">2500</span>.0<span class="w">  </span><span class="m">3000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>blue<span class="w">        </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">3000</span>.0<span class="w">  </span><span class="m">3500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>gb<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">3500</span>.0<span class="w">  </span><span class="m">4000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>violet<span class="w">      </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w">  </span><span class="m">4500</span>.0
+
+<span class="c1">################################### 断层设置 ####################################</span>
+<span class="c1">#用range P4 (point1) (point2) (point3) (point4) 命令，逆时针指定四个点</span>
+<span class="c1">#四个点组成的多边形，设置为组 struct1</span>
+PROP<span class="w"> </span>GROUP<span class="w"> </span>struct1<span class="w"> </span>RANGE<span class="w"> </span>P4<span class="w"> </span><span class="o">(</span><span class="m">4000</span>.0,<span class="w"> </span><span class="m">0</span>.0<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">4500</span>.0,<span class="w"> </span><span class="m">0</span>.0<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">10500</span>.0<span class="w"> </span><span class="m">4000</span>.0<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">10000</span>.0<span class="w"> </span><span class="m">4000</span>.0<span class="o">)</span>
+<span class="c1">#打断struct1组内的颗粒粘结</span>
+BOND<span class="w"> </span><span class="k">break</span><span class="w"> </span>RANGE<span class="w"> </span>GROUP<span class="w"> </span>struct1
+<span class="c1">#将struct1组的颗粒颜色设置为红色，摩擦系数设置为0.0，摩擦系数可以根据断层强弱改变</span>
+PROP<span class="w"> </span>COLOR<span class="w"> </span>red<span class="w"> </span>FRIC<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>RANGE<span class="w"> </span>GROUP<span class="w"> </span>struct1
+<span class="c1">################################################################################</span>
+
+<span class="c1">#设置挡板墙摩擦系数</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">0</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">2</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xv<span class="w"> </span><span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进4000.0，每挤压1000.0保存一次计算结果</span>
+IMPLE<span class="w"> </span>wall<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xmove<span class="w"> </span><span class="m">4000</span>.0<span class="w"> </span>save<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>print<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>ps<span class="w"> </span><span class="m">1000</span>.0
+<span class="c1">#计算停止</span>
+STOP
+</pre></div>
+</div>
+<p>计算结束后，将得到以下结果：</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/pre_struct.gif"><img alt="../../_images/pre_struct.gif" src="../../_images/pre_struct.gif" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/0.png"><img alt="../../_images/0.png" src="../../_images/0.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/1.png"><img alt="../../_images/1.png" src="../../_images/1.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/2.png"><img alt="../../_images/2.png" src="../../_images/2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 5.3 </span><span class="caption-text"><strong>单位(km)</strong></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ex3_syn_sedimentaion/" class="btn btn-neutral float-left" title="5.2 同构造沉积" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ex5_detachment/" class="btn btn-neutral float-right" title="5.4 滑脱层" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2025, ZDEM.
+      <span class="lastupdated">最后更新于 2025年04月12日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

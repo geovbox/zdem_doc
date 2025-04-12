@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>5.2 同构造沉积 &mdash; ZDEM手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/struct/ex3_syn_sedimentaion/index.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="5.3 先存断层设置" href="../ex4_pre_struct/" />
+    <link rel="prev" title="5.1 同构造剥蚀" href="../ex2_syn_erosion/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/2.0/" > 2.0 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 构造模拟</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ex2_syn_erosion/">5.1 同构造剥蚀</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2 同构造沉积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex4_pre_struct/">5.3 先存断层设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex5_detachment/">5.4 滑脱层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex6_palaeohigh/">5.5 古隆起</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex7_extens_rigid/">5.6 刚性基底 伸展构造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex8_dem_am/">5.7 与物理模拟对比实验</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">12 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">13 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">14 致谢</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.0/zdem_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../"><span class="section-number">5 </span>构造模拟</a> &raquo;</li>
+        
+      <li><span class="section-number">5.2 </span>同构造沉积</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/struct/ex3_syn_sedimentaion/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../ex4_pre_struct/" class="btn btn-neutral float-right" title="5.3 先存断层设置" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../ex2_syn_erosion/" class="btn btn-neutral float-left" title="5.1 同构造剥蚀" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="id1">
+<h1><span class="section-number">5.2 </span>同构造沉积<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这里是一个 <code class="docutils literal notranslate"><span class="pre">同构造沉积</span></code> 计算实例。</p>
+<p><code class="docutils literal notranslate"><span class="pre">syn_sedimentaion.py</span></code> 和 <a class="reference external" href="https://github.com/geovbox/vbox_doc/blob/master/source/struct/syn_erosion/0000046000.sav">0000046000.sav</a> 需放在同一目录下。</p>
+<p><code class="docutils literal notranslate"><span class="pre">syn_sedimentaion.py</span></code> 中完整脚本命令如下</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
+<span class="c1"># title: 同构造沉积</span>
+<span class="c1"># date: 2019-01-19</span>
+<span class="c1"># authors: 李长圣</span>
+<span class="c1"># E-mail: sheng0619@163.com</span>
+<span class="c1"># more info, see www.geovbox.com</span>
+<span class="c1">#######################################</span>
+<span class="c1">#从 0000046000.sav &lt;版本1.3&gt; 计算节点恢复，由 一个实例学会ZDEM 生成</span>
+RES <span class="m">0000046000</span>.sav
+<span class="c1"># 每次 100 步更新一次进度条</span>
+SET stepbar <span class="m">100</span>
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL id <span class="m">1</span> xv <span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进1000.0，每挤压2000.0保存一次计算结果</span>
+IMPLE wall id <span class="m">1</span> xmove <span class="m">1000</span>.0 save <span class="m">2000</span>.0 print <span class="m">1000</span>.0 ps <span class="m">1000</span>.0
+
+<span class="c1">##################################### 沉积 #####################################</span>
+<span class="c1">#停止挤压，墙的x方向速度改为0.0</span>
+WALL id <span class="m">1</span> xv <span class="m">0</span>.0
+<span class="c1">#沉积。在挤压前端12000～40000.0上方，沉积约 1 km 颗粒。y的范围需要设置为4000-6000。</span>
+<span class="c1">#经验：颗粒充填满2km范围，沉积之后的地层厚度约为1km</span>
+GEN NUM <span class="m">100000</span>.0 rad discrete <span class="m">60</span>.0 <span class="m">80</span>.0,  x <span class="o">(</span> <span class="m">12000</span>.0, <span class="m">40000</span>.0<span class="o">)</span>, y <span class="o">(</span> <span class="m">4000</span>.0, <span class="m">6000</span>.0<span class="o">)</span>, COLOR red GROUP sed
+<span class="c1">#设置沉积颗粒 GROUP=sed 的微观参数</span>
+PROP DENSITY <span class="m">2</span>.5e3, fric <span class="m">0</span>.3, shear <span class="m">2</span>.9e9, poiss <span class="m">0</span>.2, damp <span class="m">0</span>.4, hertz range GROUP sed
+<span class="c1">#计算2000步，让颗粒沉积下来</span>
+SET print <span class="m">100</span> <span class="c1">#每 100 步输出一次计算结果</span>
+CYC <span class="m">2000</span>
+<span class="c1">################################################################################</span>
+
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL id <span class="m">1</span> xv <span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进5000.0，每挤压2000.0保存一次计算结果</span>
+IMPLE wall id <span class="m">1</span> xmove <span class="m">5000</span>.0 save <span class="m">2000</span>.0 print <span class="m">1000</span>.0 ps <span class="m">1000</span>.0
+
+<span class="c1">#计算停止</span>
+STOP
+</pre></div>
+</div>
+<p>计算结束后，将得到以下结果：</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/syn_sedimentaion.gif"><img alt="../../_images/syn_sedimentaion.gif" src="../../_images/syn_sedimentaion.gif" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/0401.png"><img alt="../../_images/0401.png" src="../../_images/0401.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/0501.png"><img alt="../../_images/0501.png" src="../../_images/0501.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/0511.png"><img alt="../../_images/0511.png" src="../../_images/0511.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/053.png"><img alt="../../_images/053.png" src="../../_images/053.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/056.png"><img alt="../../_images/056.png" src="../../_images/056.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/1001.png"><img alt="../../_images/1001.png" src="../../_images/1001.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 5.2 </span><span class="caption-text"><strong>单位(km)</strong></span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../ex4_pre_struct/" class="btn btn-neutral float-right" title="5.3 先存断层设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../ex2_syn_erosion/" class="btn btn-neutral float-left" title="5.1 同构造剥蚀" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2019 - 2021, ZDEM.
+      <span class="lastupdated">
+        最后更新于 2021年06月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

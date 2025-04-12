@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 一个示例学会ZDEM &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/push/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=beaddf03"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+        <script async="async" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="4 提交计算" href="../clac/" />
+    <link rel="prev" title="2 如何使用" href="../use/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use/">2 如何使用</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">图库</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3 </span>一个示例学会ZDEM</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/push/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../use/" class="btn btn-neutral float-left" title="2 如何使用" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../clac/" class="btn btn-neutral float-right" title="4 提交计算" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="zdem">
+<span id="firstexample"></span><h1><span class="section-number">3 </span>一个示例学会ZDEM<a class="headerlink" href="#zdem" title="Link to this heading">¶</a></h1>
+<p>一个构造沙箱试验仿真的完整流程：</p>
+<ul class="simple">
+<li><p>生成。生成颗粒集合体，定义颗粒的材料参数，让其在重力作用下沉积，形成初始模型。</p></li>
+<li><p>挤压。给定墙相应的速度，开始挤压。</p></li>
+</ul>
+<p>下面是一个最简单的挤压计算实例，26行命令即可完成该计算。学会了该命令脚本，基本掌握ZDEM的使用方法。</p>
+<p>登陆 <a class="reference external" href="https://geovbox.com/hpc/">并行超算云</a> ，运行 <code class="docutils literal notranslate"><span class="pre">push.py</span></code> 脚本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zdem<span class="w"> </span>push.py
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">push.py</span></code> 中完整脚本命令如下</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
+<span class="c1"># title: 一个实例学会ZDEM</span>
+<span class="c1"># date: 2021-04-25</span>
+<span class="c1"># authors: 李长圣</span>
+<span class="c1"># E-mail: sheng0619@163.com</span>
+<span class="c1"># note:</span>
+<span class="c1"># 括号内参数可根据模型大小及个人需要修改</span>
+<span class="c1"># 脚本命令不区分大小写</span>
+<span class="c1"># 用16个核心，实际用时&lt;1小时</span>
+<span class="c1"># 计算费用约&lt;2元</span>
+<span class="c1"># more info, see www.geovbox.com</span>
+<span class="c1">#######################################</span>
+<span class="c1">#程序初始化</span>
+START
+<span class="c1">#颗粒设为球，计算颗粒体积用4/3*pi*r^3计算</span>
+SET<span class="w"> </span>disk<span class="w"> </span>off
+<span class="c1">#设置研究范围 </span>
+BOX<span class="w"> </span>left<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>right<span class="w"> </span><span class="m">41000</span>.0<span class="w"> </span>bottom<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>height<span class="w"> </span><span class="m">11000</span>.0<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
+<span class="c1">#设置挡板墙，这里模型采用hertz接触模型，挡板墙的kn ks无效，计算时取颗粒的参数</span>
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">40000</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>black
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">     </span><span class="m">10</span>.0<span class="w"> </span>,<span class="w">  </span><span class="m">10000</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">     </span><span class="m">10</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>blue
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">2</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">40000</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">40000</span>.0<span class="w"> </span>,<span class="w">  </span><span class="m">10000</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>red
+<span class="c1">#在矩形范围内生成颗粒</span>
+GEN<span class="w"> </span>NUM<span class="w"> </span><span class="m">100000</span><span class="w"> </span>rad<span class="w"> </span>discrete<span class="w"> </span><span class="m">60</span>.0<span class="w"> </span><span class="m">80</span>.0,<span class="w">  </span>x<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10</span>.0,<span class="w"> </span><span class="m">40000</span>.0<span class="o">)</span>,<span class="w"> </span>y<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10</span>.0,<span class="w"> </span><span class="m">10000</span>.0<span class="o">)</span>,<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w"> </span>GROUP<span class="w"> </span>ball_rand
+<span class="c1">#设置颗粒的微观参数　density 密度，firc 摩擦系数，shear 剪切模量，poiss　泊松比，damp 局部阻尼常数，heart　Hertz-Mindlin接触模型</span>
+PROP<span class="w"> </span>density<span class="w"> </span><span class="m">2</span>.5e3,<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0,<span class="w"> </span>shear<span class="w"> </span><span class="m">2</span>.9e9,<span class="w"> </span>poiss<span class="w"> </span><span class="m">0</span>.2,<span class="w"> </span>damp<span class="w"> </span><span class="m">0</span>.4,<span class="w"> </span>hertz
+<span class="c1">#设置时间步及重力加速度</span>
+SET<span class="w">  </span>DT<span class="w"> </span>5e-2,<span class="w">  </span>GRAVITY<span class="w">  </span><span class="m">0</span>.0,<span class="w">  </span>-9.8<span class="w"> </span>
+<span class="c1">#设置每1000步保存一次vtk格式的计算结果</span>
+SET<span class="w">  </span>vtk<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#设置每1000步保存一次ps格式的计算结果</span>
+SET<span class="w">  </span>ps<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#设置每1000步保存一次dat格式的计算结果</span>
+SET<span class="w">  </span>print<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#沉积，计算5000步</span>
+CYC<span class="w"> </span><span class="m">5000</span>
+<span class="c1">#删除4000米以上的颗粒</span>
+DEL<span class="w"> </span>RANGE<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w"> </span><span class="m">999000</span>.0
+<span class="c1">#平衡，计算1000步</span>
+CYC<span class="w"> </span><span class="m">1000</span>
+<span class="c1">#输出包含颗粒的[x y r]信息的初始模型 init_xyr.dat</span>
+<span class="c1">#EXP init_xyr.dat</span>
+
+<span class="c1">#设置bond粘结，使颗粒具有粘聚力，ebmod 杨氏模量，　gbmod 剪切模量，tstrength 抗拉强度，sstrength　聚合强度，　firc 摩擦系数</span>
+PROP<span class="w"> </span>ebmod<span class="w"> </span>2e8<span class="w"> </span>gbmod<span class="w"> </span>2e8<span class="w">  </span>tstrength<span class="w"> </span>2e7<span class="w"> </span>sstrength<span class="w"> </span>4e7<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>
+<span class="c1">#给地层赋上颜色</span>
+PROP<span class="w"> </span>COLOR<span class="w"> </span>lg<span class="w">          </span>range<span class="w"> </span>y<span class="w">    </span><span class="m">0</span>.0<span class="w">   </span><span class="m">500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>green<span class="w">       </span>range<span class="w"> </span>y<span class="w">  </span><span class="m">500</span>.0<span class="w">  </span><span class="m">1000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>yellow<span class="w">      </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1000</span>.0<span class="w">  </span><span class="m">1500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>red<span class="w">         </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1500</span>.0<span class="w">  </span><span class="m">2000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w">       </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">2000</span>.0<span class="w">  </span><span class="m">2500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>mg<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">2500</span>.0<span class="w">  </span><span class="m">3000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>blue<span class="w">        </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">3000</span>.0<span class="w">  </span><span class="m">3500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>gb<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">3500</span>.0<span class="w">  </span><span class="m">4000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>violet<span class="w">      </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">4000</span>.0<span class="w">  </span><span class="m">4500</span>.0
+
+<span class="c1">#设置挡板墙摩擦系数</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">0</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">2</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xv<span class="w"> </span><span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进10000.0，每挤压2000.0保存一次计算结果</span>
+IMPLE<span class="w"> </span>wall<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xmove<span class="w"> </span><span class="m">10000</span>.0<span class="w"> </span>save<span class="w"> </span><span class="m">2000</span>.0<span class="w"> </span>print<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>ps<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>vtk<span class="w"> </span><span class="m">1000</span>.0
+<span class="c1">#计算停止</span>
+STOP
+</pre></div>
+</div>
+<p>计算结束后，将得到以下结果：</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/colorbar1.png"><img alt="../_images/colorbar1.png" src="../_images/colorbar1.png" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/shearSS.gif"><img alt="../_images/shearSS.gif" src="../_images/shearSS.gif" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/10km.png"><img alt="../_images/10km.png" src="../_images/10km.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 3.1 </span><span class="caption-text"><strong>单位(km)</strong></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>软件中，坐标不支持负数，为了防止墙体和BOX重合，本示例将模型左下角起始点为 <em>(10.0, 10.0)</em> 。实际设计实验时，一般将模型左下角起始点设置为 <em>(1000.0,1000.0)</em> ，再结合 <a class="reference internal" href="../cmd/zdemss/#zdemss"><span class="std std-ref">zdemss</span></a> 中的 <code class="docutils literal notranslate"><span class="pre">--xmove=-1000.0</span></code> 和 <code class="docutils literal notranslate"><span class="pre">--ymove=-1000.0</span></code> 将模型左下角移到 (0.0,0.0)。</p>
+</div>
+<p><strong>颗粒参数表</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>颗粒直径</p></th>
+<th class="head"><p>颗粒密度</p></th>
+<th class="head"><p>颗粒摩擦系数</p></th>
+<th class="head"><p>缩短速率</p></th>
+<th class="head"><p>时间步</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p><span class="math notranslate nohighlight">\(d (m)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(ρ(kg \cdot m^{-3})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mu\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(v(m \cdot s^{-1})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(s\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>60，80</p></td>
+<td><p>2500</p></td>
+<td><p>0.3</p></td>
+<td><p>2.0</p></td>
+<td><p>0.05</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../use/" class="btn btn-neutral float-left" title="2 如何使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../clac/" class="btn btn-neutral float-right" title="4 提交计算" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2025, ZDEM.
+      <span class="lastupdated">最后更新于 2025年04月12日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

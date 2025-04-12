@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.4 绘制最大主应力矢量 &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/strainstress/plot_sigma1/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="7 命令参考" href="../../cmd/" />
+    <link rel="prev" title="6.3 有沉积剥蚀" href="../add_del/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../struct/">5 构造模拟</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">6 应力应变</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../set/">6.1 配置环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../no_add_del/">6.2 无沉积剥蚀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../add_del/">6.3 有沉积剥蚀</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4 绘制最大主应力矢量</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">图库</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../"><span class="section-number">6 </span>应力应变</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.4 </span>绘制最大主应力矢量</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/strainstress/plot_sigma1/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../add_del/" class="btn btn-neutral float-left" title="6.3 有沉积剥蚀" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../cmd/" class="btn btn-neutral float-right" title="7 命令参考" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="plot-sigma1">
+<span id="id1"></span><h1><span class="section-number">6.4 </span>绘制最大主应力矢量<a class="headerlink" href="#plot-sigma1" title="Link to this heading">¶</a></h1>
+<p>接上节 <a class="reference internal" href="../add_del/#add-del"><span class="std std-ref">有沉积剥蚀</span></a> 实例 <code class="docutils literal notranslate"><span class="pre">ex_strain_stress</span></code> ，完成步骤1、2、3和4，之后， <a class="reference internal" href="../../cmd/zdem/#zdem"><span class="std std-ref">zdem</span></a> 将生成 <code class="docutils literal notranslate"><span class="pre">./datass/ss/data/*.out</span></code> ，供GMT绘图用。目录结构如下</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.jpg
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>datass
+<span class="w">        </span><span class="p">|</span>--ss
+<span class="w">           </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">               </span><span class="p">|</span>--<span class="w"> </span>*.out
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000026000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000036000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000056000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000078000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000108000.dat
+</pre></div>
+</div>
+</div></blockquote>
+<p>第5步中可以绘制最大主应力矢量。</p>
+<ol class="arabic" start="5">
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">zdemss</span> <span class="pre">--dir</span> <span class="pre">./datass</span> <span class="pre">--strainvol</span> <span class="pre">OFF</span> <span class="pre">--strainshear</span> <span class="pre">ON</span> <span class="pre">--sigma1</span> <span class="pre">ON</span> <span class="pre">--scale</span> <span class="pre">1.0</span> <span class="pre">--gridsize</span> <span class="pre">600.0</span> <span class="pre">--stressmean</span> <span class="pre">OFF</span> <span class="pre">--stressshear</span> <span class="pre">OFF</span> <span class="pre">--addball</span> <span class="pre">ON</span> <span class="pre">--delball</span> <span class="pre">ON</span> <span class="pre">--xmax</span> <span class="pre">40.0</span> <span class="pre">--ymax</span> <span class="pre">10.0</span></code></dt><dd><p>使用GMT绘制最大主应力矢量，叠加在变形应变[strainshear]上。<code class="docutils literal notranslate"><span class="pre">zdemss</span></code> 将会读取 <code class="docutils literal notranslate"><span class="pre">zdem</span></code> 生成的应力应变数据 <code class="docutils literal notranslate"><span class="pre">./datass/ss/data</span></code>，生成应力应变云图到 <code class="docutils literal notranslate"><span class="pre">./datass/ss/*jpg</span></code> 。设置x轴最大值 40.0 km，设置y轴最大值 10.0 km。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--sigma1</span> <span class="pre">ON</span></code> 绘制最大主应力矢量 ，注意 <code class="docutils literal notranslate"><span class="pre">--scale</span> <span class="pre">1.0</span> <span class="pre">--gridsize</span> <span class="pre">600.0</span></code> 是 <code class="docutils literal notranslate"><span class="pre">--sigma1</span></code> 的子参数，如打算修改 <code class="docutils literal notranslate"><span class="pre">scale</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">gridsize</span></code> 的值， 必须跟在 <code class="docutils literal notranslate"><span class="pre">--sigma1</span></code> 后，不可随意调换参数位置。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--scale</span> <span class="pre">1.0</span></code> 最大主应力矢量缩放系数，该值越大，矢量越长，大小用户可以根据出图效果自主调节。默认1.0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--gridsize</span> <span class="pre">600.0</span></code> 计算最大主应力均值的正方形边长大小，该值越大，矢量稀疏，大小用户可以根据出图效果自主调节。默认600.0，可以尝试修改为1000.0看看效果。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>参数详解见 <a class="reference internal" href="../../cmd/zdemss/#zdemss"><span class="std std-ref">zdemss</span></a> 。如果 <code class="docutils literal notranslate"><span class="pre">scale</span></code> <code class="docutils literal notranslate"><span class="pre">gridsize</span></code> 等参数均采用默认值，则可用采用以下命令绘制最大主应力矢量：
+<code class="docutils literal notranslate"><span class="pre">zdemss</span> <span class="pre">--dir</span> <span class="pre">./datass</span> <span class="pre">--sigma1</span> <span class="pre">ON</span> <span class="pre">--addball</span> <span class="pre">ON</span> <span class="pre">--delball</span> <span class="pre">ON</span></code></p>
+</div>
+<p>运行完成之后，目录结构：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>ex_strain_stress
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>push_add_del.py
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000000000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>...
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000005000.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000058000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w">  </span>all_0000108000.dat
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>datass
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>ss
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>data
+<span class="w">                </span><span class="p">|</span>--<span class="w"> </span>*.out
+
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>data2ps
+<span class="w">                </span><span class="p">|</span>--<span class="w"> </span>strain*.out
+<span class="w">                </span><span class="p">|</span>--<span class="w"> </span>stress*.out
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>ps
+<span class="w">               </span><span class="p">|</span>--<span class="w"> </span>*.ps
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>Tmp
+<span class="w">                </span><span class="p">|</span>--<span class="w"> </span>*.grd
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>*.jpg
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000006000_ini.dat
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>all_0000026000.dat
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/data/*.out</span></code> <a class="reference internal" href="../../cmd/zdem/#zdem"><span class="std std-ref">zdem</span></a> 输出的颗粒位置和(假)应力的原始数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/data2ps/*.out</span></code>   (真)应力应变数据，用于绘制应力应变图(ps)，用户可以用于定量分析</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/ps/*.ps</span></code>  <strong>输出的应力应变图(矢量图)</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/Tmp/*.grd</span></code> 计算应力应变产生的中间数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./datass/ss/*.jpg</span></code> <strong>输出的应力应变图(位图)</strong></p></li>
+</ul>
+<p>输出的最大主应力矢量见下图：</p>
+</dd>
+</dl>
+</li>
+</ol>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/all00001080001.jpg"><img alt="../../_images/all00001080001.jpg" src="../../_images/all00001080001.jpg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 6.3 </span><span class="caption-text"><strong>最大主应力矢量，叠加在变形应变图上</strong></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../add_del/" class="btn btn-neutral float-left" title="6.3 有沉积剥蚀" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../cmd/" class="btn btn-neutral float-right" title="7 命令参考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2025, ZDEM.
+      <span class="lastupdated">最后更新于 2025年04月12日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
