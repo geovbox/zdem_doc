@@ -49,6 +49,12 @@
 27. `王帅杰,颜丹平,周志成,等.2025.基于离散元数值模拟的雪峰山前陆褶皱冲断带齐岳山分界断裂性质与形成过程.现代地质,39(01):18-30. <https://doi.org/10.19657/j.geoscience.1000-8527.2024.126>`_
 28. `Zhou C, He J, Su H, et al. 2025. Discrete element modeling of the structural vergence beneath intermediate décollements: Implications for along-strike variations in the Zagros Simply Folded Belt. GSA Bulletin. <https://doi.org/10.1130/B37988.1>`_
 29. `Ma H, Wang M. 2025. Structural control of induced seismicity in the Weiyuan anticline, southwestern Sichuan foreland thrust belt, China. Tectonics, 44, e2024TC008617. <https://doi.org/10.1029/2024TC008617>`_
+30. `王永刚,李晨曦,黄洁,等.鄂尔多斯盆地西缘南段银洞子地区构造变形机制及动力学成因分析[J/OL].地质科学,1-18[2026-05-23]. <https://link.cnki.net/urlid/11.1937.P.20260413.0935.002.>`_
+31. `马欢朋,黄涵宇,何登发,等.先存构造对盆-山边界构造演化的数值模拟分析:以川东南-湘鄂西褶皱冲断带为例[J/OL].地质学报,1-18[2026-05-23]. <https://doi.org/10.19762/j.cnki.dizhixuebao.2025322.>`_
+32. 宋亮,李长圣,范昱林,等.先存断层对准噶尔盆地西北缘哈山构造带变形的影响:来自离散元数值模拟的启示[J].东华理工大学学报(自然科学版),2025,48(06):563-573.
+33. 赵佳琦,程晓敢,陈维力,等.库车坳陷克拉苏构造带中段盐下逆掩推覆带特征与数值模拟[J].地球科学,2026,51(01):317-328.
+34. 罗浩渝,杨克基,申林,等.库车坳陷北部构造带分段差异变形及其主控因素[J].地质科学,2025,60(03):619-634.
+
 
 本硕博
 ------

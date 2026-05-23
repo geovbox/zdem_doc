@@ -17,9 +17,9 @@
     source /public1/soft/other/module_GMT.sh
     module load GMT_5.4.5
 
-    #zdemss
+    #zdemss 默认为T6分区帐号配置
     export PATH=/public1/home/sch3726/bin:$PATH #T6分区
-    #export PATH=/public1/home/sc80502/bin:$PATH #T分区
+    #export PATH=/publicfs01/fs1-t/home/sc80502/bin:$PATH #T分区
 
 .. note::
     不会配置zdemss环境变量的小白用户可参考 `bilibili视频之配置zdemss的环境变量 <https://www.bilibili.com/video/BV1qq4y177Ni?p=4>`_

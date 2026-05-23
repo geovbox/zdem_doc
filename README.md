@@ -22,6 +22,11 @@
 - 官网：https://geovbox.com/
 - 手册：https://doc.geovbox.com/
 
+## 环境配置
+	```
+	pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+	```
+
 ## 编译生成文档
 
 - 网页版
