@@ -10,16 +10,16 @@ prop
 --------
 
 ``DENSITY=<float>``
-    颗粒密度
+    颗粒的密度
 
 ``FRIC =<float>``
-    颗粒密度
+    颗粒的摩擦系数
 
 ``SHEAR=<float>``
-    颗粒密度
+    颗粒的剪切模量
 
 ``POISS=<float>``
-    颗粒密度
+    颗粒的泊松比
 
 ``DAMP=<float>``
     局部阻尼系数，见PFC2D 4.0手册或李长圣博士论文
