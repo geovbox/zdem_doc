@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>5.4 滑脱层 &mdash; VBOX手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/struct/ex5_detachment/index.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="5.5 古隆起" href="../ex6_palaeohigh/" />
+    <link rel="prev" title="5.3 先存断层设置" href="../pre_struct/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> VBOX手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/1.4/"  selected > 1.4 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 Windows下使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会VBOX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 构造模拟</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../syn_erosion/">5.1 同构造剥蚀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syn_sedimentaion/">5.2 同构造沉积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pre_struct/">5.3 先存断层设置</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4 滑脱层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex6_palaeohigh/">5.5 古隆起</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ex7_extens_rigid/">5.6 刚性基底 伸展构造</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmd/">6 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">7 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">8 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">9 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">10 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">11 致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vbox1.4_license/">12 使用协议</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/vbox_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> VBOX官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">VBOX手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../"><span class="section-number">5 </span>构造模拟</a> &raquo;</li>
+        
+      <li><span class="section-number">5.4 </span>滑脱层</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/struct/ex5_detachment/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../ex6_palaeohigh/" class="btn btn-neutral float-right" title="5.5 古隆起" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../pre_struct/" class="btn btn-neutral float-left" title="5.3 先存断层设置" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">5.4 </span>滑脱层<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这里是一个 <code class="docutils literal notranslate"><span class="pre">滑脱层</span></code> 设置的实例，一般地，将滑脱层设置为没有粘结，类似松散石英砂，摩擦系数则可以设置为 0.0。</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ex5</span></code> 目录中文件有</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><a class="reference external" href="lsf.sh">lsf.sh</a></p></li>
+<li><p><a class="reference external" href="detachment.py">detachment.py</a></p></li>
+<li><p><a class="reference external" href="init_xyr.dat">init_xyr.dat</a></p></li>
+</ul>
+<p>## 进入 <cite>ex5</cite> 目录，在终端或 <cite>xshell</cite> 中运行</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bsub &lt; lsf.sh   <span class="c1"># 提交计算</span>
+$ bjobs           <span class="c1"># 查看计算是否提交成功</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">lsf.sh</span></code> 中内容如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#</span>
+<span class="c1">#BSUB -q mpi</span>
+<span class="c1">#BSUB -n 24</span>
+<span class="c1">#BSUB -R &quot;span[ptile=24]&quot;</span>
+vboxdaily   detachment.py
+vbox2jpg --dir<span class="o">=</span>./data/ --xmax<span class="o">=</span><span class="m">40000</span> --ymax<span class="o">=</span><span class="m">10000</span>                    <span class="c1"># gen jpg</span>
+<span class="c1">#convert -delay 100 ./data/*[0-9].jpg -loop 0 ./data/process.gif    # gen gif</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">detachment.py</span></code> 中内容如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
+<span class="c1"># title: 滑脱层设置方法</span>
+<span class="c1"># date: 2019-06-29</span>
+<span class="c1"># authors: 李长圣</span>
+<span class="c1"># E-mail: sheng0619@163.com</span>
+<span class="c1"># more info, see www.geovbox.com</span>
+<span class="c1">#######################################</span>
+<span class="c1"># init_xyr.dat 保存了沉积后的所有颗粒的[x y r]信息，由一个实例学会VBOX生成</span>
+LOAD init_xyr.dat
+<span class="c1">#导入的颗粒命名为 ball_rand</span>
+PROP GROUP ball_rand
+<span class="c1">#关闭圆盘，颗粒设为球，计算颗粒体积用4/3*pi*r^3计算</span>
+SET DISK OFF
+<span class="c1">#设置研究范围 </span>
+BOX LEFT <span class="m">0</span>.0 RIGHT <span class="m">41000</span>.0 BOTTOM <span class="m">0</span>.0 HEIGHT <span class="m">11000</span>.0 <span class="nv">KN</span><span class="o">=</span>0e10 <span class="nv">KS</span><span class="o">=</span>0e10 <span class="nv">FRIC</span><span class="o">=</span><span class="m">0</span>.00 
+<span class="c1">#设置挡板墙，这里模型采用hertz接触模型，挡板墙的kn ks无效，计算时取颗粒的参数</span>
+WALL ID <span class="m">0</span>, NODES <span class="o">(</span>      <span class="m">0</span>.0 ,     <span class="m">10</span>.0 <span class="o">)</span> <span class="o">(</span>  <span class="m">40000</span>.0 ,     <span class="m">10</span>.0 <span class="o">)</span>, <span class="nv">KN</span><span class="o">=</span>0e10 <span class="nv">KS</span><span class="o">=</span>0e10 <span class="nv">FRIC</span><span class="o">=</span><span class="m">0</span>.0 COLOR black
+WALL ID <span class="m">1</span>, NODES <span class="o">(</span>     <span class="m">10</span>.0 ,  <span class="m">10000</span>.0 <span class="o">)</span> <span class="o">(</span>     <span class="m">10</span>.0 ,     <span class="m">10</span>.0 <span class="o">)</span>, <span class="nv">KN</span><span class="o">=</span>0e10 <span class="nv">KS</span><span class="o">=</span>0e10 <span class="nv">FRIC</span><span class="o">=</span><span class="m">0</span>.0 COLOR blue
+WALL ID <span class="m">2</span>, NODES <span class="o">(</span>  <span class="m">40000</span>.0 ,     <span class="m">10</span>.0 <span class="o">)</span> <span class="o">(</span>  <span class="m">40000</span>.0 ,  <span class="m">10000</span>.0 <span class="o">)</span>, <span class="nv">KN</span><span class="o">=</span>0e10 <span class="nv">KS</span><span class="o">=</span>0e10 <span class="nv">FRIC</span><span class="o">=</span><span class="m">0</span>.0 COLOR red
+
+<span class="c1">#设置颗粒的微观参数</span>
+PROP DENSITY <span class="m">2</span>.5e3, FRIC <span class="m">0</span>.0, SHEAR <span class="m">2</span>.9e9, POISS <span class="m">0</span>.2, DAMP <span class="m">0</span>.4, HERTZ
+<span class="c1">#设置时间步及重力加速度</span>
+SET  DT 5e-2,  GRAVITY  <span class="m">0</span>.0,  -9.8 
+
+<span class="c1">#设置bond粘结，使颗粒具有粘聚力</span>
+PROP ebmod 2e8 gbmod 2e8  tstrength 0e7 sstrength 0e7 fric <span class="m">0</span>.3 
+<span class="c1">#给地层赋上颜色</span>
+PROP COLOR lg          range y    <span class="m">0</span>.0   <span class="m">500</span>.0
+PROP COLOR green       range y  <span class="m">500</span>.0  <span class="m">1000</span>.0
+PROP COLOR yellow      range y <span class="m">1000</span>.0  <span class="m">1500</span>.0
+PROP COLOR white       range y <span class="m">1500</span>.0  <span class="m">2000</span>.0
+PROP COLOR black       range y <span class="m">2000</span>.0  <span class="m">2500</span>.0
+PROP COLOR mg          range y <span class="m">2500</span>.0  <span class="m">3000</span>.0
+PROP COLOR blue        range y <span class="m">3000</span>.0  <span class="m">3500</span>.0
+PROP COLOR gb          range y <span class="m">3500</span>.0  <span class="m">4000</span>.0
+PROP COLOR violet      range y <span class="m">4000</span>.0  <span class="m">4500</span>.0
+
+<span class="c1">################################### 滑脱层设置 ####################################</span>
+<span class="c1">#用range y (ymin ymax)圈定范围，该范围内颗粒命名为detachment</span>
+PROP GROUP detachment RANGE y <span class="o">(</span> <span class="m">0</span>.0, <span class="m">1000</span>.0<span class="o">)</span>
+<span class="c1">#打断detachment组内的颗粒粘结</span>
+BOND <span class="nb">break</span> RANGE GROUP detachment
+<span class="c1">#将detachment组的颗粒颜色设置为红色，摩擦系数设置为0.0，摩擦系数可以根据断层强弱改变</span>
+PROP COLOR red FRIC <span class="m">0</span>.0 DEN <span class="m">2</span>.2e3 RANGE GROUP detachment
+<span class="c1">################################################################################</span>
+
+<span class="c1">#设置挡板墙摩擦系数</span>
+WALL ID <span class="m">0</span> fric <span class="m">0</span>.0
+WALL ID <span class="m">1</span> fric <span class="m">0</span>.3
+WALL ID <span class="m">2</span> fric <span class="m">0</span>.3
+<span class="c1">#设置墙的挤压速度 x方向速度为2.0</span>
+WALL ID <span class="m">1</span> XV <span class="m">2</span>.0
+<span class="c1">#设置墙的挤压量x方向推进10000.0，每挤压1000.0保存一次计算结果</span>
+IMPLE WALL ID <span class="m">1</span> XMOVE <span class="m">10000</span>.0 SAVE <span class="m">1000</span>.0 PRINT <span class="m">1000</span>.0 PS <span class="m">1000</span>.0
+<span class="c1">#计算停止</span>
+STOP
+</pre></div>
+</div>
+<p>计算结束后，将得到以下结果：</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/detachment.gif"><img alt="../../_images/detachment.gif" src="../../_images/detachment.gif" style="width: 60%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/00.jpg"><img alt="../../_images/00.jpg" src="../../_images/00.jpg" style="width: 60%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/05.jpg"><img alt="../../_images/05.jpg" src="../../_images/05.jpg" style="width: 60%;" /></a>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/10.jpg"><img alt="../../_images/10.jpg" src="../../_images/10.jpg" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">图 5.4 </span><span class="caption-text"><strong>单位(km)</strong></span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+</div>
+<p>参考文献</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="reference external" href="http://t.cn/E6k57Mg">李长圣，尹宏伟. 滑脱层强度对挤压构造的影响:离散元数值模拟[A]. 2017中国地球科学联合学术年会论文集,2017:4.</a></p></li>
+</ol>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../ex6_palaeohigh/" class="btn btn-neutral float-right" title="5.5 古隆起" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../pre_struct/" class="btn btn-neutral float-left" title="5.3 先存断层设置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014 - 2021, VBOX官网.
+      <span class="lastupdated">
+        最后更新于 2021年04月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
