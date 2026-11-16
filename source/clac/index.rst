@@ -169,7 +169,7 @@ DeepSeek Harness 提交
 
 让智能体在高性能计算集群上运行，需要安装 DeepSeek Harness 插件 DSH-SLOP 
 
-:适用版本: DeepSeek Harness ``0.2.2-rc.3`` ＋ DSH-SLOP ``0.0.17``
+:适用版本: DeepSeek Harness ``0.2.2-rc.3`` ＋ DSH-SLOP ``0.0.17`` `百度网盘下载 <https://pan.baidu.com/s/1fWjvBPKvayAhWxfij-gAnw>`_ 提取码 ``zdem``
 :仓库: https://github.com/demsheng/dsh-slop
 :最后更新: 2026-11-16
 
