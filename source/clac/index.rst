@@ -94,3 +94,101 @@ SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工
 .. seealso::
 
     Slurm更多介绍 https://docs.hpc.sjtu.edu.cn/job/slurm.html
+
+
+DeepSeek Harness 提交
+=====================
+
+在 DeepSeek Harness 中安装超算远程连接插件 `DSH-SLOP <https://github.com/zrzrv5/dsh-slop>`_，你就可以使用如下自然语言控制计算任务：
+
+    .. only:: html
+
+       .. figure:: /clac/ZDEM@harness-1提交计算示例11月14日.gif
+          :width: 100%
+          :align: center
+
+  
+
+提示词示例
+----------
+
+提示词示例1
+
+::
+
+    把 ex1_small2 上传、提交并登记追踪；计算完成后把结果下载到本地，
+    注意只下载 jpg 和 gif 图片，本地目录结构要与远程保持一致。
+    再把 jpg + gif + 模拟参数做成 1 页 PPT，做好后发到我的邮箱。
+
+提示词示例2
+
+::
+
+    我要分析颗粒摩擦系数fric对构造变形过程的影响，你在ex1_small2的基础上，
+    创建ex1_small3文件夹，对应修改push.py中的fric为0.0，
+    把这个文件夹传上去、提交并登记追踪，计算完成后，把结果下载到本地，注意只下载jpg和gif图片，
+    本地目录结构保证和远程一致。
+    把ex1_small2和ex1_small3这两个实验的jpg+gif+模拟参数做成2页实验结果对比PPT，
+    把做好的这个PPT发我邮箱。
+
+
+.. figure:: /clac/deekseekharness-example1-2.png
+  :width: 100%
+  :align: center
+  
+  **DeepSeek Harness 中使用示例**
+  
+.. figure:: /clac/20261114李长圣@地大武汉3-harness.png
+  :width: 100%
+  :align: center
+  
+  **DeepSeek Harness 做好的多个实验对比PPT示例**
+
+
+如何选择
+--------
+
+- 优点：
+    * 用自然语言下达任务，上传、提交、任务状态监测、结果下载全程自动完成
+    * 可接续生成汇报 PPT 并直接发送至本人邮箱
+    * 适合单因素批量多算例提交，无需手工建目录、逐个提交和下载
+
+- 缺点：
+    * 依赖 DeepSeek-V4.1 Flash 模型，需消耗 Token（约几分到几毛钱）
+    * 计算规模较小时，Deepseek理解自然语言所花的时间在总耗时中占比偏高，性价比不佳
+
+.. note::
+
+    - **Slurm**：单任务提交
+    - **DeepSeek Harness**：多算例、单因素批量任务
+
+
+
+配置DeepSeek Harness
+----------------------
+
+让智能体在高性能计算集群上运行，需要安装 DeepSeek Harness 插件 DSH-SLOP 
+
+:适用版本: DeepSeek Harness ``0.2.1-rc.5`` ＋ DSH-SLOP ``0.0.16``
+:仓库: https://github.com/zrzrv5/dsh-slop
+:最后更新: 2026-11-16
+
+- 打开 **DeepSeek Harness** 输入以下提示词
+
+    .. code-block:: text
+
+       帮我装插件 https://github.com/zrzrv5/dsh-slop
+
+
+- 安装PPT制作skill提示词
+
+    .. code-block:: text
+
+       安装这个skill https://github.com/wendaokeliu-sys/ppt-builder
+
+- 安装邮件插件	提示词
+
+    .. code-block:: text
+
+       推荐给我，可以给我发邮件的插件
+

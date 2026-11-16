@@ -54,6 +54,10 @@
 32. 宋亮,李长圣,范昱林,等.先存断层对准噶尔盆地西北缘哈山构造带变形的影响:来自离散元数值模拟的启示[J].东华理工大学学报(自然科学版),2025,48(06):563-573.
 33. 赵佳琦,程晓敢,陈维力,等.库车坳陷克拉苏构造带中段盐下逆掩推覆带特征与数值模拟[J].地球科学,2026,51(01):317-328.
 34. 罗浩渝,杨克基,申林,等.库车坳陷北部构造带分段差异变形及其主控因素[J].地质科学,2025,60(03):619-634.
+35. Liu, J., Rao, G., Bai, S., Xiong, X., Zhang, J., Yang, W., Yin, C., Zhong, Y., Tang, P., Qiu, J., Gao, L., 2025. Structural analysis and numerical modeling of multi-stage tectonic deformation in the Ziliujing anticline, SW Sichuan Basin, China: Implications for deformation propagation in salt-bearing fold-and-thrust belts. Tectonophysics 908, 230760. https://doi.org/10.1016/j.tecto.2025.230760
+36. `Maomao Wang, Philip M. Barnes, Demian Saffer, Gregory F. Moore, Haoran Ma, Ming Wang, Jinbao Su (2025). Effects of incoming polygonal fault systems on subduction zone and slow slip behavior. Science Advances , 11(27), eadu4227. <https://www.science.org/doi/epdf/10.1126/sciadv.adu4227>`_
+37. Yang, W., Rao, G., Tang, P., Zhu, C., Wang, R., 2025. Discrete-element numerical simulations of thrust-related folding: Insights into back-limb deformation. Journal of Structural Geology 197, 105442. https://doi.org/10.1016/j.jsg.2025.105442
+38. Zheng, J., Wu, Z., Tang, X., He, X., Liu, Y., Yan, J., & Miocic, J. M. (2026). Inherited fault angle control on basin inversion structures in the East China Sea: Insights from numerical simulations. Tectonics, 45, e2025TC009335. https://doi.org/10.1029/2025TC009335
 
 
 本硕博
