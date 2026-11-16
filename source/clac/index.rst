@@ -192,3 +192,43 @@ DeepSeek Harness 提交
 
        推荐给我，可以给我发邮件的插件
 
+
+测试用例
+--------
+
+目录结构
+
+::
+
+    |-- test-dsh-slop #设置为 DeepSeek Harness 的工作目录
+        |-- slurm.sh
+        |-- syn_erosion.py
+
+``slurm.sh``
+
+.. literalinclude:: /clac/test-dsh-slop/slurm.sh
+
+``push.py``
+
+.. literalinclude:: /clac/test-dsh-slop/push.py
+
+
+
+在DeepSeek Harness中设置工作目录为 ``test-dsh-slop`` ，打开对话框，输入以下提示词
+
+- 仅仅测试 dsh-slop 插件
+
+    ::
+
+        把 test-dsh-slop 上传、提交并登记追踪；计算完成后把结果下载到本地，
+        注意只下载 jpg 和 gif 图片，本地目录结构要与远程保持一致。
+
+- 测试 ``dsh-slop`` ``ppt-builder`` 和 给本人发邮件功能
+
+    ::
+
+        把 test-dsh-slop 上传、提交并登记追踪；计算完成后把结果下载到本地，
+        注意只下载 jpg 和 gif 图片，本地目录结构要与远程保持一致。
+        再把 jpg + gif + 模拟参数做成 1 页 PPT，做好后发到我的邮箱。
+
+
