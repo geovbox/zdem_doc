@@ -169,22 +169,22 @@ DeepSeek Harness 提交
 
 让智能体在高性能计算集群上运行，需要安装 DeepSeek Harness 插件 DSH-SLOP 
 
-:适用版本: DeepSeek Harness ``0.2.1-rc.5`` ＋ DSH-SLOP ``0.0.16``
-:仓库: https://github.com/zrzrv5/dsh-slop
+:适用版本: DeepSeek Harness ``0.2.2-rc.3`` ＋ DSH-SLOP ``0.0.17``
+:仓库: https://github.com/demsheng/dsh-slop
 :最后更新: 2026-11-16
 
 - 打开 **DeepSeek Harness** 输入以下提示词
 
     .. code-block:: text
 
-       帮我装插件 https://github.com/zrzrv5/dsh-slop
+       安装插件 https://github.com/demsheng/dsh-slop
 
 
 - 安装PPT制作skill提示词
 
     .. code-block:: text
 
-       安装这个skill https://github.com/wendaokeliu-sys/ppt-builder
+       安装skill https://github.com/wendaokeliu-sys/ppt-builder
 
 - 安装邮件插件	提示词
 
