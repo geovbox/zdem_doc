@@ -171,6 +171,7 @@ DeepSeek Harness 提交
 
 :适用版本: DeepSeek Harness ``0.2.2-rc.3`` ＋ DSH-SLOP ``0.0.17`` `百度网盘下载 <https://pan.baidu.com/s/1fWjvBPKvayAhWxfij-gAnw>`_ 提取码 ``zdem``
 :仓库: https://github.com/demsheng/dsh-slop
+:配置视频教程: `【离散元数值模拟软件ZDEM中级教程】 <https://www.bilibili.com/video/BV1azsB64Ev2>`_
 :最后更新: 2026-11-16
 
 - 打开 **DeepSeek Harness** 输入以下提示词
