@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 提交计算 &mdash; ZDEM手册</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://doc.geovbox.com/latest/clac/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=45c2001d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=beaddf03"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="5 构造模拟" href="../struct/" />
+    <link rel="prev" title="3 一个示例学会ZDEM" href="../push/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+    
+    <a href="../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+    <div class="version">
+      2.2
+    </div>
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4 提交计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.1 直接提交</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slurm">4.2 Slurm 作业调度系统</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sbatch-job-sh">4.2.1 提交作业 <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">job.sh</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squeue">4.2.2 查看作业状态 <code class="docutils literal notranslate"><span class="pre">squeue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scancel-id">4.2.3 取消作业 <code class="docutils literal notranslate"><span class="pre">scancel</span> <span class="pre">id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deepseek-harness">4.3 DeepSeek Harness 提交</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.3.1 提示词示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.3.2 如何选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">4.3.3 配置DeepSeek Harness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">4.3.4 测试用例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmd/">7 命令参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/">12 相关文章</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license/">13 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../updatelog/">14 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thanks/">15 致谢</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">图库</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.x/ZDEM_docs.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">ZDEM手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4 </span>提交计算</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/geovbox/zdem_doc/blob/master/source/clac/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../push/" class="btn btn-neutral float-left" title="3 一个示例学会ZDEM" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../struct/" class="btn btn-neutral float-right" title="5 构造模拟" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">4 </span>提交计算<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">push.py</span></code> 为要运行的脚本名</p>
+<section id="id2">
+<h2><span class="section-number">4.1 </span>直接提交<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#程序名 脚本名</span>
+zdem<span class="w"> </span>push.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>优点：实时查看计算是否正确，使用 <code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code> 结束计算</p></li>
+<li><p>缺点：关闭窗口，计算停止</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>这种方式只能作简单测试用，长时间使用会被管理员封号。如果想交互式的提交计算，可采用如下命令 <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">-n</span> <span class="pre">1</span> <span class="pre">-c</span> <span class="pre">12</span> <span class="pre">zdem</span> <span class="pre">push.py</span></code> ，即采用1个节点 <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">1</span></code> ， 12个核 <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">12</span></code> 计算。这种方式会正常计费，不会被管理员封号。</p>
+</div>
+</section>
+<section id="slurm">
+<span id="id3"></span><h2><span class="section-number">4.2 </span>Slurm 作业调度系统<a class="headerlink" href="#slurm" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://geovbox.com/hpc/">并行超算云</a> 安装了该调度系统。</p>
+<p>SLURM （Simple Linux Utility for Resource Management）是一种可扩展的工作负载管理器，已被全世界的国家超级计算机中心广泛采用。 它是免费且开源的，根据GPL通用公共许可证发行。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">job.sh</span></code> 提交作业</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">squeue</span></code> 查看作业状态（可以查看所有作业的id号）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scancel</span> <span class="pre">id</span></code> 取消一个作业（id号定位该作业）</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ul class="simple">
+<li><p>优点：同时计算多个，关闭窗口，不影响计算</p></li>
+<li><p>缺点：不能实时查看计算情况</p></li>
+</ul>
+</div>
+<section id="sbatch-job-sh">
+<h3><span class="section-number">4.2.1 </span>提交作业 <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">job.sh</span></code><a class="headerlink" href="#sbatch-job-sh" title="Link to this heading">¶</a></h3>
+<p>显示</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">134573</span>
+</pre></div>
+</div>
+<p>说明提交成功。 <a class="reference external" href="https://github.com/geovbox/zdem_doc/blob/master/source/clac/job.sh">job.sh</a>  内容如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=test</span>
+<span class="c1">#SBATCH --partition=v6_384</span>
+<span class="c1">#SBATCH -n 1</span>
+<span class="c1">#SBATCH -c 12</span>
+<span class="c1">#SBATCH -t 1440</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_zdem.sh
+module<span class="w"> </span>load<span class="w"> </span>zdem2.0
+
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem<span class="w"> </span>push.py
+<span class="nb">time</span><span class="w"> </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem2jpg<span class="w"> </span>--dir<span class="o">=</span>./data
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>这里配置 <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">zdem2.0</span></code> ，将使用 <code class="docutils literal notranslate"><span class="pre">2.*</span></code> 系列的最新版本。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>注意job.sh的行结尾符需采用 Unix 的 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 格式，否则将产生如下错误信息：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch:<span class="w"> </span>error:<span class="w"> </span>Batch<span class="w"> </span>script<span class="w"> </span>contains<span class="w"> </span>DOS<span class="w"> </span>line<span class="w"> </span>breaks<span class="w"> </span><span class="o">(</span><span class="se">\r\n</span><span class="o">)</span>
+sbatch:<span class="w"> </span>error:<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>expected<span class="w"> </span>UNIX<span class="w"> </span>line<span class="w"> </span>breaks<span class="w"> </span><span class="o">(</span><span class="se">\n</span><span class="o">)</span>.
+</pre></div>
+</div>
+<p>修改 <code class="docutils literal notranslate"><span class="pre">job.sh</span></code> 的行结尾符 见 <a class="reference external" href="https://www.bilibili.com/video/BV1m7411M7rz?p=1">第00课 并行超算云上使用ZDEM</a> 的 10:15</p>
+</div>
+</section>
+<section id="squeue">
+<h3><span class="section-number">4.2.2 </span>查看作业状态 <code class="docutils literal notranslate"><span class="pre">squeue</span></code><a class="headerlink" href="#squeue" title="Link to this heading">¶</a></h3>
+<p>显示</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="m">134573</span><span class="w">    </span>v6_384<span class="w">     </span><span class="nb">test</span><span class="w">  </span>sc80502<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:30<span class="w">      </span><span class="m">1</span><span class="w"> </span>cb0503
+</pre></div>
+</div>
+<p>从上面的输出可知，该任务的 <code class="docutils literal notranslate"><span class="pre">id</span></code> 为 <code class="docutils literal notranslate"><span class="pre">134573</span></code> 。<code class="docutils literal notranslate"><span class="pre">ST</span></code> 状态为 <code class="docutils literal notranslate"><span class="pre">R</span></code> 说明正在计算。任务分配给了节点 <code class="docutils literal notranslate"><span class="pre">cb0503</span></code>。</p>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p><cite>squeue -l</cite> 可以查看作业细节信息</p>
+</div>
+</section>
+<section id="scancel-id">
+<h3><span class="section-number">4.2.3 </span>取消作业 <code class="docutils literal notranslate"><span class="pre">scancel</span> <span class="pre">id</span></code><a class="headerlink" href="#scancel-id" title="Link to this heading">¶</a></h3>
+<p>要杀死上面的作业， 输入 <code class="docutils literal notranslate"><span class="pre">scancel</span> <span class="pre">134573</span></code> 即可，134573为上面作业的id号。</p>
+<p>再次输入 <code class="docutils literal notranslate"><span class="pre">squeue</span></code>。显示</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+</pre></div>
+</div>
+<p>说明作业已经取消。</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>Slurm更多介绍 <a class="reference external" href="https://docs.hpc.sjtu.edu.cn/job/slurm.html">https://docs.hpc.sjtu.edu.cn/job/slurm.html</a></p>
+</div>
+</section>
+</section>
+<section id="deepseek-harness">
+<h2><span class="section-number">4.3 </span>DeepSeek Harness 提交<a class="headerlink" href="#deepseek-harness" title="Link to this heading">¶</a></h2>
+<p>在 DeepSeek Harness 中安装超算远程连接插件 <a class="reference external" href="https://github.com/zrzrv5/dsh-slop">DSH-SLOP</a>，你就可以使用如下自然语言控制计算任务：</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../_images/ZDEM&#64;harness-1提交计算示例11月14日.gif"><img alt="../_images/ZDEM%40harness-1%E6%8F%90%E4%BA%A4%E8%AE%A1%E7%AE%97%E7%A4%BA%E4%BE%8B11%E6%9C%8814%E6%97%A5.gif" src="../_images/ZDEM%40harness-1%E6%8F%90%E4%BA%A4%E8%AE%A1%E7%AE%97%E7%A4%BA%E4%BE%8B11%E6%9C%8814%E6%97%A5.gif" style="width: 100%;" /></a>
+</figure>
+</div></blockquote>
+<section id="id5">
+<h3><span class="section-number">4.3.1 </span>提示词示例<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>提示词示例1</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>把<span class="w"> </span>ex1_small2<span class="w"> </span>上传、提交并登记追踪；计算完成后把结果下载到本地，
+注意只下载<span class="w"> </span>jpg<span class="w"> </span>和<span class="w"> </span>gif<span class="w"> </span>图片，本地目录结构要与远程保持一致。
+再把<span class="w"> </span>jpg<span class="w"> </span>+<span class="w"> </span>gif<span class="w"> </span>+<span class="w"> </span>模拟参数做成<span class="w"> </span><span class="m">1</span><span class="w"> </span>页<span class="w"> </span>PPT，做好后发到我的邮箱。
+</pre></div>
+</div>
+<p>提示词示例2</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>我要分析颗粒摩擦系数fric对构造变形过程的影响，你在ex1_small2的基础上，
+创建ex1_small3文件夹，对应修改push.py中的fric为0.0，
+把这个文件夹传上去、提交并登记追踪，计算完成后，把结果下载到本地，注意只下载jpg和gif图片，
+本地目录结构保证和远程一致。
+把ex1_small2和ex1_small3这两个实验的jpg+gif+模拟参数做成2页实验结果对比PPT，
+把做好的这个PPT发我邮箱。
+</pre></div>
+</div>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/deekseekharness-example1-2.png"><img alt="../_images/deekseekharness-example1-2.png" src="../_images/deekseekharness-example1-2.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 4.1 </span><span class="caption-text"><strong>DeepSeek Harness 中使用示例</strong></span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/20261114李长圣&#64;地大武汉3-harness.png"><img alt="../_images/20261114%E6%9D%8E%E9%95%BF%E5%9C%A3%40%E5%9C%B0%E5%A4%A7%E6%AD%A6%E6%B1%893-harness.png" src="../_images/20261114%E6%9D%8E%E9%95%BF%E5%9C%A3%40%E5%9C%B0%E5%A4%A7%E6%AD%A6%E6%B1%893-harness.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 4.2 </span><span class="caption-text"><strong>DeepSeek Harness 做好的多个实验对比PPT示例</strong></span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id6">
+<h3><span class="section-number">4.3.2 </span>如何选择<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>优点：</dt><dd><ul>
+<li><p>用自然语言下达任务，上传、提交、任务状态监测、结果下载全程自动完成</p></li>
+<li><p>可接续生成汇报 PPT 并直接发送至本人邮箱</p></li>
+<li><p>适合单因素批量多算例提交，无需手工建目录、逐个提交和下载</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>缺点：</dt><dd><ul>
+<li><p>依赖 DeepSeek-V4.1 Flash 模型，需消耗 Token（约几分到几毛钱）</p></li>
+<li><p>计算规模较小时，Deepseek理解自然语言所花的时间在总耗时中占比偏高，性价比不佳</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ul class="simple">
+<li><p><strong>Slurm</strong>：单任务提交</p></li>
+<li><p><strong>DeepSeek Harness</strong>：多算例、单因素批量任务</p></li>
+</ul>
+</div>
+</section>
+<section id="id7">
+<h3><span class="section-number">4.3.3 </span>配置DeepSeek Harness<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>让智能体在高性能计算集群上运行，需要安装 DeepSeek Harness 插件 DSH-SLOP</p>
+<dl class="field-list simple">
+<dt class="field-odd">适用版本<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DeepSeek Harness <code class="docutils literal notranslate"><span class="pre">0.2.2-rc.3</span></code> ＋ DSH-SLOP <code class="docutils literal notranslate"><span class="pre">0.0.17</span></code> <a class="reference external" href="https://pan.baidu.com/s/1fWjvBPKvayAhWxfij-gAnw">百度网盘下载</a> 提取码 <code class="docutils literal notranslate"><span class="pre">zdem</span></code></p>
+</dd>
+<dt class="field-even">仓库<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/demsheng/dsh-slop">https://github.com/demsheng/dsh-slop</a></p>
+</dd>
+<dt class="field-odd">配置视频教程<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.bilibili.com/video/BV1azsB64Ev2">【离散元数值模拟软件ZDEM中级教程】</a></p>
+</dd>
+<dt class="field-even">最后更新<span class="colon">:</span></dt>
+<dd class="field-even"><p>2026-11-16</p>
+</dd>
+</dl>
+<ul>
+<li><p>打开 <strong>DeepSeek Harness</strong> 输入以下提示词</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>安装插件 https://github.com/demsheng/dsh-slop
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>安装PPT制作skill提示词</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>安装skill https://github.com/wendaokeliu-sys/ppt-builder
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>安装邮件插件        提示词</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>推荐给我，可以给我发邮件的插件
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h3><span class="section-number">4.3.4 </span>测试用例<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>目录结构</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>--<span class="w"> </span>test-dsh-slop<span class="w"> </span><span class="c1">#设置为 DeepSeek Harness 的工作目录</span>
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>slurm.sh
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>syn_erosion.py
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">slurm.sh</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=dsh-slop</span>
+<span class="c1">#SBATCH --partition=v6_384</span>
+<span class="c1">#SBATCH -n 1</span>
+<span class="c1">#SBATCH -c 8</span>
+<span class="c1">#SBATCH --output=%j.out</span>
+<span class="c1">#SBATCH --error=%j.err</span>
+
+<span class="nb">source</span><span class="w"> </span>/public1/soft/modules/module.sh
+<span class="nb">source</span><span class="w"> </span>/public1/soft/other/module_zdem.sh
+module<span class="w"> </span>load<span class="w"> </span>zdem2.0
+
+srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem<span class="w"> </span>push.py
+srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>zdem2jpg<span class="w"> </span>--dir<span class="o">=</span>./data<span class="w"> </span>--dpi<span class="o">=</span><span class="m">100</span>
+srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>convert<span class="w"> </span>-delay<span class="w"> </span><span class="m">100</span><span class="w"> </span>./data/*<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>.jpg<span class="w"> </span>-loop<span class="w"> </span><span class="m">0</span><span class="w"> </span>./data/process.gif
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">push.py</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">######################################</span>
+<span class="c1"># title: 一个实例学会ZDEM</span>
+<span class="c1"># 简化版，测试DSH-SLOP</span>
+<span class="c1"># date: 2026-11-16</span>
+<span class="c1"># authors: 李长圣</span>
+<span class="c1"># E-mail: sheng0619@163.com</span>
+<span class="c1">#######################################</span>
+START
+<span class="nb">set</span><span class="w"> </span>disk<span class="w"> </span>off
+BOX<span class="w"> </span>left<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>right<span class="w"> </span><span class="m">21000</span>.0<span class="w"> </span>bottom<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>height<span class="w"> </span><span class="m">6000</span>.0<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">20000</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>black
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">     </span><span class="m">10</span>.0<span class="w"> </span>,<span class="w">   </span><span class="m">5000</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">     </span><span class="m">10</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>blue
+WALL<span class="w"> </span>ID<span class="w"> </span><span class="m">2</span>,<span class="w"> </span>NODES<span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">20000</span>.0<span class="w"> </span>,<span class="w">     </span><span class="m">10</span>.0<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="w">  </span><span class="m">20000</span>.0<span class="w"> </span>,<span class="w">   </span><span class="m">5000</span>.0<span class="w"> </span><span class="o">)</span>,<span class="w"> </span><span class="nv">kn</span><span class="o">=</span>0e10<span class="w"> </span><span class="nv">ks</span><span class="o">=</span>0e10<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>COLOR<span class="w"> </span>red
+GEN<span class="w"> </span>NUM<span class="w"> </span><span class="m">100000</span>.0<span class="w"> </span>rad<span class="w"> </span>discrete<span class="w"> </span><span class="m">60</span>.0<span class="w"> </span><span class="m">80</span>.0,<span class="w">  </span>x<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10</span>.0,<span class="w"> </span><span class="m">20000</span>.0<span class="o">)</span>,<span class="w"> </span>y<span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="m">10</span>.0,<span class="w"> </span><span class="m">3000</span>.0<span class="o">)</span>,<span class="w"> </span>COLOR<span class="w"> </span>black<span class="w"> </span>GROUP<span class="w"> </span>ball_rand
+PROP<span class="w"> </span>DENSITY<span class="w"> </span><span class="m">2</span>.5e3,<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.0,<span class="w"> </span>shear<span class="w"> </span><span class="m">2</span>.9e9,<span class="w"> </span>poiss<span class="w"> </span><span class="m">0</span>.2,<span class="w"> </span>damp<span class="w"> </span><span class="m">0</span>.4,<span class="w"> </span>hertz
+SET<span class="w">  </span>DT<span class="w"> </span>5e-2,<span class="w">  </span>GRAVITY<span class="w">  </span><span class="m">0</span>.0,<span class="w">  </span>-9.8<span class="w"> </span>
+SET<span class="w">  </span>ps<span class="w"> </span><span class="m">1000</span>
+SET<span class="w">  </span>print<span class="w"> </span><span class="m">200</span>
+SET<span class="w"> </span>stepbar<span class="w"> </span><span class="m">200</span>
+
+CYC<span class="w"> </span><span class="m">1000</span>
+
+PROP<span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>
+PROP<span class="w"> </span>COLOR<span class="w"> </span>red<span class="w">         </span>range<span class="w"> </span>y<span class="w">    </span><span class="m">0</span>.0<span class="w">   </span><span class="m">500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>blue<span class="w">        </span>range<span class="w"> </span>y<span class="w">  </span><span class="m">500</span>.0<span class="w">  </span><span class="m">1000</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>mg<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1000</span>.0<span class="w">  </span><span class="m">1500</span>.0
+PROP<span class="w"> </span>COLOR<span class="w"> </span>mg<span class="w">          </span>range<span class="w"> </span>y<span class="w"> </span><span class="m">1500</span>.0<span class="w">  </span><span class="m">2000</span>.0
+
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">0</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">2</span><span class="w"> </span>fric<span class="w"> </span><span class="m">0</span>.3
+
+WALL<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xv<span class="w"> </span><span class="m">2</span>.0
+IMPLE<span class="w"> </span>wall<span class="w"> </span>id<span class="w"> </span><span class="m">1</span><span class="w"> </span>xmove<span class="w"> </span><span class="m">5000</span>.0<span class="w"> </span>save<span class="w"> </span><span class="m">5000</span>.0<span class="w"> </span>print<span class="w"> </span><span class="m">1000</span>.0<span class="w"> </span>ps<span class="w"> </span><span class="m">5000</span>.0
+STOP
+</pre></div>
+</div>
+<p>在DeepSeek Harness中设置工作目录为 <code class="docutils literal notranslate"><span class="pre">test-dsh-slop</span></code> ，打开对话框，输入以下提示词</p>
+<ul>
+<li><p>仅仅测试 dsh-slop 插件</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>把<span class="w"> </span>test-dsh-slop<span class="w"> </span>上传、提交并登记追踪；计算完成后把结果下载到本地，
+注意只下载<span class="w"> </span>jpg<span class="w"> </span>和<span class="w"> </span>gif<span class="w"> </span>图片，本地目录结构要与远程保持一致。
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>测试 <code class="docutils literal notranslate"><span class="pre">dsh-slop</span></code> <code class="docutils literal notranslate"><span class="pre">ppt-builder</span></code> 和 给本人发邮件功能</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>把<span class="w"> </span>test-dsh-slop<span class="w"> </span>上传、提交并登记追踪；计算完成后把结果下载到本地，
+注意只下载<span class="w"> </span>jpg<span class="w"> </span>和<span class="w"> </span>gif<span class="w"> </span>图片，本地目录结构要与远程保持一致。
+再把<span class="w"> </span>jpg<span class="w"> </span>+<span class="w"> </span>gif<span class="w"> </span>+<span class="w"> </span>模拟参数做成<span class="w"> </span><span class="m">1</span><span class="w"> </span>页<span class="w"> </span>PPT，做好后发到我的邮箱。
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+             <div class="articleComments">
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+             </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../push/" class="btn btn-neutral float-left" title="3 一个示例学会ZDEM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../struct/" class="btn btn-neutral float-right" title="5 构造模拟" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2026, ZDEM.
+      <span class="lastupdated">最后更新于 2026年11月18日.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>7.14 range &mdash; ZDEM手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://doc.geovbox.com/latest/cmd/range.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="7.15 restore" href="../restore/" />
+    <link rel="prev" title="7.13 prop" href="../prop/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> ZDEM手册
+    
+
+    
+    </a>
+
+<!--    -->
+<!---->
+<!--    -->
+<!--    -->
+<!--    <div class="version">-->
+<!--        <select onchange="location = this.options[this.selectedIndex].value;">-->
+<!--            -->
+<!--            <option value="/2.0/" > 2.0 </option>-->
+<!--            -->
+<!--        </select>-->
+<!--    </div>-->
+<!--    -->
+<!--    -->
+
+    
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="doc.geovbox.com/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">2 如何使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../push/">3 一个示例学会ZDEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clac/">4 提交计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../struct/">5 构造模拟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../strainstress/">6 应力应变</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">7 命令参考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ball/">7.1 ball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bond/">7.2 bond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">7.3 convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cyc/">7.4 cyc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../del/">7.5 del</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp/">7.6 exp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fix/">7.7 fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../free/">7.8 free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gen/">7.9 gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gline/">7.10 gline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imple/">7.11 imple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../load/">7.12 load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prop/">7.13 prop</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.14 range</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">7.14.1 圈定方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#and-or">7.14.2 使用 <code class="docutils literal notranslate"><span class="pre">AND</span></code> <code class="docutils literal notranslate"><span class="pre">OR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../restore/">7.15 restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">7.16 set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../start/">7.17 start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wall/">7.18 wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zdem/">7.19 zdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zdemss/">7.20 zdemss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zdem2jpg/">7.21 zdem2jpg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory/">8 离散元原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../color/">9 颜色表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/">10 开通账户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/">11 Linux命令行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">12 使用协议</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../updatelog/">13 版本更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thanks/">14 致谢</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://doc.geovbox.com/2.0/zdem_doc.pdf"><i class="fa fa-download fa-fw"></i> PDF版本手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com"><i class="fa fa-globe fa-fw"></i> 官网</a></li>
+            
+                <li class="toctree-l1"><a href="https://geovbox.com/about/"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">ZDEM手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../"><span class="section-number">7 </span>命令参考</a> &raquo;</li>
+        
+      <li><span class="section-number">7.14 </span>range</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/geovbox/vbox_doc/blob/master/source/cmd/range.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../restore/" class="btn btn-neutral float-right" title="7.15 restore" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../prop/" class="btn btn-neutral float-left" title="7.13 prop" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="range">
+<span id="index-0"></span><h1><span class="section-number">7.14 </span>range<a class="headerlink" href="#range" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">简介</dt>
+<dd class="field-odd"><p>圈定颗粒范围</p>
+</dd>
+</dl>
+<p>不指定range则默认选定全部颗粒，必须放在其他命令的最后 <code class="docutils literal notranslate"><span class="pre">prop</span></code> <code class="docutils literal notranslate"><span class="pre">bond</span></code> <code class="docutils literal notranslate"><span class="pre">del</span></code> 后。</p>
+<section id="id1">
+<h2><span class="section-number">7.14.1 </span>圈定方法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>矩形 <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;),</span> <span class="pre">Y</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;)</span></code> ，指定 <code class="docutils literal notranslate"><span class="pre">左右边界</span></code> <code class="docutils literal notranslate"><span class="pre">下上边界</span></code></p></li>
+<li><p>四边形 <code class="docutils literal notranslate"><span class="pre">P4</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;),</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;),</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;),</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;)</span></code> ，逆时针指定四个点</p></li>
+<li><p>椭圆 <code class="docutils literal notranslate"><span class="pre">ellipse</span> <span class="pre">(&lt;float&gt;</span> <span class="pre">&lt;float&gt;),</span> <span class="pre">&lt;float&gt;</span> <span class="pre">&lt;float&gt;</span></code> ，指定椭圆中心 (x0, y0) 和 a、b，椭圆方程 (x-x0)^2/a^2 + (y-y0)^2/b^2 = 1</p></li>
+<li><p>组名 <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">&lt;str&gt;</span></code></p></li>
+<li><p>支持变量 <code class="docutils literal notranslate"><span class="pre">{left}</span> <span class="pre">{right}</span> <span class="pre">{bottom}</span> <span class="pre">{top}</span></code>, 大括号引用所需要的变量，如式子 <code class="docutils literal notranslate"><span class="pre">{top}-1000.0</span></code>, 式子内不能有空格。</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">实例</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ol class="arabic simple">
+<li><p>矩形</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#圈定一个矩形范围，左右边界(1.0 10.0)，下上边界(1.0 10.0)</span>
+<span class="c1">#将该范围内的颗粒的颜色设置为红色</span>
+PROP COLOR red RANGE x <span class="o">(</span><span class="m">1</span>.0 <span class="m">10</span>.0<span class="o">)</span> y <span class="o">(</span><span class="m">1</span>.0 <span class="m">10</span>.0<span class="o">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>四边形</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#圈定一个四边形范围，逆时针指定四个点 ( 2e-2, 0.0) (3e-2, 0.0) ( 1e-2, 2e-2) (1e-2, 1e-2)</span>
+<span class="c1">#将该范围内的颗粒的摩擦系数设置为0.0</span>
+PROP fric <span class="m">0</span>.0 range P4 <span class="o">(</span> 2e-2, <span class="m">0</span>.0<span class="o">)</span> <span class="o">(</span>3e-2, <span class="m">0</span>.0<span class="o">)</span> <span class="o">(</span> 1e-2, 2e-2<span class="o">)</span> <span class="o">(</span>1e-2, 1e-2<span class="o">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>椭圆</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#圈定一个椭圆范围，指定椭圆中心和a,b ( 2e-2, 0.0)  3e-2, 0.0</span>
+<span class="c1">#将该范围内的颗粒的摩擦系数设置为0.0</span>
+PROP fric <span class="m">0</span>.0 range ellipse <span class="o">(</span> 2e-2, <span class="m">0</span>.0<span class="o">)</span>  3e-2, <span class="m">0</span>.0
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>使用变量 <code class="docutils literal notranslate"><span class="pre">{left}</span> <span class="pre">{right}</span> <span class="pre">{bottom}</span> <span class="pre">{top}</span></code></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#删除顶部1km的颗粒</span>
+DEL RANGE y <span class="o">{</span>top<span class="o">}</span>-1000.0, <span class="o">{</span>top<span class="o">}</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/del1.jpg"><img alt="../../_images/del1.jpg" src="../../_images/del1.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 7.3 </span><span class="caption-text"><strong>剥蚀前</strong></span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/del2.jpg"><img alt="../../_images/del2.jpg" src="../../_images/del2.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">图 7.4 </span><span class="caption-text"><strong>剥蚀后</strong></span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="and-or">
+<h2><span class="section-number">7.14.2 </span>使用 <code class="docutils literal notranslate"><span class="pre">AND</span></code> <code class="docutils literal notranslate"><span class="pre">OR</span></code><a class="headerlink" href="#and-or" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AND</span></code> 并</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#颗粒在矩形X()Y()并且在GROUP中，才设置为红色</span>
+prop color red range X <span class="o">(</span>&lt;float&gt; &lt;float&gt;<span class="o">)</span>, Y <span class="o">(</span>&lt;float&gt; &lt;float&gt;<span class="o">)</span> AND GROUP &lt;str&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OR</span></code> 或</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#颗粒在矩形X()Y()或者在GROUP中，都设置为红色</span>
+prop coloe red range X <span class="o">(</span>&lt;float&gt; &lt;float&gt;<span class="o">)</span>, Y <span class="o">(</span>&lt;float&gt; &lt;float&gt;<span class="o">)</span> OR GROUP &lt;str&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">实例</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AND</span></code></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 颗粒在矩形 x() y()中，并且在四边形 P4 ()()()()中， 则其颜色设置为红色</span>
+PROP COLOR red RANGE x <span class="o">(</span><span class="m">1</span>.0 <span class="m">10</span>.0<span class="o">)</span> y <span class="o">(</span><span class="m">1</span>.0 <span class="m">10</span>.0<span class="o">)</span> AND P4 <span class="o">(</span> 2e-2, <span class="m">0</span>.0<span class="o">)</span> <span class="o">(</span>3e-2, <span class="m">0</span>.0<span class="o">)</span> <span class="o">(</span> 1e-2, 2e-2<span class="o">)</span> <span class="o">(</span>1e-2, 1e-2<span class="o">)</span>
+<span class="c1">#颗粒在矩形 x() y()中，并且在组GROUP sed中，则其颜色设置为红色</span>
+PROP COLOR red RANGE x <span class="o">(</span><span class="m">1</span>.0 <span class="m">10</span>.0<span class="o">)</span> y <span class="o">(</span><span class="m">1</span>.0 <span class="m">10</span>.0<span class="o">)</span> AND GROUP sed
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">OR</span></code></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#颗粒在矩形 x() y()中， 或者在P4 ()()()() 中，其颜色设置为红色</span>
+PROP COLOR red RANGE x <span class="o">(</span> 1e-2, <span class="m">2</span>.0e-2<span class="o">)</span> y <span class="o">(</span> 0e-2, <span class="m">1</span>.5e-2<span class="o">)</span> OR P4 <span class="o">(</span> 2e-2, <span class="m">0</span>.0<span class="o">)</span> <span class="o">(</span>3e-2, <span class="m">0</span>.0<span class="o">)</span> <span class="o">(</span> 1e-2, 2e-2<span class="o">)</span> <span class="o">(</span>1e-2, 1e-2<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<!--<div id="gitalk-container"></div>-->
+<!--<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">-->
+<!--<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  var gitalk = new Gitalk({-->
+<!--    clientID: 'b430df1a53b187558d83',-->
+<!--    clientSecret: '1fb9733d3c08f788ac3fd8951a281febb3ef5e32',-->
+<!--    owner: 'gmt-china',-->
+<!--    repo: 'gitalk',-->
+<!--    admin: ['lichangsheng','weihuajing','fengyanjie'],-->
+<!--    body: location.href,-->
+<!--  });-->
+<!--gitalk.render('gitalk-container');-->
+<!--</script>-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65dbb2d111562c71ec1b9c0e0cd2969b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../restore/" class="btn btn-neutral float-right" title="7.15 restore" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../prop/" class="btn btn-neutral float-left" title="7.13 prop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2019 - 2021, ZDEM.
+      <span class="lastupdated">
+        最后更新于 2021年06月18日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
